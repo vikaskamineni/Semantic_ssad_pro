@@ -53,7 +53,8 @@ function tag_function()
         var sel = window.getSelection();
         if (sel.rangeCount) {
             var range = sel.getRangeAt(0).cloneRange();
-            range.removeAllRanges();
+            range.surroundContents(span);
+            sel.removeAllRanges();
             sel.addRange(range);
         }
     }

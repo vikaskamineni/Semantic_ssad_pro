@@ -245,12 +245,6 @@ function anno_rtag(xpath)
     console.log(temp);
     document.getElementById("page-wrap").removeAttribute("hidden");
   }
-  else
-  {
-      var temp=document.getElementById("page-wrap");
-      console.log(temp);
-      document.getElementById("page-wrap").setAttribute("page-wrap","hidden");
-  }
 }
 
 //main function which will execute other functions

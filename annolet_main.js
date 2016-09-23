@@ -250,10 +250,7 @@ function anno_rtag(xpath)
       console.log("add hidden");
       var temp=document.getElementById("page-wrap");
       console.log(temp);
-      if (document.getElementById("page-wrap").getAttribute()=="NULL")
-      {
-          document.getElementById("page-wrap").setAttribute("hidden")
-      }
+      document.getElementById("page-wrap").setAttribute("hidden");
   }
 }
 

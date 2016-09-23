@@ -247,6 +247,7 @@ function anno_rtag(xpath)
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
     annolet_createContainer();
+    add_tagging();
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;

@@ -249,7 +249,7 @@ function anno_rtag(xpath)
   {
       var temp=document.getElementById("page-wrap");
       console.log(temp);
-      document.getElementById("page-wrap").setAttribute("null","hidden");
+      document.getElementById("page-wrap").setAttribute("page-wrap","hidden");
   }
 }
 

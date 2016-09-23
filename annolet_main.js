@@ -30,6 +30,7 @@ function annolet_createContainer() {
     "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>rtag</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>audio</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=10;'>edit</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=11;'>Modify</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=exit-btn onclick='annolet_btn=0;'>exit</li>"+
     "</ul>"; //HTML to create a list of options
 }

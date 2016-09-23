@@ -9,7 +9,7 @@ function annolet_createContainer() {
     // appending a CSS stylesheet to head of webpage
     var link = document.createElement('link');
     // using rawgit.com MaxCDN.. files directly linked to git repo 'annoletjs/master'
-    link.href = "https://cdn.rawgit.com/SSS-Studio-development/annoletjs/master/annolet.css"; //random version number removed bcoz some browser take it as text file and not as CSS.
+    link.href = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/annolet.css"; //random version number removed bcoz some browser take it as text file and not as CSS.
     link.type = "text/css";
     link.rel = "stylesheet";
     document.getElementsByTagName('head')[0].appendChild(link);

@@ -247,7 +247,8 @@ function tag_function()
         tagName = prompt('tagName');
         tagInfo = prompt('tagInfo');
         prop2.value = "background-color:yellow";
-        prop1.value = tagName.toString();
+        prop1.value = tagName;
+        console.log(tagName);
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
         var sel = window.getSelection();

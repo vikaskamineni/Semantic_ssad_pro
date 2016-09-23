@@ -247,7 +247,6 @@ function anno_rtag(xpath)
   }
   else
   {
-      console.log("add hidden");
       var temp=document.getElementById("page-wrap");
       console.log(temp);
       document.getElementById("page-wrap").setAttribute("hidden");

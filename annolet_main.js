@@ -24,9 +24,12 @@ function annolet_createContainer() {
     "<span id='annolet' style='border-radius:10px;  color:orange;font-weight:bold;font-family:monospace; font-size:1.3em'>AnnoLet!</span>"+
     "<span id='annolet' style='color:grey;'>|</span>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TagIt!</li>"+
-    /*"<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Highlight</li>"+*/
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>Phonetics</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>Translation</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>rtag</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>audio</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=10;'>edit</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=exit-btn onclick='annolet_btn=0;'>exit</li>"+
     "</ul>"; //HTML to create a list of options
 }
@@ -181,9 +184,63 @@ function anno_language(xpath) {
   }
 }
 
+
+function anno_audio(xpath)
+{
+    if (window.getSelection().toString().length!==0) {
+        console.log("inside audio");
+        var clicked_element = anno_getElementByXpath(xpath);
+        var node = document.createElement("audio");
+        var prop1 = document.createAttribute("src");
+        var prop2 = document.createAttribute("controls");
+        var prop3 = document.createAttribute("autoplay");
+        var prop4 = document.createAttribute("id");
+        var string1 = "https://api.voicerss.org/?key=24041d6a5a6c4f0db89edfbff791e8cb&src=";
+        var string2 = window.getSelection().toString();
+        var string3 = "&hl=en-in";
+        var str = string1.concat(string2,string3);
+        prop1.value = str;
+        prop4.value = "uniqueid";
+        node.setAttributeNode(prop1);
+        node.setAttributeNode(prop2);
+        node.setAttributeNode(prop3);
+        node.setAttributeNode(prop4                         );
+        clicked_element.appendChild(node);
+        document.getElementById("uniqueid").remove();
+
+    }
+}
+
+function anno_edit(xpath)
+{
+        document.getElementsByTagName("body")[0].setAttribute('contenteditable','true');
+}
+
+function anno_remove_edit(xpath)
+{
+  document.getElementsByTagName("body")[0].removeAttribute('contenteditable');
+  document.getElementById("page-wrap").setAttribute("hidden","");
+}
 //------------------------------------------------------------------------
+function add_tagging()
+{
+    $j("body").append('<div id=\"page-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Event</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'event-name\')\">Name</a> </li> <li> <a href=\"#\">Date</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-startdate\')\" >Start date</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-enddate\')\">End date</a></li> </ul> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-street\')\" >Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Organization</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-owner\')\">Owner</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-employee\')\" >Employee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-contact\')\">Contact</a> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Person</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Name</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-firstname\')\" >First Name</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-secondname\')\">Second Name</a></li> </ul> </li> <li> <a href=\"#\">Address</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-city\')\">City</a></li> </ul> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-contact\')\">Contact</a> </li> </ul> </li> <li><a href=\"#\" >Date</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'date-startdate\')\">Start date</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-enddate\')\">End date</a> </li> </ul> </li> <li><a href=\"#\" >Currency</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-rupee\')\">Rupee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-dollar\')\">Dollar</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-euro\')\">Euro</a> </li> </ul> </li> <li><a href=\"#\" >Unit</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-si\')\">SI</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-cgi\')\">CGI</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-fps\')\">FPS</a> </li> </ul> </li> </ul> </div>');
+
+  $j("head").append('<script src="https://rawgit.com/SSS-Studio-development/tagging/master/js/tagging.js">    </script>');
+
+  $j("head").append('<link rel="stylesheet" href="https://rawgit.com/SSS-Studio-development/tagging/master/css/style.css" type="text/css" media="screen, projection"/>');
+  
+ 
+}
 
 
+function anno_rtag(xpath)
+{
+  console.log("remove hidden");
+  var temp=document.getElementById("page-wrap");
+  console.log(temp);
+  document.getElementById("page-wrap").removeAttribute("hidden");
+}
 
 //main function which will execute other functions
 function annolet_main() {
@@ -204,6 +261,21 @@ function annolet_main() {
         }
         else if (annolet_btn == 3){
           anno_phonetic(xpath);
+        }
+        else if (annolet_btn == 6){
+           anno_rtag(xpath);
+        }
+        else if (annolet_btn===9)
+        {
+            anno_audio(xpath);
+        }
+        else if (annolet_btn===10)
+        {
+             anno_edit(xpath);
+        }
+         else if (annolet_btn===0)
+        {
+             anno_remove_edit(xpath);
         }
     };
 }

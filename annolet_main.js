@@ -246,8 +246,9 @@ function tag_function()
         console.log('highlighted');
         tagName = prompt('tagName');
         tagInfo = prompt('tagInfo');
-        prop2.backgroundColor = "yellow";
-        prop1.value = tagName;
+        prop2.value = "background-color:yellow";
+        prop1.value = tagName.toString();
+        span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
         var sel = window.getSelection();
         if (sel.raneCount) {

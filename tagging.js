@@ -33,3 +33,28 @@ function toggle_tagging()
     element.setAttribute("hidden","");
   }
 }
+//function to tag a selected text and modify function
+function tag_function()
+{
+    var span = document.createElement("span");
+    var prop1 = document.createAttribute("property");
+    var prop2 = document.createAttribute("style");
+
+    if (window.getSelection().toString().length!=0)
+    {
+        console.log('highlighted');
+        tagName = prompt('tagName');
+        tagInfo = prompt('tagInfo');
+        prop2.value = "background-color:yellow";
+        prop1.value = tagName;
+        console.log(tagName);
+        span.setAttributeNode(prop2);
+        span.setAttributeNode(prop1);
+        var sel = window.getSelection();
+        if (sel.raneCount) {
+            var range = sel.getRangeAt(0).cloneRange();
+            range.removeAllRanges();
+            sel.addRange(range);
+        }
+    }
+}

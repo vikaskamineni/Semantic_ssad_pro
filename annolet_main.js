@@ -4,6 +4,7 @@ var $j = jQuery.noConflict();
 annolet_main();
 
 var annolet_btn;
+var count=0;
 // function to create annolet controls container
 function annolet_createContainer() {
     // appending a CSS stylesheet to head of webpage
@@ -237,10 +238,23 @@ function add_tagging()
 
 function anno_rtag(xpath)
 {
-  console.log("remove hidden");
-  var temp=document.getElementById("page-wrap");
-  console.log(temp);
-  document.getElementById("page-wrap").removeAttribute("hidden");
+  if (count % 2 == 1)
+  {
+    console.log("remove hidden");
+    var temp=document.getElementById("page-wrap");
+    console.log(temp);
+    document.getElementById("page-wrap").removeAttribute("hidden");
+  }
+  else
+  {
+      console.log("add hidden");
+      var temp=document.getElementById("page-wrap");
+      console.log(temp);
+      if (document.getElementById("page-wrap").getAttribute()=="NULL")
+      {
+          document.getElementById("page-wrap").setAttribute("hidden")
+      }
+  }
 }
 
 //main function which will execute other functions
@@ -265,6 +279,7 @@ function annolet_main() {
           anno_phonetic(xpath);
         }
         else if (annolet_btn == 6){
+           count++;
            anno_rtag(xpath);
         }
         else if (annolet_btn===9)

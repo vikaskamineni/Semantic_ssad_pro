@@ -51,7 +51,7 @@ function tag_function()
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
         var sel = window.getSelection();
-        if (sel.raneCount) {
+        if (sel.rangeCount) {
             var range = sel.getRangeAt(0).cloneRange();
             range.removeAllRanges();
             sel.addRange(range);

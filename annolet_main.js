@@ -229,7 +229,7 @@ function add_tagging()
 
   $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/tagging.js">    </script>');
 
-  $j("head").append('<link rel="stylesheet" href="https://rawgit.com/SSS-Studio-development/tagging/master/css/style.css" type="text/css" media="screen, projection"/>');
+  $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/style.css" type="text/css" media="screen, projection"/>');
   
  
 }

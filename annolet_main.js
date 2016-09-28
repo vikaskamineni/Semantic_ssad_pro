@@ -26,6 +26,7 @@ function annolet_createContainer() {
     "<span id='annolet' style='color:grey;'>|</span>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TagIt!</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
+    "<li>"+
     "<ul class=\"annolet_dropdown\">"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn>"+
     "<a href=\"#\" >Tag_function1</a>"+
@@ -41,6 +42,7 @@ function annolet_createContainer() {
     "</ul>"+
     "</li>"+
     "</ul>"+
+    "</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>Phonetics</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>Translation</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>rtag</li>"+

@@ -1,6 +1,8 @@
 * 									{ margin: 0; padding: 0; }
 body								{ font: 14px Helvetica, Sans-Serif; } 
 #page-wrap                                                      { width: 1200px; position: fixed; right: 10%; z-index:999 ;top:0px;  }
+#page_wrap_new                                                      { width: 400px; position: fixed; left: 10%; z-index:999 ;top:0px;  }
+
 a									{ text-decoration: none; }
 ul									{ list-style: none; }
 p                                   { margin: 15px 0; }

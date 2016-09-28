@@ -34,15 +34,15 @@ function annolet_createContainer() {
     "<a href=\"#\">Highlight</a>"+
     "<ul>"+
     "<li>"+
-    "<a href=\"#\" onclick='annolet_btn=2'>BG_color_Yellow</a>"+
+    "<a href=\"#\" onclick='annolet_btn=11'>BG_color_Yellow</a>"+
     "</li>"+
     "<li>"+
-    "<a href=\"#\" onclick=\"tag_function(\'background-color:red\')\">BG_color_red</a>"+
+    "<a href=\"#\" onclick='annolet_btn=12'>BG_color_red</a>"+
     "</li>"+
     "</ul>"+
     "</li>"+
     "<li>"+
-    "<a href=\"#\" onclick=\"bold_tag()\">Bold</a>"+
+    "<a href=\"#\" onclick='annolet_btn=13'>Bold</a>"+
     "</li>"+
     "</ul>"+
     "</li>"+
@@ -302,10 +302,19 @@ function annolet_main() {
         {
              anno_edit(xpath);
         }
-        else if (annolet_btn == 2)
+        else if (annolet_btn == 11)
         {
-            tag_function();
+            tag_function('background-color:yellow');
         }
+        else if (annolet_btn == 12)
+        {
+            tag_function('background-color:red');
+        }
+        else if (annolet_btn == 13)
+        {
+            bold_tag();
+        }
+        
          else if (annolet_btn===0)
         {
              anno_remove_edit(xpath);

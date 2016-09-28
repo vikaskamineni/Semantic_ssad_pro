@@ -224,7 +224,7 @@ function anno_remove_edit(xpath)
   document.getElementById("page-wrap").setAttribute("hidden","");
 }
 //------------------------------------------------------------------------
-function add_tagging()
+/*function add_tagging()
 {
     $j("body").append('<div id=\"page-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Event</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'event-name\')\">Name</a> </li> <li> <a href=\"#\">Date</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-startdate\')\" >Start date</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-enddate\')\">End date</a></li> </ul> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-street\')\" >Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Organization</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-owner\')\">Owner</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-employee\')\" >Employee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-contact\')\">Contact</a> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Person</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Name</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-firstname\')\" >First Name</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-secondname\')\">Second Name</a></li> </ul> </li> <li> <a href=\"#\">Address</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-city\')\">City</a></li> </ul> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-contact\')\">Contact</a> </li> </ul> </li> <li><a href=\"#\" >Date</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'date-startdate\')\">Start date</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-enddate\')\">End date</a> </li> </ul> </li> <li><a href=\"#\" >Currency</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-rupee\')\">Rupee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-dollar\')\">Dollar</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-euro\')\">Euro</a> </li> </ul> </li> <li><a href=\"#\" >Unit</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-si\')\">SI</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-cgi\')\">CGI</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-fps\')\">FPS</a> </li> </ul> </li> </ul> </div>');
 
@@ -233,7 +233,7 @@ function add_tagging()
   $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/style.css" type="text/css" media="screen, projection"/>');
   
  
-}
+}*/
 //-----------------------------
 function add_func_tagging()
 {
@@ -245,7 +245,7 @@ function add_func_tagging()
   
 }
 
-function anno_rtag(xpath)
+/*function anno_rtag(xpath)
 {
   if (count % 2 == 1)
   {
@@ -254,7 +254,7 @@ function anno_rtag(xpath)
     console.log(temp);
     document.getElementById("page-wrap").removeAttribute("hidden");
   }
-}
+}*/
 function tag_function()
 {
     console.log("remove new hidden");
@@ -266,7 +266,7 @@ function tag_function()
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
     annolet_createContainer();
-    add_tagging();
+    //add_tagging();
     add_func_tagging();
     document.onclick = function(event) {
         if (event === undefined) {
@@ -286,7 +286,7 @@ function annolet_main() {
         }
         else if (annolet_btn == 6){
            count++;
-           anno_rtag(xpath);
+           //anno_rtag(xpath);
         }
         else if (annolet_btn===9)
         {

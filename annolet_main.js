@@ -34,7 +34,7 @@ function annolet_createContainer() {
     "<a href=\"#\">Highlight</a>"+
     "<ul>"+
     "<li>"+
-    "<a href=\"#\" onclick=\"tag_function(\'background-color:yellow\')\">BG_color_Yellow</a>"+
+    "<a href=\"#\" onclick='annolet_btn=2'>BG_color_Yellow</a>"+
     "</li>"+
     "<li>"+
     "<a href=\"#\" onclick=\"tag_function(\'background-color:red\')\">BG_color_red</a>"+

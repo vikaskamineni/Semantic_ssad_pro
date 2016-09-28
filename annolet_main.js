@@ -45,7 +45,6 @@ function annolet_createContainer() {
     "<li>"+
     "<a href=\"#\" onclick=\"bold_tag()\">Bold</a>"+
     "</li>"+
-    "</li>"+
     "</ul>"+
     "</li>"+
     "</ul>"+

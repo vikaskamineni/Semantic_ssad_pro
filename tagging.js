@@ -34,7 +34,7 @@ function toggle_tagging()
   }
 }
 //function to tag a selected text and modify function
-function tag_function()
+function tag_function(stri)
 {
     var span = document.createElement("span");
     var prop1 = document.createAttribute("property");
@@ -45,7 +45,7 @@ function tag_function()
         console.log('highlighted');
         tagName = prompt('tagName');
         tagInfo = prompt('tagInfo');
-        prop2.value = "background-color:yellow";
+        prop2.value = stri;
         prop1.value = tagName;
         console.log(tagName);
         span.setAttributeNode(prop2);

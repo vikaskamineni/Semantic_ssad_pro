@@ -25,7 +25,6 @@ function annolet_createContainer() {
     "<span id='annolet' style='border-radius:10px;  color:orange;font-weight:bold;font-family:monospace; font-size:1.3em'>AnnoLet!</span>"+
     "<span id='annolet' style='color:grey;'>|</span>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TagIt!</li>"+
-    //"<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
     "<li id='annolet' class=annolet-tools-menu-item >"+
     "<ul class=\"annolet_dropdown\">"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn>"+
@@ -39,7 +38,7 @@ function annolet_createContainer() {
     "</li>"+
     "<li>"+
     "<a href=\"#\" onclick=\"tag_function(\'background-color:red\')\">BG_color_red</a>"+
-    "</li>"
+    "</li>"+
     "</ul>"+
     "</li>"+
     "<li>"+

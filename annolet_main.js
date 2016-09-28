@@ -25,29 +25,7 @@ function annolet_createContainer() {
     "<span id='annolet' style='border-radius:10px;  color:orange;font-weight:bold;font-family:monospace; font-size:1.3em'>AnnoLet!</span>"+
     "<span id='annolet' style='color:grey;'>|</span>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TagIt!</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item >"+
-    "<ul class=\"annolet_dropdown\">"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn>"+
-    "<a href=\"#\" >Tag_function</a>"+
-    "<ul class=\"sub_menu\">"+
-    "<li>"+
-    "<a href=\"#\">Highlight</a>"+
-    "<ul>"+
-    "<li>"+
-    "<a href=\"#\" onclick='annolet_btn=11'>BG_color_Yellow</a>"+
-    "</li>"+
-    "<li>"+
-    "<a href=\"#\" onclick='annolet_btn=12'>BG_color_red</a>"+
-    "</li>"+
-    "</ul>"+
-    "</li>"+
-    "<li>"+
-    "<a href=\"#\" onclick='annolet_btn=13'>Bold</a>"+
-    "</li>"+
-    "</ul>"+
-    "</li>"+
-    "</ul>"+
-    "</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>Phonetics</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>Translation</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>rtag</li>"+
@@ -256,6 +234,10 @@ function add_tagging()
   
  
 }
+//-----------------------------
+function add_func_tagging()
+{
+    $j("body").append('<div id=\"page_wrap_new\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Tag_function</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Highlight</a> <ul> <li><a href=\"#\" onclick=\"tagging_function(\'yellow\')\">BG_color_Yellow</a></li> <li><a href=\"#\" onclick=\"tagging_function(\'red\')\">BG_color_red</a> </li> </ul> </li> <li> <a href=\"#\" onclick=\"bold_tag()\">Bold</a></li></li></ul></li></ul> </div>');
 
 
 function anno_rtag(xpath)
@@ -268,12 +250,19 @@ function anno_rtag(xpath)
     document.getElementById("page-wrap").removeAttribute("hidden");
   }
 }
-
+function tag_function()
+{
+    console.log("remove new hidden");
+    var temp=document.getElementById("page_wrap_new");
+    console.log(temp);
+    document.getElementById("page_wrap_new").removeAttribute("hidden");
+}
 //main function which will execute other functions
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
     annolet_createContainer();
     add_tagging();
+    add_func_tagging();
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -302,19 +291,10 @@ function annolet_main() {
         {
              anno_edit(xpath);
         }
-        else if (annolet_btn == 11)
+        else if (annolet_btn == 2)
         {
-            tag_function('background-color:yellow');
-        }
-        else if (annolet_btn == 12)
-        {
-            tag_function('background-color:red');
-        }
-        else if (annolet_btn == 13)
-        {
-            bold_tag();
-        }
-        
+            tag_function();
+        }        
          else if (annolet_btn===0)
         {
              anno_remove_edit(xpath);

@@ -29,15 +29,22 @@ function annolet_createContainer() {
     "<li id='annolet' class=annolet-tools-menu-item >"+
     "<ul class=\"annolet_dropdown\">"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn>"+
-    "<a href=\"#\" >Tag_function1</a>"+
+    "<a href=\"#\" >Tag_function</a>"+
     "<ul class=\"sub_menu\">"+
     "<li>"+
     "<a href=\"#\">Highlight</a>"+
     "<ul>"+
     "<li>"+
-    "<a href=\"#\" onclick=\"annolet_btn=2\">BG_color_Yellow</a>"+
+    "<a href=\"#\" onclick=\"tag_function(\'yellow\')\">BG_color_Yellow</a>"+
     "</li>"+
+    "<li>"+
+    "<a href=\"#\" onclick=\"tag_function(\'red\')\">BG_color_red</a>"+
+    "</li>"
     "</ul>"+
+    "</li>"+
+    "<li>"+
+    "<a href=\"#\" onclick=\"bold_tag()\">Bold</a>"+
+    "</li>"+
     "</li>"+
     "</ul>"+
     "</li>"+

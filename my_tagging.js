@@ -1,4 +1,4 @@
-function tagging_function(stri)
+function tagging_function(stri1,stri2)
 {
     var span = document.createElement("span");
     var prop1 = document.createAttribute("property");
@@ -7,11 +7,11 @@ function tagging_function(stri)
     if (window.getSelection().toString().length!=0)
     {
         console.log('highlighted');
-        tagName = prompt('tagName');
-        tagInfo = prompt('tagInfo');
-        prop2.value = stri;
-        prop1.value = tagName;
-        console.log(tagName);
+        //tagName = prompt('tagName');
+        //tagInfo = prompt('tagInfo');
+        prop2.value = stri1;
+        prop1.value = stri2;
+        console.log(stri2);
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
         var sel = window.getSelection();
@@ -23,7 +23,7 @@ function tagging_function(stri)
         }
     }
 }
-function bold_tag()
+function bold_tag(stri)
 {
     var span = document.createElement("span");
     var prop1 = document.createAttribute("property");
@@ -32,11 +32,11 @@ function bold_tag()
     if (window.getSelection().toString().length!=0)
     {
         console.log('highlighted');
-        tagName = prompt('tagName');
-        tagInfo = prompt('tagInfo');
+        //tagName = prompt('tagName');
+        //tagInfo = prompt('tagInfo');
         prop2.value = "font-weight:bold";
-        prop1.value = tagName;
-        console.log(tagName);
+        prop1.value = stri;
+        console.log(stri);
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
         var sel = window.getSelection();

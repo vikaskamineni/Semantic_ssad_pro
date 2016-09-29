@@ -224,7 +224,7 @@ function anno_remove_edit(xpath)
   document.getElementById("page-wrap").setAttribute("hidden","");
 }
 //------------------------------------------------------------------------
-/*function add_tagging()
+function add_tagging()
 {
     $j("body").append('<div id=\"page-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Event</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'event-name\')\">Name</a> </li> <li> <a href=\"#\">Date</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-startdate\')\" >Start date</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-enddate\')\">End date</a></li> </ul> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-street\')\" >Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Organization</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-owner\')\">Owner</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-employee\')\" >Employee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-contact\')\">Contact</a> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Person</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Name</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-firstname\')\" >First Name</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-secondname\')\">Second Name</a></li> </ul> </li> <li> <a href=\"#\">Address</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-city\')\">City</a></li> </ul> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-contact\')\">Contact</a> </li> </ul> </li> <li><a href=\"#\" >Date</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'date-startdate\')\">Start date</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-enddate\')\">End date</a> </li> </ul> </li> <li><a href=\"#\" >Currency</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-rupee\')\">Rupee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-dollar\')\">Dollar</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-euro\')\">Euro</a> </li> </ul> </li> <li><a href=\"#\" >Unit</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-si\')\">SI</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-cgi\')\">CGI</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'unit-fps\')\">FPS</a> </li> </ul> </li> </ul> </div>');
 
@@ -233,11 +233,11 @@ function anno_remove_edit(xpath)
   $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/style.css" type="text/css" media="screen, projection"/>');
   
  
-}*/
+}
 //-----------------------------
 function add_func_tagging()
 {
-    $j("body").append('<div id=\"page_wrap_new\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Tag_function</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Highlight</a> </li> <li> <a href=\"#\" >Bold</a></li></ul></li></ul> </div>');
+    $j("body").append('<div id=\"page_wrap_new\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Tag_function</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Highlight</a><ul> <li><a href=\"#\" onclick=\"tagging_function(\'yellow\')\">BG_color_Yellow</a></li> <li><a href=\"#\" onclick=\"tagging_function(\'red\')\">BG_color_red</a> </li> </ul>  </li> <li> <a href=\"#\" >Bold</a></li></ul></li></ul> </div>');
     
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_tagging.js">    </script>');
     
@@ -245,7 +245,7 @@ function add_func_tagging()
   
 }
 
-/*function anno_rtag(xpath)
+function anno_rtag(xpath)
 {
   if (count % 2 == 1)
   {
@@ -254,7 +254,7 @@ function add_func_tagging()
     console.log(temp);
     document.getElementById("page-wrap").removeAttribute("hidden");
   }
-}*/
+}
 function tag_function()
 {
     console.log("remove new hidden");

@@ -266,7 +266,7 @@ function tag_function()
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
     annolet_createContainer();
-    //add_tagging();
+    add_tagging();
     add_func_tagging();
     document.onclick = function(event) {
         if (event === undefined) {

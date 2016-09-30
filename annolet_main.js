@@ -257,7 +257,7 @@ function anno_rtag(xpath)
     //}
     //else
     //{
-    if(document.getElementById("page_wrap_new").hasAttribute("hidden"))
+    /*if(document.getElementById("page_wrap_new").hasAttribute("hidden"))
     {
     }
     else
@@ -266,7 +266,7 @@ function anno_rtag(xpath)
         var temp=document.getElementById("page_wrap_new");
         console.log(temp);
         document.getElementById("page_wrap_new").setAttribute("hidden",true);
-    }
+    }*/
     //toggle_tagging();
 }
 function toggle_tagging()
@@ -307,14 +307,14 @@ function tag_function()
     //}
     //else
     //{
-    if(document.getElementById("page-wrap").hasAttribute("hidden"))
+    /*if(document.getElementById("page-wrap").hasAttribute("hidden"))
     {
     }
     else
     {
         console.log("add hidden");
         document.getElementById("page-wrap").setAttribute("hidden",true);
-    }
+    }*/
  
 }
 //main function which will execute other functions

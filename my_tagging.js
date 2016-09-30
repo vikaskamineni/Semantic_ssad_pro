@@ -25,6 +25,27 @@ function tagging_function(stri1,stri2)
         }
     }
 }
+function change_font(stri1,stri2)
+{
+    var span = document.createElement("span");
+    var prop1 = document.createAttribute("style");
+    var prop2 = document.createAttribute("property");
+    if (window.getSelection().toString().length!=0)
+    {
+        prop2.value = stri1;
+        prop1.value = stri2;
+        span.setAttributeNode(prop2);
+        span.setAttributeNode(prop1);
+        var sel = window.getSelection();
+        if(sel.rangeCount){
+            var range = sel.getRangeAt(0).cloneRange();
+            range.surroundContents(span);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    }
+}
+}
 function conv_to_href()
 {
     //var span=document.createElement("span");

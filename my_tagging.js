@@ -37,6 +37,7 @@ function conv_to_href()
         //span.setAttributeNode(prop);
         www=prompt("Enter the link");
         link.setAttribute('href','www');
+        link.setAttribute('style','color:blue');
         //span.className="myClass";
         //prop.value=www;
         //link.setAttributeNode(prop);

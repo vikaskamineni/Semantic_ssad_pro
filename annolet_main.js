@@ -263,10 +263,20 @@ function toggle_tagging()
   }
   else
   {
-    element.setAttribute("hidden","");
+    element.setAttribute("hidden",true);
   }
 }
-
+function toggle_tagging2()
+{
+    var element = document.getElementById("page-wrap");
+    if(element.hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        element.setAttribute("hidden","");
+    }
+}
 function tag_function()
 {
     console.log("remove new hidden");

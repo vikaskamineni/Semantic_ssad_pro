@@ -21,7 +21,7 @@ function func_tagging(stri)
     }  
 }
 
-function toggle_tagging()
+/*function toggle_tagging()
 {
   var element = document.getElementById("page-wrap") ;
   if(element.hasAttribute("hidden"))
@@ -33,4 +33,4 @@ function toggle_tagging()
     element.setAttribute("hidden","");
   }
 }
-
+*/

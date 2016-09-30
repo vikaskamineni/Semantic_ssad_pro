@@ -1,3 +1,5 @@
+var $j = jQuery.noConflict();
+
 function tagging_function(stri1,stri2)
 {
     var span = document.createElement("span");
@@ -42,12 +44,12 @@ function conv_to_href()
             sel.addRange(range)
         }
     }
-    $(function(){
-        $("#btn1").click(function(){
-            var elems = $("span.myClass > span");
+    $j(function(){
+        $j("#btn1").click(function(){
+            var elems = $j("span.myClass > span");
             elems.each(function(){
-                var linkText= $(this).text();
-                $("<a/>").attr({"href": linkText, "target": "_blank"}).text(linkText).appendTo("body");
+                var linkText= $j(this).text();
+                $j("<a/>").attr({"href": linkText, "target": "_blank"}).text(linkText).appendTo("body");
             });
     elems.remove();
         });

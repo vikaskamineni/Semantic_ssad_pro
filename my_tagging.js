@@ -45,7 +45,6 @@ function change_font(stri1,stri2)
         }
     }
 }
-}
 function conv_to_href()
 {
     //var span=document.createElement("span");

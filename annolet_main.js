@@ -248,9 +248,9 @@ function add_func_tagging()
 function anno_rtag(xpath)
 {
     
-    console.log("remove hidden");
-    var temp=document.getElementById("page-wrap");
-    console.log(temp);
+    //console.log("remove hidden");
+    //var temp=document.getElementById("page-wrap");
+    //console.log(temp);
     //document.getElementById("page-wrap").removeAttribute("hidden");
     toggle_tagging();
 }
@@ -259,11 +259,15 @@ function toggle_tagging()
   var element = document.getElementById("page-wrap") ;
   if(element.hasAttribute("hidden"))
   {
+    console.log("remove hidden");
     element.removeAttribute("hidden");
+    console.log(element);
   }
   else
   {
+      console.log("add hidden");
     element.setAttribute("hidden",true);
+      console.log(element);
   }
 }
 function toggle_tagging2()

@@ -302,7 +302,7 @@ function tag_function()
     }
     else
     {
-        document.getElementById("page-wrap-new").setAttribute("hidden",true);
+        document.getElementById("page_wrap_new").setAttribute("hidden",true);
     }
  
 }

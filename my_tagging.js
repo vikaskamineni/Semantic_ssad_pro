@@ -29,22 +29,26 @@ function conv_to_href()
 {
     var span=document.createElement("span");
     //var prop = document.createAtrribute("class");
-    
+    var link = document.createElement("a");
+    var prop = document.createElement("href");
     if (window.getSelection().toString().length!=0)
     {
         //prop.value="myclass";
         //span.setAttributeNode(prop);
-        span.className="myClass";
+        www=prompt("Enter the link");
+        //span.className="myClass";
+        prop.value=www;
+        link.setAttributeNode(prop);
         var sel = window.getSelection();
         if (sel.rangeCount)
         {
             var range = sel.getRangeAt(0).cloneRange();
-            range.surroundContents(span);
+            range.surroundContents(link);
             sel.removeAllRanges();
             sel.addRange(range)
         }
     }
-    $j(function(){
+    /*$j(function(){
         $j("#btn1").click(function(){
             var elems = $j("span.myClass > span");
             elems.each(function(){
@@ -53,7 +57,7 @@ function conv_to_href()
             });
     elems.remove();
         });
-    });
+    });*/
 }
 function bold_tag(stri)
 {

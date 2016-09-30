@@ -302,6 +302,7 @@ function tag_function()
     }
     else
     {
+        console.log("add hidden");
         document.getElementById("page_wrap_new").setAttribute("hidden",true);
     }
  

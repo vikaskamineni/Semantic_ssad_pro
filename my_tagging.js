@@ -27,18 +27,19 @@ function tagging_function(stri1,stri2)
 }
 function conv_to_href()
 {
-    var span=document.createElement("span");
+    //var span=document.createElement("span");
     //var prop = document.createAtrribute("class");
     var link = document.createElement("a");
-    var prop = document.createElement("href");
+    //var prop = document.createElement("href");
     if (window.getSelection().toString().length!=0)
     {
         //prop.value="myclass";
         //span.setAttributeNode(prop);
         www=prompt("Enter the link");
+        link.setAttribute('href','www');
         //span.className="myClass";
-        prop.value=www;
-        link.setAttributeNode(prop);
+        //prop.value=www;
+        //link.setAttributeNode(prop);
         var sel = window.getSelection();
         if (sel.rangeCount)
         {

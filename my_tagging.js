@@ -26,12 +26,13 @@ function tagging_function(stri1,stri2)
 function conv_to_href()
 {
     var span=document.createElement("span");
-    var prop = document.createAtrribute("class");
+    //var prop = document.createAtrribute("class");
     
     if (window.getSelection().toString().length!=0)
     {
-        prop.value="myclass";
-        span.setAttributeNode(prop);
+        //prop.value="myclass";
+        //span.setAttributeNode(prop);
+        span.className="myClass";
         var sel = window.getSelection();
         if (sel.rangeCount)
         {

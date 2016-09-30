@@ -1,4 +1,4 @@
-var $j = jQuery.noConflict();
+//var $j = jQuery.noConflict();
 
 function tagging_function(stri1,stri2)
 {

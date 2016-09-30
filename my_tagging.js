@@ -23,6 +23,35 @@ function tagging_function(stri1,stri2)
         }
     }
 }
+function conv_to_href()
+{
+    var span=document.createElement("span");
+    var prop = document.createAtrribute("class");
+    
+    if (window.getSelection().toString().length!=0)
+    {
+        prop.value="myclass";
+        span.setAttributeNode(prop);
+        var sel = window.getSelection();
+        if (sel.rangeCount)
+        {
+            var range = sel.getRangeAt(0).cloneRange();
+            range.surroundContents(span);
+            sel.removeAllRanges();
+            sel.addRange(range)
+        }
+    }
+    $(function(){
+        $("#btn1").click(function(){
+            var elems = $("span.myClass > span");
+            elems.each(function(){
+                var linkText= $(this).text();
+                $("<a/>").attr({"href": linkText, "target": "_blank"}).text(linkText).appendTo("body");
+            });
+    elems.remove();
+        });
+    });
+}
 function bold_tag(stri)
 {
     var span = document.createElement("span");

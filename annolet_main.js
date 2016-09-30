@@ -247,14 +247,26 @@ function add_func_tagging()
 
 function anno_rtag(xpath)
 {
-  if (count % 2 == 1)
-  {
+    
     console.log("remove hidden");
     var temp=document.getElementById("page-wrap");
     console.log(temp);
-    document.getElementById("page-wrap").removeAttribute("hidden");
+    //document.getElementById("page-wrap").removeAttribute("hidden");
+    toggle_tagging();
+}
+function toggle_tagging()
+{
+  var element = document.getElementById("page-wrap") ;
+  if(element.hasAttribute("hidden"))
+  {
+    element.removeAttribute("hidden");
+  }
+  else
+  {
+    element.setAttribute("hidden","");
   }
 }
+
 function tag_function()
 {
     console.log("remove new hidden");

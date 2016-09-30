@@ -237,7 +237,7 @@ function add_tagging()
 //-----------------------------
 function add_func_tagging()
 {
-    $j("body").append('<div id=\"page_wrap_new\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Tag_function</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Highlight</a><ul> <li><a href=\"#\" onclick=\"tagging_function(\'background-color:yellow\',\'Hghlight_BG_yellow\')\">BG_color_Yellow</a></li> <li><a href=\"#\" onclick=\"tagging_function(\'background-color:red\',\'Highlight_BG_red\')\">BG_color_red</a> </li> </ul>  </li> <li> <a href=\"#\" onclick=\"bold_tag(\'bold\')\">Bold</a></li></ul></li></ul> </div>');
+    $j("body").append('<div id=\"page_wrap_new\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Tag_function</a> <ul class=\"sub_menu\"> <li id=\"btn1\"> <a href=\"#\">conv_to_link</a></li> <li> <a href=\"#\">Highlight</a><ul> <li><a href=\"#\" onclick=\"tagging_function(\'background-color:yellow\',\'Hghlight_BG_yellow\')\">BG_color_Yellow</a></li> <li><a href=\"#\" onclick=\"tagging_function(\'background-color:red\',\'Highlight_BG_red\')\">BG_color_red</a> </li> </ul>  </li> <li> <a href=\"#\" onclick=\"bold_tag(\'bold\')\">Bold</a></li></ul></li></ul> </div>');
     
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_tagging.js">    </script>');
     

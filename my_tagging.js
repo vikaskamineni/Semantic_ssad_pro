@@ -36,7 +36,7 @@ function conv_to_href()
         //prop.value="myclass";
         //span.setAttributeNode(prop);
         www=prompt("Enter the link");
-        link.setAttribute('href','www');
+        link.setAttribute('href',www);
         link.setAttribute('style','color:blue');
         link.className="myClass";
         document.getElementsByClassName('myClass').onmouseover=function()

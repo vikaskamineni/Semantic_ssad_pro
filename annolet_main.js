@@ -248,19 +248,24 @@ function add_func_tagging()
 
 function anno_rtag(xpath)
 {
-    if((count%2)==1)
-    {
+    //if((count%2)==1)
+    //{
     console.log("remove hidden");
     var temp=document.getElementById("page-wrap");
     console.log(temp);
     document.getElementById("page-wrap").removeAttribute("hidden");
+    //}
+    //else
+    //{
+    if(document.getElementById("page_wrap_new").hasAttribute("hidden"))
+    {
     }
     else
     {
         console.log("add hidden");
-        var temp=document.getElementById("page-wrap");
+        var temp=document.getElementById("page_wrap_new");
         console.log(temp);
-        document.getElementById("page-wrap").setAttribute("hidden",true);
+        document.getElementById("page_wrap_new").setAttribute("hidden",true);
     }
     //toggle_tagging();
 }
@@ -293,17 +298,22 @@ function toggle_tagging2()
 }
 function tag_function()
 {
-    if(cnt%2==1)
-    {
+    //if(cnt%2==1)
+    //{
     console.log("remove new hidden");
     var temp=document.getElementById("page_wrap_new");
     console.log(temp);
     document.getElementById("page_wrap_new").removeAttribute("hidden");
+    //}
+    //else
+    //{
+    if(document.getElementById("page-wrap").hasAttribute("hidden"))
+    {
     }
     else
     {
         console.log("add hidden");
-        document.getElementById("page_wrap_new").setAttribute("hidden",true);
+        document.getElementById("page-wrap").setAttribute("hidden",true);
     }
  
 }

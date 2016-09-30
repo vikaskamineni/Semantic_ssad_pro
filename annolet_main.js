@@ -5,6 +5,7 @@ annolet_main();
 
 var annolet_btn;
 var count=0;
+var cnt=0;
 // function to create annolet controls container
 function annolet_createContainer() {
     // appending a CSS stylesheet to head of webpage
@@ -292,10 +293,18 @@ function toggle_tagging2()
 }
 function tag_function()
 {
+    if(cnt%2==1)
+    {
     console.log("remove new hidden");
     var temp=document.getElementById("page_wrap_new");
     console.log(temp);
     document.getElementById("page_wrap_new").removeAttribute("hidden");
+    }
+    else
+    {
+        document.getElementById("page-wrap-new").setAttribute("hidden",true);
+    }
+ 
 }
 //main function which will execute other functions
 function annolet_main() {
@@ -333,6 +342,7 @@ function annolet_main() {
         }
         else if (annolet_btn == 2)
         {
+            cnt++;
             tag_function();
         }        
          else if (annolet_btn===0)

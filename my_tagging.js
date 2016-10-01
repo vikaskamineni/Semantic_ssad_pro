@@ -85,7 +85,7 @@ function conv_to_href()
         });
     });*/
 }
-function header_function(stri1,stri2)
+function header_func(stri1,stri2)
 {
     var head=document.createElement(stri1);
     var prop = document.createAtrribute("property");

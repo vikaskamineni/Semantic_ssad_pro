@@ -363,7 +363,7 @@ function search_function()
         console.log("add hidden");
         document.getElementById("page-wrap").setAttribute("hidden",true);
     }
-    var element = document.getElementById("page-wrap");
+    var element = document.getElementById("page_wrap_new");
     if(element.hasAttribute("hidden"))
     {
     }

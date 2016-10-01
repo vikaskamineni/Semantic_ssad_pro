@@ -249,11 +249,11 @@ function add_search_tagging()
 {
     $j("body").append('<div id=\"search-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\">Search_modify</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Date</a><ul><li><a href=\"#\" onclick=\"modify_startdate()\">startdate</a></li> <li><a href=\"#\" onclick=\"modify_enddate()\">enddate</a></li></ul></li></ul></li></ul></div>');
     
-    $j("head").append('<script src="http://momentjs.com/downloads/moment.min.js"> </script>');
+    //$j("head").append('<script src="http://momentjs.com/downloads/moment.min.js"> </script>');
     
-    $j("head").append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>');
+    //$j("head").append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>');
     
-    $j("head").append('  <script src="jquery-1.6.1.js"></script>');
+    //$j("head").append('  <script src="jquery-1.6.1.js"></script>');
     
     $j("head").append('  <script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/search_function.js"></script>');
     

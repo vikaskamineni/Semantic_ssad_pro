@@ -53,7 +53,7 @@ function underline() {
     if (window.getSelection().toString().length!=0)  
     {       
         prop.value="text-decoration:underline"   
-        span.setAttribute(prop); 
+        span.setAttributeNode(prop); 
         var sel = window.getSelection();    
         if (sel.rangeCount) 
         {   

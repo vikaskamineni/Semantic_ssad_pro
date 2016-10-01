@@ -88,11 +88,12 @@ function conv_to_href()
 function header_func(stri1,stri2)
 {
     var head=document.createElement(stri1);
-    var prop = document.createAtrribute("property");
+    //var prop = document.createAtrribute("property");
     if (window.getSelection().toString().length!=0)
     {
-        prop.value=stri2;
-        head.setAttribute(prop);
+       // prop.value=stri2;
+        //head.setAttribute(prop);
+        head.property=stri2;
         var sel = window.getSelection();
         if (sel.rangeCount)
         {

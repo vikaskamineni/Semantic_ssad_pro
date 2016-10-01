@@ -85,6 +85,24 @@ function conv_to_href()
         });
     });*/
 }
+function header_function(stri1,stri2)
+{
+    var head=document.createElement(stri1);
+    var prop = document.createAtrribute("property");
+    if (window.getSelection().toString().length!=0)
+    {
+        prop.value=stri2;
+        head.setAttribute(prop);
+        var sel = window.getSelection();
+        if (sel.rangeCount)
+        {
+            var range = sel.getRangeAt(0).cloneRange();
+            range.surroundContents(head);
+            sel.removeAllRanges();
+            sel.addRange(range)
+        }
+    }
+}
 function bold_tag(stri)
 {
     var span = document.createElement("span");

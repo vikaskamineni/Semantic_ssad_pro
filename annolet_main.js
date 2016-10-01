@@ -247,7 +247,7 @@ function add_func_tagging()
 }
 function add_search_tagging()
 {
-    $j("body").append('<div id=\"search-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\">Search_modify</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Date</a><ul><li><a href=\"#\" onclick=\"modify_startdate()\">startdate</a></li> <li><a href=\"#\" onclick=\"modify_enddate()\">enddate</a></li></ul></li></ul></li></ul></div>');
+    $j("body").append('<div id=\"search-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\">Search_modify</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Date</a><ul><li><a href=\"#\">startdate</a> <ul><li><a href=\"#\" onclick=\"modify_startdate_britishA()\">British-A</a></li> <li><a href=\"#\" onclick=\"modify_startdate_britishB()\">British-B</a></li> <li><a href=\"#\" onclick=\"modify_startdate_americanA()\">American-A</a></li> <li><a href=\"#\" onclick=\"modify_startdate_americanB()\">American-B</a></li> <li><a href=\"#\" onclick=\"modify_startdate_americanC()\">American-C</a></li> </ul></li> <li><a href=\"#\">enddate</a> <ul><li><a href=\"#\" onclick=\"modify_enddate_britishA()\">British-A</a></li> <li><a href=\"#\" onclick=\"modify_enddate_britishB()\">British-B</a></li> <li><a href=\"#\" onclick=\"modify_enddate_americanA()\">American-A</a></li> <li><a href=\"#\" onclick=\"modify_enddate_americanB()\">American-B</a></li> <li><a href=\"#\" onclick=\"modify_enddate_americanC()\">American-C</a></li></ul> </li></ul></li></ul></li></ul></div>');
     
     $j("head").append('<script src="http://momentjs.com/downloads/moment.min.js"> </script>');
     

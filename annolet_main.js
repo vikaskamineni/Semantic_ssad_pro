@@ -257,6 +257,9 @@ function add_search_tagging()
     
     $j("head").append('  <script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/search_function.js"></script>');
     
+    $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style.css" type="text/css" media="screen, projection"/>');
+  
+    
 }
 
 function anno_rtag(xpath)

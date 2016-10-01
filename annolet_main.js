@@ -245,6 +245,19 @@ function add_func_tagging()
     $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style.css" type="text/css" media="screen, projection"/>');
   
 }
+function add_search_tagging()
+{
+    $j("body").append('<div id=\"search-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\">Search_modify</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Date</a><ul><li><a href=\"#\" onclick=\"modify_startdate()\">startdate</a></li> <li><a href=\"#\" onclick=\"modify_enddate()\">enddate</a></li></ul></li></ul></li></ul></div>');
+    
+    $j("head").append('<script src="http://momentjs.com/downloads/moment.min.js"> </script>');
+    
+    $j("head").append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>');
+    
+    $j("head").append('  <script src="jquery-1.6.1.js"></script>');
+    
+    $j("head").append('  <script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/search_function.js"></script>');
+    
+}
 
 function anno_rtag(xpath)
 {
@@ -267,6 +280,15 @@ function anno_rtag(xpath)
         console.log(temp);
         document.getElementById("page_wrap_new").setAttribute("hidden",true);
     }
+    if(document.getElementById("search-wrap").hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        console.log("add hidden");
+        document.getElementById("search-wrap").setAttribute("hidden",true);
+    }
+    
     //toggle_tagging();
 }
 function toggle_tagging()
@@ -315,7 +337,37 @@ function tag_function()
         console.log("add hidden");
         document.getElementById("page-wrap").setAttribute("hidden",true);
     }
+    if(document.getElementById("search-wrap").hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        console.log("add hidden");
+        document.getElementById("search-wrap").setAttribute("hidden",true);
+    }
+    
  
+}
+
+function search_function()
+{
+    document.getElementById("search-wrap").removeAttribute("hidden");
+    if(document.getElementById("page-wrap").hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        console.log("add hidden");
+        document.getElementById("page-wrap").setAttribute("hidden",true);
+    }
+    var element = document.getElementById("page-wrap");
+    if(element.hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        element.setAttribute("hidden",true);
+    }
 }
 //main function which will execute other functions
 function annolet_main() {
@@ -323,6 +375,7 @@ function annolet_main() {
     annolet_createContainer();
     add_tagging();
     add_func_tagging();
+    add_search_tagging();
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -355,7 +408,11 @@ function annolet_main() {
         {
             cnt++;
             tag_function();
-        }        
+        }
+        else if (annolet_btn == 11)
+        {
+            search_function();
+        }
          else if (annolet_btn===0)
         {
              anno_remove_edit(xpath);

@@ -298,7 +298,7 @@ function manual_modify(stri)
  console.log("entered");
  console.log(stri);
  $j(document).ready(function(){
-    $j("[property = stri]").each( function() {
+    $j("[property = \'stri\']").each( function() {
     console.log("stri correct");
     //var format = "MMMM Do, YYYY";
 

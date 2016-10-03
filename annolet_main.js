@@ -33,6 +33,7 @@ function annolet_createContainer() {
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>audio</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=10;'>edit</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=11;'>Modify</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=12;'>pop_up</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=exit-btn onclick='annolet_btn=0;'>exit</li>"+
     "</ul>"; //HTML to create a list of options
 }
@@ -256,12 +257,54 @@ function add_search_tagging()
     $j("head").append('  <script src="jquery-1.6.1.js"></script>');
     
     $j("head").append('  <script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/search_function.js"></script>');
-    
     $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style1.css" type="text/css" media="screen, projection"/>');
   
     
 }
+function pop_up_balloon()
+{
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/balloon.config.js"></script>');
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/box.js"></script>');
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/prototype.js"></script>');
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/balloon.js"></script>');
+}
+function pop_up_func()
+{
+    var span = document.createElement("span");
+    var balloon    = new Balloon;
+   //BalloonConfig(balloon,'GBubble');
 
+   // plain balloon tooltip
+   var tooltip  = new Balloon;
+   BalloonConfig(tooltip,'GPlain');
+
+   // fading balloon
+   var fader = new Balloon;
+   BalloonConfig(fader,'GFade');
+
+   // a plainer popup box
+   var box         = new Box;
+   BalloonConfig(box,'GBox');
+
+   // a box that fades in/out
+   var fadeBox     = new Box;
+   BalloonConfig(fadeBox,'GBox');
+   fadeBox.bgColor     = 'black';
+   fadeBox.fontColor   = 'white';
+   fadeBox.borderStyle = 'none';
+   fadeBox.delayTime   = 200;
+   fadeBox.allowFade   = true;
+   fadeBox.fadeIn      = 750;
+   fadeBox.fadeOut     = 200;
+   span.onclick="box.showtooltip(event,'abcdefg')";
+   var sel = window.getSelection();
+        if (sel.rangeCount) {
+            var range = sel.getRangeAt(0).cloneRange();
+            range.surroundContents(span);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+}
 function anno_rtag(xpath)
 {
     //if((count%2)==1)
@@ -372,6 +415,7 @@ function search_function()
         element.setAttribute("hidden",true);
     }
 }
+
 //main function which will execute other functions
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
@@ -415,6 +459,10 @@ function annolet_main() {
         else if (annolet_btn == 11)
         {
             search_function();
+        }
+        else if (annolet_btn == 12)
+        {
+            pop_up_func();
         }
          else if (annolet_btn===0)
         {

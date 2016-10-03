@@ -305,7 +305,7 @@ function modify_event_name()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -322,7 +322,7 @@ function modify_event_location_street()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -339,7 +339,7 @@ function modify_event_location_area()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -356,7 +356,7 @@ function modify_event_location_city()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -373,7 +373,7 @@ function modify_organistion_owner()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -390,7 +390,7 @@ function modify_organistion_contact()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -407,7 +407,7 @@ function modify_organistion_employee()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -424,7 +424,7 @@ function modify_organistion_location_street()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -441,7 +441,7 @@ function modify_organistion_location_area()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });
@@ -459,7 +459,7 @@ function modify_organistion_location_city()
     var $this = $j( this );
     //var old_date = $j.trim($this.text());
     //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color:yellow");
+    $this.css("background-color","yellow");
     //$this.text($this.text().replace(old_date, new_date));
   });
   });

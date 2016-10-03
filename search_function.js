@@ -293,12 +293,166 @@ $(document).ready(function(){
 }); 
 
 }
-function manual_modify(stri)
+function modify_event_name()
 {
  console.log("entered");
- console.log(stri);
+ //console.log(stri);
  $j(document).ready(function(){
-    $j("[property = \'stri\']").each( function() {
+    $j("[property = 'event-name']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_event_location_street()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'event-location-street']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_event_location_area()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'event-location-area']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_event_location_city()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'event-location-city']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_organistion_owner()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'organisation-owner']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_organistion_contact()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'organisation-contact']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_organistion_employee()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'organisation-employee']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_organistion_location_street()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'organisation-location-street']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+function modify_organistion_location_area()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'organisation-location-area']").each( function() {
+    console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color:yellow");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
+}
+
+function modify_organistion_location_city()
+{
+ console.log("entered");
+ //console.log(stri);
+ $j(document).ready(function(){
+    $j("[property = 'organisation-location-city']").each( function() {
     console.log("stri correct");
     //var format = "MMMM Do, YYYY";
 

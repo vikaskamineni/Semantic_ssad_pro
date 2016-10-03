@@ -165,7 +165,7 @@ $(document).ready(function(){
   
       if(con=="cm")
       {
-      var out=100*(parseFloat(inp,10));
+      var out=(parseFloat(inp,10))/100;
       var ans;
       ans=out+" "+"m";
         $this.text($this.text().replace(inp,ans));

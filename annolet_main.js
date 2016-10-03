@@ -112,8 +112,6 @@ function get_languagetrans(str,fr,to){
 
 }
 
-
-
 //function for getting phonetic
 function anno_phonetic(xpath) {
   clicked_element = anno_getElementByXpath(xpath);

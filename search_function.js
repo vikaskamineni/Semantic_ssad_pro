@@ -153,7 +153,7 @@ function modify_enddate_americanB()
 function modify_unit_SI()
 {
 $(document).ready(function(){
-     $("[property='unit-CGI']").each( function() {
+     $("[property='unit']").each( function() {
   
   
     
@@ -178,34 +178,22 @@ $(document).ready(function(){
       ans=out+" "+"m";
         $this.text($this.text().replace(inp,ans));
       }
+      if(con=="ft")
+      {
+        var out=(0.3048)*(parseFloat(inp,10));
+        var ans;
+        ans=out+" "+"m";
+          $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="foot")
+      {
+        var out=0.3048*(parseFloat(inp,10));
+        var ans;
+        ans=out+" "+"m";
+          $this.text($this.text().replace(inp,ans));
+      }
    });
-$("[property='unit-FPS']").each( function() {
-  
-  
-    
-  var $this = $(this);
-      var inp=$this.text();
-      
-      var con=inp.match(/[a-z,A-Z]+/);
-      
-if(con=="ft")
-{
-  var out=(0.3048)*(parseFloat(inp,10));
-  var ans;
-  ans=out+" "+"m";
-    $this.text($this.text().replace(inp,ans));
-
-}
-else if(con=="foot")
-{
-  var out=0.3048*(parseFloat(inp,10));
-  var ans;
-  ans=out+" "+"m";
-    $this.text($this.text().replace(inp,ans));
-}
-
-  
-         });
 }); 
 
 }
@@ -213,7 +201,7 @@ else if(con=="foot")
 function modify_unit_CGI()
 {
 $(document).ready(function(){
-     $("[property='unit-SI']").each( function() {
+     $("[property='unit']").each( function() {
   
   
     
@@ -238,41 +226,30 @@ $(document).ready(function(){
       ans=out+" "+"cm";
         $this.text($this.text().replace(inp,ans));
       }
+      if(con=="ft")
+      {
+        var out=(30.48)*(parseFloat(inp,10));
+        var ans;
+        ans=out+" "+"cm";
+          $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="foot")
+      {
+        var out=30.48*(parseFloat(inp,10));
+        var ans;
+        ans=out+" "+"cm";
+          $this.text($this.text().replace(inp,ans));
+      }
+      
    });
-$("[property='unit-FPS']").each( function() {
-  
-  
-    
-  var $this = $(this);
-      var inp=$this.text();
-      
-      var con=inp.match(/[a-z,A-Z]+/);
-      
-if(con=="ft")
-{
-  var out=(30.48)*(parseFloat(inp,10));
-  var ans;
-  ans=out+" "+"cm";
-    $this.text($this.text().replace(inp,ans));
-
-}
-else if(con=="foot")
-{
-  var out=30.48*(parseFloat(inp,10));
-  var ans;
-  ans=out+" "+"cm";
-    $this.text($this.text().replace(inp,ans));
-}
-
-  
-         });
 }); 
 
 }
 function modify_unit_FPS()
 {
 $(document).ready(function(){
-     $("[property='unit-CGI']").each( function() {
+     $("[property='unit']").each( function() {
   
   
     
@@ -297,34 +274,22 @@ $(document).ready(function(){
       ans=out+" "+"ft";
         $this.text($this.text().replace(inp,ans));
       }
+      if(con=="m")
+      {
+        var out=(parseFloat(inp,10))/0.3048;
+        var ans;
+        ans=out+" "+"ft";
+          $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="meters")
+      {
+        var out=(parseFloat(inp,10))/0.3048;
+        var ans;
+        ans=out+" "+"ft";
+          $this.text($this.text().replace(inp,ans));
+      }
    });
-$("[property='unit-SI']").each( function() {
-  
-  
-    
-  var $this = $(this);
-      var inp=$this.text();
-      
-      var con=inp.match(/[a-z,A-Z]+/);
-      
-if(con=="m")
-{
-  var out=(parseFloat(inp,10))/0.3048;
-  var ans;
-  ans=out+" "+"ft";
-    $this.text($this.text().replace(inp,ans));
-
-}
-else if(con=="meters")
-{
-  var out=(parseFloat(inp,10))/0.3048;
-  var ans;
-  ans=out+" "+"ft";
-    $this.text($this.text().replace(inp,ans));
-}
-
-  
-         });
 }); 
 
 }

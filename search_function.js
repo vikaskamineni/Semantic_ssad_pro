@@ -178,7 +178,7 @@ $(document).ready(function(){
       ans=out+" "+"m";
         $this.text($this.text().replace(inp,ans));
       }
-      if(con=="km")
+      if(con=="Km")
       {
       var out=1000*(parseFloat(inp,10));
       var ans;
@@ -249,7 +249,7 @@ $(document).ready(function(){
       ans=out+" "+"cm";
         $this.text($this.text().replace(inp,ans));
       }
-      if(con=="km")
+      if(con=="Km")
       {
       var out=100000*(parseFloat(inp,10));
       var ans;
@@ -320,7 +320,7 @@ $(document).ready(function(){
       ans=out+" "+"ft";
         $this.text($this.text().replace(inp,ans));
       }
-      if(con=="km")
+      if(con=="Km")
       {
       var out=3280.84*(parseFloat(inp,10));
       var ans;

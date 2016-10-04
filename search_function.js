@@ -178,6 +178,21 @@ $(document).ready(function(){
       ans=out+" "+"m";
         $this.text($this.text().replace(inp,ans));
       }
+      if(con=="km")
+      {
+      var out=1000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"m";
+        $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="kilometers")
+      {
+      var out=1000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"m";
+        $this.text($this.text().replace(inp,ans));
+      }
       if(con=="ft")
       {
         var out=(0.3048)*(parseFloat(inp,10));
@@ -226,6 +241,21 @@ $(document).ready(function(){
       ans=out+" "+"cm";
         $this.text($this.text().replace(inp,ans));
       }
+      if(con=="km")
+      {
+      var out=100000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"cm";
+        $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="kilometers")
+      {
+      var out=100000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"cm";
+        $this.text($this.text().replace(inp,ans));
+      }
       if(con=="ft")
       {
         var out=(30.48)*(parseFloat(inp,10));
@@ -270,6 +300,21 @@ $(document).ready(function(){
       else if(con=="centimeters")
       {
       var out=(parseFloat(inp,10))/30.48;
+      var ans;
+      ans=out+" "+"ft";
+        $this.text($this.text().replace(inp,ans));
+      }
+      if(con=="km")
+      {
+      var out=3280.84*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"ft";
+        $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="kilometers")
+      {
+      var out=3280.84*(parseFloat(inp,10));
       var ans;
       ans=out+" "+"ft";
         $this.text($this.text().replace(inp,ans));

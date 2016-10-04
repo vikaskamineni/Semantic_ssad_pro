@@ -222,6 +222,13 @@ function anno_remove_edit(xpath)
 {
   document.getElementsByTagName("body")[0].removeAttribute('contenteditable');
   document.getElementById("page-wrap").setAttribute("hidden","");
+  $j(document).ready(function(){
+        $j("[property='event-name']").each( function() {
+             var $this = $j( this );
+             $this.css("background-color","");
+        )}
+  )}
+      
 }
 //------------------------------------------------------------------------
 function add_tagging()

@@ -223,11 +223,17 @@ function anno_remove_edit(xpath)
   document.getElementsByTagName("body")[0].removeAttribute('contenteditable');
   document.getElementById("page-wrap").setAttribute("hidden","");
   $j(document).ready(function(){
-        $j("[property='event-name']").each( function() {
-             var $this = $j( this );
-             $this.css("background-color","");
-        )}
-  )}
+    $j("[property = 'event-name']").each( function() {
+    //console.log("stri correct");
+    //var format = "MMMM Do, YYYY";
+
+    var $this = $j( this );
+    //var old_date = $j.trim($this.text());
+    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+    $this.css("background-color","");
+    //$this.text($this.text().replace(old_date, new_date));
+  });
+  });
       
 }
 //------------------------------------------------------------------------

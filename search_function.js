@@ -28,7 +28,7 @@ function modify_startdate_britishA()
   });
   });
 }  
-function modify_startdate_britishB()
+/*function modify_startdate_britishB()
 {
  $j(document).ready(function(){
     $j("[property='date-startdate']").each( function() {
@@ -42,7 +42,7 @@ function modify_startdate_britishB()
     $this.text($this.text().replace(old_date, new_date));
   });
   });
-}
+}*/
 function modify_startdate_americanA()
 {
  $j(document).ready(function(){
@@ -105,7 +105,7 @@ function modify_enddate_britishA()
   });
   });
 }  
-function modify_enddate_britishB()
+/*function modify_enddate_britishB()
 {
  $j(document).ready(function(){
     $j("[property='date-enddate']").each( function() {
@@ -119,7 +119,7 @@ function modify_enddate_britishB()
     $this.text($this.text().replace(old_date, new_date));
   });
   });
-}
+}*/
 function modify_enddate_americanA()
 {
  $j(document).ready(function(){

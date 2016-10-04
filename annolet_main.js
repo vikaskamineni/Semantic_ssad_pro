@@ -27,13 +27,13 @@ function annolet_createContainer() {
     "<span id='annolet' style='color:grey;'>|</span>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TagIt!</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>Phonetics</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>Translation</li>"+
+    //"<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>Phonetics</li>"+
+    //"<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>Translation</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>ref_tag</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>audio</li>"+
+    //"<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>audio</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=10;'>edit</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=11;'>Search&Modify</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=12;'>pop_up</li>"+
+    //"<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=12;'>pop_up</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=exit-btn onclick='annolet_btn=0;'>exit</li>"+
     "</ul>"; //HTML to create a list of options
 }

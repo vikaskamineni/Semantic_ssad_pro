@@ -259,9 +259,9 @@ $(document).ready(function(){
       }
       else if(con=="kms")
       {
-      var out=1000*(parseFloat(inp,10));
+      var out=100000*(parseFloat(inp,10));
       var ans;
-      ans=out+" "+"m";
+      ans=out+" "+"cm";
         $this.text($this.text().replace(inp,ans));
 
       }
@@ -330,9 +330,9 @@ $(document).ready(function(){
       }
       else if(con=="kms")
       {
-      var out=1000*(parseFloat(inp,10));
+      var out=3280.84*(parseFloat(inp,10));
       var ans;
-      ans=out+" "+"m";
+      ans=out+" "+"ft";
         $this.text($this.text().replace(inp,ans));
 
       }

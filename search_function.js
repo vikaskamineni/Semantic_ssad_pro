@@ -186,6 +186,14 @@ $(document).ready(function(){
         $this.text($this.text().replace(inp,ans));
 
       }
+      else if(con=="kms")
+      {
+      var out=1000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"m";
+        $this.text($this.text().replace(inp,ans));
+
+      }
       else if(con=="kilometers")
       {
       var out=1000*(parseFloat(inp,10));
@@ -249,6 +257,14 @@ $(document).ready(function(){
         $this.text($this.text().replace(inp,ans));
 
       }
+      else if(con=="kms")
+      {
+      var out=1000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"m";
+        $this.text($this.text().replace(inp,ans));
+
+      }
       else if(con=="kilometers")
       {
       var out=100000*(parseFloat(inp,10));
@@ -309,6 +325,14 @@ $(document).ready(function(){
       var out=3280.84*(parseFloat(inp,10));
       var ans;
       ans=out+" "+"ft";
+        $this.text($this.text().replace(inp,ans));
+
+      }
+      else if(con=="kms")
+      {
+      var out=1000*(parseFloat(inp,10));
+      var ans;
+      ans=out+" "+"m";
         $this.text($this.text().replace(inp,ans));
 
       }

@@ -32,13 +32,16 @@ annolet.getJSON = function(){
       var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
       console.log("fucked up");
       $j.getJSON(pathJSON, function(json) {
+	  console.log("enetered");
           annolet.metafile = json;
       });
       console.log("fucking dec");
   };
 
 annolet.connectWebservices = function() {
+    console.log("fucking continues");
     var services = annolet.metafile.services;
+    console.log("fucking didnt end");
     for(var i = 0; i < services.length; i++) {
         services[i].id = i + 1; // reserving 0 for exit.
         if (services[i].fileCSS !== null) {

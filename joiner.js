@@ -29,7 +29,7 @@ annolet.getJSON = function(){
         frontend. it will help us in calling webservices to from using
         manifest file JSON file.
       */
-      var pathJSON = "//rawgit.com/vikaskamineni/Semantic_ssad_pro/master/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
+      var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
       $j.getJSON(pathJSON, function(json) {
           annolet.metafile = json;
       });

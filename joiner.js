@@ -34,6 +34,7 @@ annolet.getJSON = function(){
       $j.getJSON(pathJSON, function(json) {
           annolet.metafile = json;
 	  console.log("entered");
+	  console.log(annolet.metafile);
 	  $j(window.annolet.metafile).load(function(){
 		      console.log("sol2");
 		      annolet.connectWebservices();

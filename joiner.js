@@ -39,10 +39,7 @@ annolet.getJSON = function(){
           annolet.metafile = json;
 	  console.log("entered");
 	  console.log(annolet.metafile);
-	  $j(window.annolet.metafile).load(function(){
-		      console.log("sol2");
-		      annolet.connectWebservices();
-		      annolet.createUI();});
+	  
       });
       $j.ajaxSetup({
 	     async: true
@@ -166,7 +163,10 @@ annolet.run = function(){
 	annolet.getJSON();
 	console.log("sol1");
 	console.log(annolet.metafile);
-	
+	$j(window.annolet.metafile).load(function(){
+		      console.log("sol2");
+		      annolet.connectWebservices();
+		      annolet.createUI();});
 }
 
 annolet.run();

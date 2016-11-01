@@ -1,0 +1,91 @@
+{
+	"initial": [{
+		"fileCSS": "//rawgit.com/raghavmittal101/webservices/annolet/annolet.css",
+		"HTMLParentTagName": "body",
+		"HTMLParentTagNameIndex": 0,
+		"newTagName": "div",
+		"newTagId": "annolet-container",
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": "//rawgit.com/raghavmittal101/webservices/annolet/annolet_main.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": null,
+		"eventOnClick": null
+	}],
+
+	"services": [{
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": "//rawgit.com/raghavmittal101/webservices/translation/annolet_main.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "translate",
+		"eventOnClick": "run_langtrans()"
+	}, {
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": "//rawgit.com/raghavmittal101/webservices/phonetics/annolet_main.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "phonetics",
+		"eventOnClick": "run_phoneticConversion()"
+	}, {
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": "//rawgit.com/raghavmittal101/webservices/audioTranslation/annolet_main.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "Text2Speech",
+		"eventOnClick": "listenOnSelection()"
+	}, {
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": "//rawgit.com/raghavmittal101/webservices/tagging/annolet_main.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "Tagger",
+		"eventOnClick": "do_tagging()"
+
+	}, {
+		"fileCSS": "//rawgit.com/raghavmittal101/tagging/master/css/style.css",
+		"HTMLParentTagName": "body",
+		"HTMLParentTagNameIndex": 0,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": "//rawgit.com/raghavmittal101/tagging/master/index.html",
+		"fileJS": "//rawgit.com/raghavmittal101/tagging/master/js/tagging.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "rtag",
+		"eventOnClick": "toggle_tagging()"
+
+	}]
+}

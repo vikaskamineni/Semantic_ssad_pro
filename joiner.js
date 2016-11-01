@@ -152,7 +152,9 @@ annolet.createUI = function(){
 /* this function waits until JSON is completely loaded to avoid error */
 annolet.run = function(){
 	annolet.getJSON();
+	console.log("sol1");
 	$j(window.annolet.metafile).load(function(){
+		      console.log("sol2");
 		      annolet.connectWebservices();
 		      annolet.createUI();});
 }

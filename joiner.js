@@ -30,9 +30,11 @@ annolet.getJSON = function(){
         manifest file JSON file.
       */
       var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
+      console.log("fucked up");
       $j.getJSON(pathJSON, function(json) {
           annolet.metafile = json;
       });
+      console.log("fucking dec");
   };
 
 annolet.connectWebservices = function() {

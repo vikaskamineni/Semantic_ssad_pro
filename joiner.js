@@ -32,8 +32,8 @@ annolet.getJSON = function(){
       var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
       console.log("fucked up");
       $j.getJSON(pathJSON, function(json) {
-	  console.log("enetered");
           annolet.metafile = json;
+	  console.log("entered");
       });
       console.log("fucking dec");
   };

@@ -34,6 +34,10 @@ annolet.getJSON = function(){
       $j.getJSON(pathJSON, function(json) {
           annolet.metafile = json;
 	  console.log("entered");
+	  $j(window.annolet.metafile).load(function(){
+		      console.log("sol2");
+		      annolet.connectWebservices();
+		      annolet.createUI();});
       });
       console.log("fdec");
   };
@@ -154,10 +158,7 @@ annolet.run = function(){
 	annolet.getJSON();
 	console.log("sol1");
 	console.log(annolet.metafile);
-	$j(window.annolet.metafile).load(function(){
-		      console.log("sol2");
-		      annolet.connectWebservices();
-		      annolet.createUI();});
+	
 }
 
 annolet.run();

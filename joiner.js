@@ -33,8 +33,8 @@ annolet.getJSON = function(){
       console.log("fup");
 	
       $j.ajaxSetup({
-	      async: false
-	      )};
+      		async: false
+      )};
       $j.getJSON(pathJSON, function(json) {
           annolet.metafile = json;
 	  console.log("entered");
@@ -44,9 +44,9 @@ annolet.getJSON = function(){
 		      annolet.connectWebservices();
 		      annolet.createUI();});
       });
-	$j.ajaxSetup({
+      $j.ajaxSetup({
 	     async: true
-	     )};
+      )};
       console.log("fdec");
   };
 

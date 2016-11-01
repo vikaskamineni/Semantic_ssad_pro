@@ -163,10 +163,11 @@ annolet.run = function(){
 	annolet.getJSON();
 	console.log("sol1");
 	console.log(annolet.metafile);
-	$j(window.annolet.metafile).load(function(){
+	//$j(window.annolet.metafile).load(function(){
 		      console.log("sol2");
 		      annolet.connectWebservices();
-		      annolet.createUI();});
+		      annolet.createUI();
+//});
 }
 
 annolet.run();

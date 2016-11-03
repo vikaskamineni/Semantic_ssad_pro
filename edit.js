@@ -1,8 +1,8 @@
 function anno_edit()
 {
-        if (document.getElementsByTagName("body")[0].contentEditable= "true") 
+        if (document.getElementsByTagName("body")[0].contentEditable== "true") 
         {
-                document.getElementsByTagName("body")[0].contentEditable= null;
+                document.getElementsByTagName("body")[0].contentEditable= "false";
         }
         else
         {

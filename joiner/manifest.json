@@ -129,7 +129,7 @@
 		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/edit.js"],
 		"JSParentTagName": "head",
 		"JSParentTagNameIndex": 0,
-		"menuButtonName": "Tagger",
+		"menuButtonName": "edit",
 		"eventOnClick": "anno_edit()"
 
 	}]

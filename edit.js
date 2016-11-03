@@ -2,7 +2,7 @@ function anno_edit()
 {
         if (document.getElementsByTagName("body")[0].contentEditable= "true") 
         {
-                document.getElementsByTagName("body")[0].contentEditable= "false";
+                document.getElementsByTagName("body")[0].contentEditable= null;
         }
         else
         {

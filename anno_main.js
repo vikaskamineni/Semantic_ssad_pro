@@ -19,7 +19,7 @@ $j("#annolet-exit-btn").click(function(e) {
     e.stopPropagation();
 });
 
-$(document).ready(function() {
+$j(document).ready(function() {
     // Get the div's width
     var divWidth = $("#").width();
     // Update div's width

@@ -102,5 +102,20 @@
 		"menuButtonName": "Tag_function",
 		"eventOnClick": "tag_function()"
 		
+	}, {
+		"fileCSS": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style1.css",
+		"HTMLParentTagName": "body",
+		"HTMLParentTagNameIndex": 0,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/search_func.html",
+		"fileJS": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/search_function.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "modify",
+		"eventOnClick": "search_function()"
+		
 	}]
 }

@@ -80,7 +80,7 @@
 		"newTagId": null,
 		"newTagClass": null,
 		"innerHTMLText":null,
-		"innerHTMLFile": null,
+		"innerHTMLFile": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/test.html",
 		"fileJS": "https://rawgit.com/raghavmittal101/tagging/master/js/tagging.js",
 		"JSParentTagName": "head",
 		"JSParentTagNameIndex": 0,

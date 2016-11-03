@@ -61,10 +61,14 @@ annolet.connectWebservices = function() {
             annolet.inject.injectHTML(services[i]);
             console.log("injectedHTML");
         }
-        if (services[i].fileJS !== null) {
-            annolet.inject.injectJS(services[i]);
-            console.log("injectedJS");
-        }
+	var j=0;
+	while(services[i].fileJS[j]!=null) {		
+		if (services[i].fileJS[j] !== null) {
+		    annolet.inject.injectJS(services[i],j);
+		    console.log("injectedJS");
+		}
+		j++;
+	}
         if (services[i].menuButtonName !== null) {
             annolet.createButtons(services[i]);
             console.log("buttons done");
@@ -132,14 +136,14 @@ annolet.inject.injectHTML = function(service) {
     }
 };
 
-annolet.inject.injectJS = function(service) {
+annolet.inject.injectJS = function(service,j) {
   // JSParentTagName(required, if you want to add JS to DOM else leave empty)(defaut: null)
   // JsParentTagNameIndex(required, if you want to add JS to DOM else leave empty)(default: null)
   // jsLocation(required, if you want to add JS to DOM else leave empty)(default: null)
 
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = service.fileJS;
+    script.src = service.fileJS[j];
     document.getElementsByTagName(service.JSParentTagName)[service.JSParentTagNameIndex].appendChild(script);
     console.log("injectingJS");
 };

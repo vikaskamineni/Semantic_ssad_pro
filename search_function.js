@@ -1,3 +1,23 @@
+function search_function()
+{
+    document.getElementById("search-wrap").removeAttribute("hidden");
+    if(document.getElementById("page-wrap").hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        console.log("add hidden");
+        document.getElementById("page-wrap").setAttribute("hidden",true);
+    }
+    var element = document.getElementById("page_wrap_new");
+    if(element.hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        element.setAttribute("hidden",true);
+    }
+}
 function modify_startdate_americanC()
 {
  $j(document).ready(function(){

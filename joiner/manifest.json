@@ -117,5 +117,20 @@
 		"menuButtonName": "modify",
 		"eventOnClick": "search_function()"
 		
+	}, {
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/edit.js"],
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "Tagger",
+		"eventOnClick": "anno_edit()"
+
 	}]
 }

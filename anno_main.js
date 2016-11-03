@@ -21,9 +21,9 @@ $j("#annolet-exit-btn").click(function(e) {
 
 $j(document).ready(function() {
     // Get the div's width
-    var divWidth = $("#").width();
+    var divWidth = $j("#").width();
     // Update div's width
-    $("#").css("width", divWidth + 'px');
+    $j("#").css("width", divWidth + 'px');
 });
     
 // calling main function

@@ -87,5 +87,20 @@
 		"menuButtonName": "rtag",
 		"eventOnClick": "toggle_tagging()"
 
+	}, {
+		"fileCSS": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style.css",
+		"HTMLParentTagName": "body",
+		"HTMLParentTagNameIndex": 0,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/tagfunc.html",
+		"fileJS": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_tagging.js",
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "Tag_function",
+		"eventOnClick": "tag_function()"
+		
 	}]
 }

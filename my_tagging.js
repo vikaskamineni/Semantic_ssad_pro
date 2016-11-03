@@ -25,6 +25,37 @@ function tagging_function(stri1,stri2)
         }
     }
 }
+function tag_function()
+{
+    //if(cnt%2==1)
+    //{
+    console.log("remove new hidden");
+    var temp=document.getElementById("page_wrap_new");
+    console.log(temp);
+    document.getElementById("page_wrap_new").removeAttribute("hidden");
+    //}
+    //else
+    //{
+    if(document.getElementById("page-wrap").hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        console.log("add hidden");
+        document.getElementById("page-wrap").setAttribute("hidden",true);
+    }
+    if(document.getElementById("search-wrap").hasAttribute("hidden"))
+    {
+    }
+    else
+    {
+        console.log("add hidden");
+        document.getElementById("search-wrap").setAttribute("hidden",true);
+    }
+    
+ 
+}
+
 function change_font(stri1,stri2)
 {
     var span = document.createElement("span");

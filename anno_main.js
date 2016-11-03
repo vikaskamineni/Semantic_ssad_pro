@@ -13,8 +13,6 @@ function disableAllLinks(){
 
 // for exiting annolet
 $j("#annolet-exit-btn").click(function(e) {
-    document.getElementsByTagName("body")[0].removeAttribute('contenteditable');
-    document.getElementById("page-wrap").setAttribute("hidden","");
     if (e === undefined) {
         e = window.event;
     } // for IE

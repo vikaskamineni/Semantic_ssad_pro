@@ -68,6 +68,7 @@ function listenOnSelection(){
       var xpath = anno_getXpathTo(target);
       console.log(xpath);
       var ele = anno_getElementByXpath(xpath);
+      console.log(ele);
         anno_audio(xpath);
   
     };

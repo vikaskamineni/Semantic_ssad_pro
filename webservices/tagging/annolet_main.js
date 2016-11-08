@@ -48,10 +48,11 @@ function anno_rtag()
 //main function which will execute other functions
 function do_tagging() {
     document.onclick = function(event) {
+        anno_rtag();
         if (event === undefined) {
             event = window.event;
         } // for IE
-        anno_rtag();
+        
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         console.log(target);

@@ -27,29 +27,26 @@ function anno_getElementByXpath(xpath) {
 //------------------------------------------------------------------------
 function anno_rtag()
 {
+    
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
-  if (window.getSelection().toString().length!==0) {
-    prop.value = prompt("Enter the tag name you want to add");
-    span.setAttributeNode(prop);
-    var sel = window.getSelection();
-    if (sel.rangeCount) {
-      var range = sel.getRangeAt(0).cloneRange();
-      range.surroundContents(span);
-      sel.removeAllRanges();
-      sel.addRange(range);
-    }
-  }  
-}
-//------------------------------------------------------------------------
-
-
-
-//main function which will execute other functions
-function do_tagging() {
-    anno_rtag();
-    document.onclick = function(event) {
-        
+  var flag = 0;
+  document.onclick = function() {
+        flag = 1;
+        if (window.getSelection().toString().length!==0) {
+            prop.value = prompt("Enter the tag name you want to add");
+            span.setAttributeNode(prop);
+            var sel = window.getSelection();
+            if (sel.rangeCount) {
+                var range = sel.getRangeAt(0).cloneRange();
+                range.surroundContents(span);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+  };
+   if ( flag==1)
+   {
         if (event === undefined) {
             event = window.event;
         } // for IE
@@ -62,5 +59,14 @@ function do_tagging() {
         console.log(xpath);
         console.log(ele);
           
-    };
+    }
+  
+}
+//------------------------------------------------------------------------
+
+
+
+//main function which will execute other functions
+function do_tagging() {
+    anno_rtag();
 }

@@ -54,6 +54,7 @@ function do_tagging() {
         anno_rtag();
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
+        console.log(target);
         var xpath = anno_getXpathTo(target);
         var ele = anno_getElementByXpath(xpath);
         console.log(xpath);

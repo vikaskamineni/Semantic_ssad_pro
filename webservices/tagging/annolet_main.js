@@ -51,10 +51,11 @@ function do_tagging() {
         if (event === undefined) {
             event = window.event;
         } // for IE
+        anno_rtag();
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
         console.log(xpath);
-          anno_rtag();
+          
     };
 }

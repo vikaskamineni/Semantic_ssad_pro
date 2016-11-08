@@ -52,7 +52,7 @@
 		"newTagClass": null,
 		"innerHTMLText":null,
 		"innerHTMLFile": null,
-		"fileJS": ["https://rawgit.com/raghavmittal101/webservices/audioTranslation/annolet_main.js"],
+		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/audio.js"],
 		"JSParentTagName": "head",
 		"JSParentTagNameIndex": 0,
 		"menuButtonName": "Text2Speech",

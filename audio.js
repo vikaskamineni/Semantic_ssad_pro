@@ -66,6 +66,8 @@ function listenOnSelection(){
       var target = 'target' in event ? event.target : event.srcElement; // for IE
       var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
       var xpath = anno_getXpathTo(target);
+      console.log(xpath);
+      var ele = anno_getElementByXpath(xpath);
         anno_audio(xpath);
   
     };

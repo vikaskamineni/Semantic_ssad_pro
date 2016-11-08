@@ -57,6 +57,7 @@ function do_tagging() {
         var xpath = anno_getXpathTo(target);
         var ele = anno_getElementByXpath(xpath);
         console.log(xpath);
+        console.log(ele);
           
     };
 }

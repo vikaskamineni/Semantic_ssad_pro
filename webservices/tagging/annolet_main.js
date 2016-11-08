@@ -45,8 +45,9 @@ function anno_rtag()
             }
         }
   };
-   if ( flag==1)
+   if ( flag !== 0)
    {
+       console.log("entered");
         if (event === undefined) {
             event = window.event;
         } // for IE

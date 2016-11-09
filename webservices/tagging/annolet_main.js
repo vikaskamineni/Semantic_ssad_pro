@@ -24,44 +24,21 @@ function anno_getElementByXpath(xpath) {
     return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
 
-//------------------------------------------------------------------------
 function anno_rtag()
 {
-    
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
-  var flag = 0;
-  document.onclick = function(event) {
-        if (window.getSelection().toString().length!==0) {
-            flag = 1;
-            prop.value = prompt("Enter the tag name you want to add");
-            span.setAttributeNode(prop);
-            var sel = window.getSelection();
-            if (sel.rangeCount) {
-                var range = sel.getRangeAt(0).cloneRange();
-                range.surroundContents(span);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-  };
-   if ( flag !== 0)
-   {
-       console.log("entered");
-        if (event === undefined) {
-            event = window.event;
-        } // for IE
-        
-        var target = 'target' in event ? event.target : event.srcElement; // for IE
-        var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
-        console.log(target);
-        var xpath = anno_getXpathTo(target);
-        var ele = anno_getElementByXpath(xpath);
-        console.log(xpath);
-        console.log(ele);
-          
+  if (window.getSelection().toString().length!==0) {
+    prop.value = prompt("Enter the tag name you want to add");
+    span.setAttributeNode(prop);
+    var sel = window.getSelection();
+    if (sel.rangeCount) {
+      var range = sel.getRangeAt(0).cloneRange();
+      range.surroundContents(span);
+      sel.removeAllRanges();
+      sel.addRange(range);
     }
-  
+  }  
 }
 //------------------------------------------------------------------------
 
@@ -69,5 +46,17 @@ function anno_rtag()
 
 //main function which will execute other functions
 function do_tagging() {
-    anno_rtag();
+    document.onclick = function(event) {
+        if (event === undefined) {
+            event = window.event;
+        } // for IE
+        var target = 'target' in event ? event.target : event.srcElement; // for IE
+        console.log(target);
+        var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
+        var xpath = anno_getXpathTo(target);
+        console.log(xpath);
+        var ele = anno_getElementByXpath(xpath);
+        console.log(ele);
+          anno_rtag();
+    };
 }

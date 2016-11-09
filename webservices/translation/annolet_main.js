@@ -97,6 +97,7 @@ function anno_language(xpath) {
 
 //main function which will execute other functions
 function run_langtrans() {
+    anno_btn = 2;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -104,7 +105,11 @@ function run_langtrans() {
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
-          anno_language(xpath);
+        anno_language(xpath);
+        var currentLocation = window.location;
+        var obj = JSON.parse(jsonStr);
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+        jsonStr = JSON.stringify(obj);
     };
 }
 

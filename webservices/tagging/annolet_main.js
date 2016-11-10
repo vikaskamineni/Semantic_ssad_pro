@@ -21,6 +21,7 @@ function anno_rtag()
     var final_xpath = anno_getXpathTo(span_element);
     console.log(final_xpath);
     var fin_ele = anno_getElementByXpath(final_xpath);
+    console.log(fin_ele);
     return final_xpath;
 }
 //------------------------------------------------------------------------

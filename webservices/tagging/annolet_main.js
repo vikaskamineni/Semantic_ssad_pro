@@ -48,5 +48,7 @@ function do_tagging() {
         var obj = JSON.parse(jsonStr);
         obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
         jsonStr = JSON.stringify(obj);
+        console.log("inside func");
+        console.log(jsonStr);
     };
 }

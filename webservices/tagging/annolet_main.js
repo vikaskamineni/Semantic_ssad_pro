@@ -44,7 +44,7 @@ function do_tagging() {
         //console.log(ele);
         var fin_xpath = anno_rtag();
         //storing the changes
-        var currentLocation = window.location;
+        var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
         jsonStr = JSON.stringify(obj);

@@ -30,7 +30,7 @@ function get_phonetics(str){
 function anno_phonetic(xpath) {
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
-  var span_id = document.createAttirbute("id");
+  var span_id = document.createAttribute("id");
   if (window.getSelection().toString().length!=0)
   {
       prop.value = "phonetics";

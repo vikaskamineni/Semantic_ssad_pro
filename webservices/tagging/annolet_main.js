@@ -28,17 +28,25 @@ function anno_rtag()
 {
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
+  var span_id = document.createAttribute("id");
   if (window.getSelection().toString().length!==0) {
     prop.value = prompt("Enter the tag name you want to add");
+    span_id.value = "123";
     span.setAttributeNode(prop);
+    span.setAttributeNode(span_id);
     var sel = window.getSelection();
     if (sel.rangeCount) {
       var range = sel.getRangeAt(0).cloneRange();
       range.surroundContents(span);
       sel.removeAllRanges();
       sel.addRange(range);
-    }
-  }  
+    }     
+  } 
+    var span_element = document.getElementById("123");
+    console.log(span_element);
+    var final_xpath = anno_getXpathTo(span_element);
+    console.log(final_xpath);
+    return final_xpath;
 }
 //------------------------------------------------------------------------
 
@@ -46,6 +54,7 @@ function anno_rtag()
 
 //main function which will execute other functions
 function do_tagging() {
+    anno_btn = 1;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -57,6 +66,11 @@ function do_tagging() {
         console.log(xpath);
         var ele = anno_getElementByXpath(xpath);
         console.log(ele);
-          anno_rtag();
+        var fin_xpath = anno_rtag();
+        //storing the changes
+        var currentLocation = window.location;
+        var obj = JSON.parse(jsonStr);
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+        jsonStr = JSON.stringify(obj);
     };
 }

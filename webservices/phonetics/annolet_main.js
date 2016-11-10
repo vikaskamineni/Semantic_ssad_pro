@@ -28,14 +28,33 @@ function get_phonetics(str){
 
 //function for getting phonetic
 function anno_phonetic(xpath) {
-  clicked_element = anno_getElementByXpath(xpath);
+  var span = document.createElement("span");
+  var prop = document.createAttribute("property");
+  var span_id = document.createAttirbute("id");
+  if (window.getSelection().toString().length!=0)
+  {
+      prop.value = "phonetics";
+      span_id.value = "211"
+      span.setAttributeNode(prop);
+      span.setAttributeNode(span_id);
+      var sel = window.getSelection();
+      if(sel.rangeCount){
+          var range = sel.getRangeAt(0).cloneRange();
+          range.surroundContents(span);
+          sel.removeAllRanges();
+          sel.addRange(range);
+      }
+  }
+  var span_ele = document.getElementById("211");
+  var fin_xpath = anno_getXpathTo(span_ele);
+  clicked_element = anno_getElementByXpath(fin_xpath);
   if (clicked_element.id == "mark" || clicked_element.id == "annolet") {
       console.log('not permitted');
   }
   else {
     //if element is already translated
-  if (anno_getElementByXpath(xpath).id != "phonetic" || !(anno_getElementByXpath(xpath).id)) {
-    var text_to_translate = $j(anno_getElementByXpath(xpath)).html();
+  if (anno_getElementByXpath(fin_xpath).id != "phonetic" || !(anno_getElementByXpath(fin_xpath).id)) {
+    var text_to_translate = $j(anno_getElementByXpath(fin_xpath)).html();
     get_phonetics(text_to_translate);
     var timer = window.setInterval
     (
@@ -44,7 +63,8 @@ function anno_phonetic(xpath) {
         if(typeof phonetic_trans !== "default_value")
         {
           console.log("text changing");
-          $j(anno_getElementByXpath(xpath)).text(phonetic_trans);
+          $j(anno_getElementByXpath(fin_xpath)).text(phonetic_trans);
+          $j(anno_getElementByXpath(fin_xpath)).id = "phonetic";
           phonetic_trans = "default_value";
           window.clearInterval(timer);
         }
@@ -60,6 +80,7 @@ function anno_phonetic(xpath) {
         console.log('already translated');
     }
   }
+  return fin_xpath;
 }
 
 //------------------------------------------------------------------------
@@ -75,7 +96,13 @@ function run_phoneticConversion() {
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
-        anno_phonetic(xpath);
+        var final_xpath = anno_phonetic(xpath);
+        var currentLocation = window.location.href;
+        var obj = JSON.parse(jsonStr);
+        obj['change'].push({"xpath":final_xpath,"url":currentLocation,"func_triggered":anno_btn});
+        jsonStr = JSON.stringify(obj);
+        console.log("inside func");
+        console.log(jsonStr);
         
     };
 }

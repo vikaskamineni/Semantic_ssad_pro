@@ -132,5 +132,35 @@
 		"menuButtonName": "edit",
 		"eventOnClick": "anno_edit()"
 
+	}, {
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/persist.js"],
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "save",
+		"eventOnClick": "store_changes()"
+
+	}, {
+		"fileCSS": null,
+		"HTMLParentTagName": null,
+		"HTMLParentTagNameIndex": null,
+		"newTagName": null,
+		"newTagId": null,
+		"newTagClass": null,
+		"innerHTMLText":null,
+		"innerHTMLFile": null,
+		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/retrieve.js"],
+		"JSParentTagName": "head",
+		"JSParentTagNameIndex": 0,
+		"menuButtonName": "retrieve",
+		"eventOnClick": "retrieve_changes()"
+
 	}]
 }

@@ -46,6 +46,7 @@ function anno_rtag()
     console.log(span_element);
     var final_xpath = anno_getXpathTo(span_element);
     console.log(final_xpath);
+    var fin_ele = anno_getElementByXpath(final_xpath);
     return final_xpath;
 }
 //------------------------------------------------------------------------
@@ -60,12 +61,12 @@ function do_tagging() {
             event = window.event;
         } // for IE
         var target = 'target' in event ? event.target : event.srcElement; // for IE
-        console.log(target);
+        //console.log(target);
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
-        console.log(xpath);
+        //console.log(xpath);
         var ele = anno_getElementByXpath(xpath);
-        console.log(ele);
+        //console.log(ele);
         var fin_xpath = anno_rtag();
         //storing the changes
         var currentLocation = window.location;

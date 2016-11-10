@@ -1,33 +1,5 @@
 
 var $j = jQuery.noConflict();
-
-// function to get Xpath to passed element
-function anno_getXpathTo(element) {
-    if (element.id !== '') {
-        return "//*[@id='" + element.id + "']";
-    }
-    if (element === document.body) {
-        return "html/" + element.tagName.toLowerCase();
-    } //added 'html/' to generate a valid Xpath even if parent has no ID.
-    var ix = 0;
-    var siblings = element.parentNode.childNodes;
-    for (var i = 0; i < siblings.length; i++) {
-        var sibling = siblings[i];
-        if (sibling === element) {
-            return anno_getXpathTo(element.parentNode) + '/' + element.tagName.toLowerCase() + '[' + (ix + 1) + ']';
-        }
-        if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
-            ix++;
-        }
-    }
-}
-
-// function to evaluate element from Xpath
-function anno_getElementByXpath(xpath) {
-    return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-}
-
-//------------------------------------------------------------------------
 var language_trans = "default_value";
 
 function get_languagetrans(str,fr,to){

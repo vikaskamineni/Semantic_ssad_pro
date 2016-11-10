@@ -19,15 +19,19 @@ function anno_audio(xpath)
     node.setAttributeNode(prop3);
     node.setAttributeNode(prop4);
     clicked_element.appendChild(node);
+    var node_ele = document.getElementById("uniqueid");
+    var fin_xpath = anno_getXpathTo(node_ele);
     document.getElementById("uniqueid").remove();
     
   }
+  return fin_xpath;
 }
 
 //------------------------------------------------------------------------
 
 
 function listenOnSelection(){
+    anno_btn = 4;
   //main function which will execute other functions
     document.onclick = function(event) {
       console.log("mouse down hello");
@@ -41,7 +45,12 @@ function listenOnSelection(){
       console.log(xpath);
       var ele = anno_getElementByXpath(xpath);
       console.log(ele);
-        anno_audio(xpath);
-  
+      var final_xpath = anno_audio(xpath);
+      var currentLocation = window.location.href;
+      var obj = JSON.parse(jsonStr);
+      obj['change'].push({"xpath":final_xpath,"url":currentLocation,"func_triggered":anno_btn});
+      jsonStr = JSON.stringify(obj);
+      console.log("inside func");
+      console.log(jsonStr);
     };
 }

@@ -58,15 +58,19 @@ function tag_function()
 
 function change_font(stri1,stri2)
 {
+    anno_btn = 11;
     var span = document.createElement("span");
     var prop1 = document.createAttribute("style");
     var prop2 = document.createAttribute("property");
+    var span_id = document.createAttribute("id");
     if (window.getSelection().toString().length!=0)
     {
         prop2.value = stri1;
         prop1.value = stri2;
+        span_id.value = "111";
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
+        span.setAttributeNode(span_id);
         var sel = window.getSelection();
         if(sel.rangeCount){
             var range = sel.getRangeAt(0).cloneRange();
@@ -75,16 +79,29 @@ function change_font(stri1,stri2)
             sel.addRange(range);
         }
     }
+    var span_ele = document.getElementById("111");
+    var fin_xpath = anno_getXpathTo(span_ele);
+    var currentLocation = window.location.href;
+    var obj = JSON.parse(jsonStr);
+    obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
+    jsonStr = JSON.stringify(obj);
+    console.log("inside func");
+    console.log(jsonStr);
 }
 
 
-function underline() {     
+function underline() {
+    anno_btn = 12;
     var span = document.createElement("span");   
-    var prop = document.createAttribute("style");  
+    var prop = document.createAttribute("style"); 
+    var span_id = document.createAttribute("id");
+
     if (window.getSelection().toString().length!=0)  
     {       
-        prop.value="text-decoration:underline"   
-        span.setAttributeNode(prop); 
+        prop.value="text-decoration:underline";
+        span_id.value = "112";
+        span.setAttributeNode(prop);
+        
         var sel = window.getSelection();    
         if (sel.rangeCount) 
         {   
@@ -94,11 +111,20 @@ function underline() {
             sel.addRange(range) 
         }
     }
+    var span_ele = document.getElementById("112");
+    var fin_xpath = anno_getXpathTo(span_ele);
+    var currentLocation = window.location.href;
+    var obj = JSON.parse(jsonStr);
+    obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
+    jsonStr = JSON.stringify(obj);
+    console.log("inside func");
+    console.log(jsonStr);
 }
 
 
 function conv_to_href()
 {
+    anno_btn = 13;
     //var span=document.createElement("span");
     //var prop = document.createAtrribute("class");
     var link = document.createElement("a");
@@ -108,8 +134,10 @@ function conv_to_href()
         //prop.value="myclass";
         //span.setAttributeNode(prop);
         www=prompt("Enter the link");
+        span_id.value = "113";
         link.setAttribute('href',www);
         link.setAttribute('style','color:blue');
+        link.id = "113";
         link.className="myClass";
         document.getElementsByClassName('myClass').onmouseover=function()
         {
@@ -126,6 +154,14 @@ function conv_to_href()
             sel.addRange(range)
         }
     }
+    var link_ele = document.getElementById("113");
+    var fin_xpath = anno_getXpathTo(link_ele);
+    var currentLocation = window.location.href;
+    var obj = JSON.parse(jsonStr);
+    obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
+    jsonStr = JSON.stringify(obj);
+    console.log("inside func");
+    console.log(jsonStr);
     /*$j(function(){
         $j("#btn1").click(function(){
             var elems = $j("span.myClass > span");
@@ -139,13 +175,15 @@ function conv_to_href()
 }
 function header_func(stri1,stri2)
 {
+    anno_btn = 14;
     var head=document.createElement(stri1);
-    //var prop = document.createAtrribute("property");
+    //var head_id = document.createAtrribute("property");
     if (window.getSelection().toString().length!=0)
     {
        // prop.value=stri2;
         //head.setAttribute(prop);
         head.property=stri2;
+        head.id = "114"
         var sel = window.getSelection();
         if (sel.rangeCount)
         {
@@ -155,13 +193,22 @@ function header_func(stri1,stri2)
             sel.addRange(range)
         }
     }
+    var head_ele = document.getElementById("114");
+    var fin_xpath = anno_getXpathTo(head_ele);
+    var currentLocation = window.location.href;
+    var obj = JSON.parse(jsonStr);
+    obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
+    jsonStr = JSON.stringify(obj);
+    console.log("inside func");
+    console.log(jsonStr);
 }
 function bold_tag(stri)
 {
+    anno_btn = 15;
     var span = document.createElement("span");
     var prop1 = document.createAttribute("property");
     var prop2 = document.createAttribute("style");
-
+    var span_id = document.createAttribute("id");
     if (window.getSelection().toString().length!=0)
     {
         console.log('highlighted');
@@ -169,9 +216,11 @@ function bold_tag(stri)
         //tagInfo = prompt('tagInfo');
         prop2.value = "font-weight:bold";
         prop1.value = stri;
+        span_id.vlaue = "115";
         console.log(stri);
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
+        span.setAttributeNode(span_id);
         var sel = window.getSelection();
         if (sel.rangeCount) {
             var range = sel.getRangeAt(0).cloneRange();
@@ -180,4 +229,12 @@ function bold_tag(stri)
             sel.addRange(range);
         }
     }
+    var span_ele = document.getElementById("115");
+    var fin_xpath = anno_getXpathTo(span_ele);
+    var currentLocation = window.location.href;
+    var obj = JSON.parse(jsonStr);
+    obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
+    jsonStr = JSON.stringify(obj);
+    console.log("inside func");
+    console.log(jsonStr);
 }

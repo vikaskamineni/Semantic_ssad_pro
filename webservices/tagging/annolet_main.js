@@ -46,7 +46,7 @@ function do_tagging() {
         //storing the changes
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+        obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
         console.log(jsonStr);

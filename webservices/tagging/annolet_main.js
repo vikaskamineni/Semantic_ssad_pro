@@ -25,6 +25,7 @@ function anno_rtag()
     //var fin_ele = anno_getElementByXpath(final_xpath);
     //console.log(fin_ele);
     //return final_xpath;
+  return prop.value;
 }
 //------------------------------------------------------------------------
 
@@ -43,7 +44,7 @@ function do_tagging() {
         //console.log(xpath);
         //var ele = anno_getElementByXpath(xpath);
         //console.log(ele);
-        anno_rtag();
+        var prompt_val = anno_rtag();
         //storing the changes
         var sel = window.getSelection();
         console.log("look here");
@@ -59,7 +60,7 @@ function do_tagging() {
         var obj = JSON.parse(jsonStr);
         if (start != end)
         {
-          obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+          obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prompt_val});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");

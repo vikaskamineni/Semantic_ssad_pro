@@ -46,6 +46,12 @@ function anno_getElementByXpath(xpath) {
 
 //------------------------------------------------------------------------
 
+function getCharOffsetRelativeTo(container, node, offset) {
+    var range = document.createRange();
+    range.selectNodeContents(container);
+    range.setEnd(node, offset);
+    return range.toString().length;
+}
 
 // for exiting annolet
 $j("#annolet-exit-btn").click(function(e) {

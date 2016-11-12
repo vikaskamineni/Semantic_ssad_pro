@@ -2,14 +2,14 @@ function anno_rtag()
 {
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
-  var span_id = document.createAttribute("id");
-  ID = ID + 1;
+  //var span_id = document.createAttribute("id");
+  //ID = ID + 1;
   var SID = ID.toString();
   if (window.getSelection().toString().length!==0) {
     prop.value = prompt("Enter the tag name you want to add");
-    span_id.value = SID;
+    //span_id.value = SID;
     span.setAttributeNode(prop);
-    span.setAttributeNode(span_id);
+    //span.setAttributeNode(span_id);
     var sel = window.getSelection();
     if (sel.rangeCount) {
       var range = sel.getRangeAt(0).cloneRange();
@@ -18,13 +18,13 @@ function anno_rtag()
       sel.addRange(range);
     }     
   } 
-    var span_element = document.getElementById(SID);
-    console.log(span_element);
-    var final_xpath = anno_getXpathTo(span_element);
-    console.log(final_xpath);
-    var fin_ele = anno_getElementByXpath(final_xpath);
-    console.log(fin_ele);
-    return final_xpath;
+    //var span_element = document.getElementById(SID);
+    //console.log(span_element);
+    //var final_xpath = anno_getXpathTo(span_element);
+    //console.log(final_xpath);
+    //var fin_ele = anno_getElementByXpath(final_xpath);
+    //console.log(fin_ele);
+    //return final_xpath;
 }
 //------------------------------------------------------------------------
 
@@ -44,11 +44,11 @@ function do_tagging() {
         //console.log(xpath);
         var ele = anno_getElementByXpath(xpath);
         //console.log(ele);
-        var fin_xpath = anno_rtag();
+        anno_rtag();
         //storing the changes
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":fin_xpath,"url":currentLocation,"func_triggered":anno_btn});
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
         console.log(jsonStr);

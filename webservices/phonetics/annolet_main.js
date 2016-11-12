@@ -90,6 +90,7 @@ function anno_phonetic(xpath) {
 
 //main function which will execute other functions
 function run_phoneticConversion() {
+    anno_btn = 3;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;

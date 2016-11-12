@@ -4,9 +4,10 @@ function anno_rtag()
   var prop = document.createAttribute("property");
   var span_id = document.createAttribute("id");
   ID = ID + 1;
+  var SID = ID.toString();
   if (window.getSelection().toString().length!==0) {
     prop.value = prompt("Enter the tag name you want to add");
-    span_id.value = ID;
+    span_id.value = SID;
     span.setAttributeNode(prop);
     span.setAttributeNode(span_id);
     var sel = window.getSelection();
@@ -17,7 +18,7 @@ function anno_rtag()
       sel.addRange(range);
     }     
   } 
-    var span_element = document.getElementById(ID);
+    var span_element = document.getElementById(SID);
     console.log(span_element);
     var final_xpath = anno_getXpathTo(span_element);
     console.log(final_xpath);

@@ -3,6 +3,7 @@ function anno_rtag()
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
   var span_id = document.createAttribute("id");
+  ID = ID + 1;
   if (window.getSelection().toString().length!==0) {
     prop.value = prompt("Enter the tag name you want to add");
     span_id.value = ID;

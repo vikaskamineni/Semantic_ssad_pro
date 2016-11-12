@@ -49,7 +49,7 @@ function anno_language(xpath) {
   }
   var span_ele = document.getElementById(SID);
   var fin_xpath = anno_getXpathTo(span_ele);
-  var clicked_element = anno_getElementByXpath(xpath);
+  var clicked_element = anno_getElementByXpath(fin_xpath);
   //if element is already highlighted
   if (clicked_element.id == "mark" || clicked_element.id == "annolet") {
       console.log('not permitted');

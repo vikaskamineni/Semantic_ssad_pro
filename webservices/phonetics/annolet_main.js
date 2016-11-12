@@ -65,8 +65,8 @@ function anno_phonetic(xpath) {
         if(typeof phonetic_trans !== "default_value")
         {
           console.log("text changing");
-          $j(anno_getElementByXpath(fin_xpath)).text(phonetic_trans);
-          $j(anno_getElementByXpath(fin_xpath)).id("phonetic");
+          $j(clicked_element).text(phonetic_trans);
+          $j(clicked_element).id = "phonetic";
           phonetic_trans = "default_value";
           window.clearInterval(timer);
         }
@@ -75,7 +75,7 @@ function anno_phonetic(xpath) {
           console.log("returned without change");
         }
       }
-      ,1000
+      ,2
     );
   }
   else {

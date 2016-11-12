@@ -32,7 +32,7 @@ function anno_rtag()
 //main function which will execute other functions
 function do_tagging() {
     anno_btn = 1;
-    document.onclick = function(event) {
+    document.selection = function(event) {
         if (event === undefined) {
             event = window.event;
         } // for IE

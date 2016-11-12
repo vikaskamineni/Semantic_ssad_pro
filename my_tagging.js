@@ -64,11 +64,12 @@ function change_font(stri1,stri2)
     var prop2 = document.createAttribute("property");
     var span_id = document.createAttribute("id");
     ID = ID + 1; 
+    var SID = ID.toString();
     if (window.getSelection().toString().length!=0)
     {
         prop2.value = stri1;
         prop1.value = stri2;
-        span_id.value = ID;
+        span_id.value = SID;
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
         span.setAttributeNode(span_id);
@@ -80,7 +81,7 @@ function change_font(stri1,stri2)
             sel.addRange(range);
         }
     }
-    var span_ele = document.getElementById(ID);
+    var span_ele = document.getElementById(SID);
     var fin_xpath = anno_getXpathTo(span_ele);
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
@@ -97,11 +98,11 @@ function underline() {
     var prop = document.createAttribute("style"); 
     var span_id = document.createAttribute("id");
     ID = ID + 1;
-
+    var SID = ID.toString();
     if (window.getSelection().toString().length!=0)  
     {       
         prop.value="text-decoration:underline";
-        span_id.value = ID;
+        span_id.value = SID;
         span.setAttributeNode(prop);
         
         var sel = window.getSelection();    
@@ -113,7 +114,7 @@ function underline() {
             sel.addRange(range) 
         }
     }
-    var span_ele = document.getElementById(ID);
+    var span_ele = document.getElementById(SID);
     var fin_xpath = anno_getXpathTo(span_ele);
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
@@ -132,6 +133,7 @@ function conv_to_href()
     var link = document.createElement("a");
     //var prop = document.createElement("href");
     ID = ID + 1;
+    var SID = ID.toString();
     if (window.getSelection().toString().length!=0)
     {
         //prop.value="myclass";
@@ -140,7 +142,7 @@ function conv_to_href()
         //span_id.value = ID;
         link.setAttribute('href',www);
         link.setAttribute('style','color:blue');
-        link.id = ID;
+        link.id = SID;
         link.className="myClass";
         document.getElementsByClassName('myClass').onmouseover=function()
         {
@@ -157,7 +159,7 @@ function conv_to_href()
             sel.addRange(range)
         }
     }
-    var link_ele = document.getElementById(ID);
+    var link_ele = document.getElementById(SID);
     var fin_xpath = anno_getXpathTo(link_ele);
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
@@ -181,13 +183,14 @@ function header_func(stri1,stri2)
     anno_btn = 14;
     var head=document.createElement(stri1);
     ID = ID + 1;
+    var SID = ID.toString();
     //var head_id = document.createAtrribute("property");
     if (window.getSelection().toString().length!=0)
     {
        // prop.value=stri2;
         //head.setAttribute(prop);
         head.property=stri2;
-        head.id = ID;
+        head.id = SID;
         var sel = window.getSelection();
         if (sel.rangeCount)
         {
@@ -197,7 +200,7 @@ function header_func(stri1,stri2)
             sel.addRange(range)
         }
     }
-    var head_ele = document.getElementById(ID);
+    var head_ele = document.getElementById(SID);
     var fin_xpath = anno_getXpathTo(head_ele);
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
@@ -214,6 +217,7 @@ function bold_tag(stri)
     var prop2 = document.createAttribute("style");
     var span_id = document.createAttribute("id");
     ID = ID + 1;
+    var SID = ID.toString();
     if (window.getSelection().toString().length!=0)
     {
         console.log('highlighted');
@@ -221,7 +225,7 @@ function bold_tag(stri)
         //tagInfo = prompt('tagInfo');
         prop2.value = "font-weight:bold";
         prop1.value = stri;
-        span_id.value = ID;
+        span_id.value = SID;
         console.log(stri);
         span.setAttributeNode(prop2);
         span.setAttributeNode(prop1);
@@ -234,7 +238,7 @@ function bold_tag(stri)
             sel.addRange(range);
         }
     }
-    var span_ele = document.getElementById(ID);
+    var span_ele = document.getElementById(SID);
     var fin_xpath = anno_getXpathTo(span_ele);
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);

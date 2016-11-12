@@ -1,5 +1,6 @@
 function func_tagging(stri)
 {
+    anno_btn = "rtag";
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -38,7 +39,7 @@ function func_tagging(stri)
         var obj = JSON.parse(jsonStr);
         if (start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":stri});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");

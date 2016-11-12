@@ -94,9 +94,17 @@ function change_font(stri1,stri2)
     }
     //var span_ele = document.getElementById(SID);
     //var xpath = anno_getXpathTo();
+    var sel = window.getSelection();
+    var temp = window.getSelection().toString().length;
+    console.log(temp);
+    var pre = anno_getElementByXpath(xpath);
+    var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+    console.log(offset);
+    var start = offset;
+    var end = offset + temp;
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
-    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
     jsonStr = JSON.stringify(obj);
     console.log("inside func");
     console.log(jsonStr);
@@ -139,9 +147,17 @@ function underline() {
     }
     //var span_ele = document.getElementById(SID);
     //var fin_xpath = anno_getXpathTo(span_ele);
+    var sel = window.getSelection();
+    var temp = window.getSelection().toString().length;
+    console.log(temp);
+    var pre = anno_getElementByXpath(xpath);
+    var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+    console.log(offset);
+    var start = offset;
+    var end = offset + temp;
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
-    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
     jsonStr = JSON.stringify(obj);
     console.log("inside func");
     console.log(jsonStr);
@@ -196,9 +212,17 @@ function conv_to_href()
     }
     //var link_ele = document.getElementById(SID);
     //var fin_xpath = anno_getXpathTo(link_ele);
+    var sel = window.getSelection();
+    var temp = window.getSelection().toString().length;
+    console.log(temp);
+    var pre = anno_getElementByXpath(xpath);
+    var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+    console.log(offset);
+    var start = offset;
+    var end = offset + temp;
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
-    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
     jsonStr = JSON.stringify(obj);
     console.log("inside func");
     console.log(jsonStr);
@@ -249,9 +273,17 @@ function header_func(stri1,stri2)
     }
     //var head_ele = document.getElementById(SID);
     //var fin_xpath = anno_getXpathTo(head_ele);
+    var sel = window.getSelection();
+    var temp = window.getSelection().toString().length;
+    console.log(temp);
+    var pre = anno_getElementByXpath(xpath);
+    var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+    console.log(offset);
+    var start = offset;
+    var end = offset + temp;
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
-    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
     jsonStr = JSON.stringify(obj);
     console.log("inside func");
     console.log(jsonStr);
@@ -299,9 +331,17 @@ function bold_tag(stri)
     }
     //var span_ele = document.getElementById(SID);
     //var fin_xpath = anno_getXpathTo(span_ele);
+    var sel = window.getSelection();
+    var temp = window.getSelection().toString().length;
+    console.log(temp);
+    var pre = anno_getElementByXpath(xpath);
+    var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+    console.log(offset);
+    var start = offset;
+    var end = offset + temp;
     var currentLocation = window.location.href;
     var obj = JSON.parse(jsonStr);
-    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+    obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
     jsonStr = JSON.stringify(obj);
     console.log("inside func");
     console.log(jsonStr);

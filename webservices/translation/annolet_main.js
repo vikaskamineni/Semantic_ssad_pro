@@ -83,7 +83,6 @@ function anno_language(xpath) {
         console.log('already translated');
     }
   }
-  return fin_xpath;
 }
 
 //------------------------------------------------------------------------
@@ -100,10 +99,10 @@ function run_langtrans() {
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
-        var final_xpath = anno_language(xpath);
+        anno_language(xpath);
         var currentLocation = window.location;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":final_xpath,"url":currentLocation,"func_triggered":anno_btn});
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
         jsonStr = JSON.stringify(obj);
     };
 }

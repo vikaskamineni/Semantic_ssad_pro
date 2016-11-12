@@ -47,12 +47,12 @@ function do_tagging() {
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
         //console.log(xpath);
-        var ele = anno_getElementByXpath(xpath);
+        //var ele = anno_getElementByXpath(xpath);
         //console.log(ele);
         anno_rtag();
         //storing the changes
         var sel = window.getSelection();
-        var pre = document.anno_getElementByXpath(xpath);
+        var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
         var currentLocation = window.location.href;

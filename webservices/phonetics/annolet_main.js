@@ -98,9 +98,17 @@ function run_phoneticConversion() {
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
         anno_phonetic(xpath);
+        var sel = window.getSelection();
+        var temp = window.getSelection().toString().length;
+        console.log(temp);
+        var pre = anno_getElementByXpath(xpath);
+        var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+        console.log(offset);
+        var start = offset;
+        var end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
         console.log(jsonStr);

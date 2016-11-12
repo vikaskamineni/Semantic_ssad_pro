@@ -2,7 +2,10 @@
 
 function tagging_function(stri1,stri2)
 {
-    anno_btn = 16;
+    if ( stri2 === "yellow")
+        anno_btn = 11;
+    if ( stri2 === "red")
+        anno_btn = 12;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -17,7 +20,6 @@ function tagging_function(stri1,stri2)
         var span = document.createElement("span");
         var prop1 = document.createAttribute("property");
         var prop2 = document.createAttribute("style");
-
         if (window.getSelection().toString().length!=0)
         {
             console.log('highlighted');
@@ -86,7 +88,14 @@ function tag_function()
 
 function change_font(stri1,stri2)
 {
-    anno_btn = 11;
+    if (stri1 === "arial")
+        anno_btn = 13;
+    if (stri1 === "courier")
+        anno_btn = 14;
+    if (stri1 === "Helvetica")
+        anno_btn = 15;
+    if (stri1 === "Times")
+        anno_btn = 16;
     //var xpath;
     document.onclick = function(event) {
         if (event === undefined) {
@@ -145,7 +154,7 @@ function change_font(stri1,stri2)
 
 
 function underline() {
-    anno_btn = 12;
+    anno_btn = 20
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -203,7 +212,7 @@ function underline() {
 
 function conv_to_href()
 {
-    anno_btn = 13;
+    anno_btn = 18
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -225,7 +234,7 @@ function conv_to_href()
         {
             //prop.value="myclass";
             //span.setAttributeNode(prop);
-            www=prompt("Enter the link");
+            var www=prompt("Enter the link");
             //span_id.value = ID;
             link.setAttribute('href',www);
             link.setAttribute('style','color:blue');
@@ -260,7 +269,7 @@ function conv_to_href()
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagname"
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -333,7 +342,7 @@ function header_func(stri1,stri2)
 }
 function bold_tag(stri)
 {
-    anno_btn = 15;
+    anno_btn = 19
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;

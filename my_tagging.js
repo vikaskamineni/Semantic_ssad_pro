@@ -42,8 +42,8 @@ function tagging_function(stri1,stri2)
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        var start = offset;
-        var end = offset + temp;
+        start = offset;
+        end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if (start != end)
@@ -129,8 +129,8 @@ function change_font(stri1,stri2)
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        var start = offset;
-        var end = offset + temp;
+        start = offset;
+        end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if(start != end)
@@ -186,8 +186,8 @@ function underline() {
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        var start = offset;
-        var end = offset + temp;
+        start = offset;
+        end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if(start != end)
@@ -254,8 +254,8 @@ function conv_to_href()
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        var start = offset;
-        var end = offset + temp;
+        start = offset;
+        end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if(start != end)
@@ -318,8 +318,8 @@ function header_func(stri1,stri2)
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        var start = offset;
-        var end = offset + temp;
+        start = offset;
+        end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if (start != end)
@@ -379,8 +379,8 @@ function bold_tag(stri)
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        var start = offset;
-        var end = offset + temp;
+        start = offset;
+        end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if(start != end)

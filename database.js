@@ -5,4 +5,6 @@ var config = {
     storageBucket: "ssad43-12c23.appspot.com",
     messagingSenderId: "354327773473"
   };
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
+// Get a reference to the database service
+var database = firebase.database();

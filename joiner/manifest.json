@@ -8,7 +8,7 @@
 		"newTagClass": null,
 		"innerHTMLText":null,
 		"innerHTMLFile": null,
-		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/anno_main.js","https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js","https://www.gstatic.com/firebasejs/3.6.0/firebase-database.js","https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/database.js"],
+		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/anno_main.js"],
 		"JSParentTagName": "head",
 		"JSParentTagNameIndex": 0,
 		"menuButtonName": null,

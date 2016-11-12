@@ -46,6 +46,8 @@ function do_tagging() {
         anno_rtag();
         //storing the changes
         var sel = window.getSelection();
+        console.log("look here");
+        console.log(sel);
         var temp = window.getSelection().toString().length;
         console.log(temp);
         var pre = anno_getElementByXpath(xpath);

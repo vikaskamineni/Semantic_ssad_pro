@@ -27,12 +27,6 @@ function anno_rtag()
     //return final_xpath;
 }
 //------------------------------------------------------------------------
-function getCharOffsetRelativeTo(container, node, offset) {
-    var range = document.createRange();
-    range.selectNodeContents(container);
-    range.setEnd(node, offset);
-    return range.toString().length;
-}
 
 
 //main function which will execute other functions

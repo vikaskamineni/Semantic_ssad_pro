@@ -27,7 +27,12 @@ function anno_rtag()
     //return final_xpath;
 }
 //------------------------------------------------------------------------
-
+function getCharOffsetRelativeTo(container, node, offset) {
+    var range = document.createRange();
+    range.selectNodeContents(container);
+    range.setEnd(node, offset);
+    return range.toString().length;
+}
 
 
 //main function which will execute other functions
@@ -46,9 +51,13 @@ function do_tagging() {
         //console.log(ele);
         anno_rtag();
         //storing the changes
+        var sel = window.getSelection();
+        var pre = document.anno_getElementByXpath(xpath);
+        var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+        console.log(offset);
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
         console.log(jsonStr);

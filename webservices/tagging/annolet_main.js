@@ -32,7 +32,7 @@ function anno_rtag()
 //main function which will execute other functions
 function do_tagging() {
     anno_btn = 1;
-    document.selection = function(event) {
+    document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
         } // for IE
@@ -55,7 +55,10 @@ function do_tagging() {
         var end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+        if (start != end)
+        {
+          obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+        }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
         console.log(jsonStr);

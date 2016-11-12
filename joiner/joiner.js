@@ -29,23 +29,24 @@ annolet.getJSON = function(){
         frontend. it will help us in calling webservices to from using
         manifest file JSON file.
       */
-      var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/joiner/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
-      console.log("fup");
+	var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/joiner/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
+	console.log(pathJSON);
+      	console.log("fup");
 	
-      $j.ajaxSetup({
-      		async: false
-      });
-      $j.getJSON(pathJSON, function(json) {
-          annolet.metafile = json;
-	  console.log("entered");
-	  console.log(annolet.metafile);
+      	$j.ajaxSetup({
+      			async: false
+      	});
+      	$j.getJSON(pathJSON, function(json) {
+        	annolet.metafile = json;
+		console.log("entered");
+	  	console.log(annolet.metafile);
 	  
-      });
-      $j.ajaxSetup({
-	     async: true
-      });
-      console.log("fdec");
-  };
+      	});
+      	$j.ajaxSetup({
+		async: true
+      	});
+      	console.log("fdec");
+};
 
 annolet.connectWebservices = function() {
     console.log("continues");

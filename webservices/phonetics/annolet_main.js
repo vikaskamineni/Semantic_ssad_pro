@@ -82,7 +82,6 @@ function anno_phonetic(xpath) {
         console.log('already translated');
     }
   }
-  return fin_xpath;
 }
 
 //------------------------------------------------------------------------
@@ -98,10 +97,10 @@ function run_phoneticConversion() {
         var target = 'target' in event ? event.target : event.srcElement; // for IE
         var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
         var xpath = anno_getXpathTo(target);
-        var final_xpath = anno_phonetic(xpath);
+        anno_phonetic(xpath);
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
-        obj['change'].push({"xpath":final_xpath,"url":currentLocation,"func_triggered":anno_btn});
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn});
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
         console.log(jsonStr);

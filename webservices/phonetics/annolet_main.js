@@ -31,10 +31,11 @@ function anno_phonetic(xpath) {
   var span = document.createElement("span");
   var prop = document.createAttribute("property");
   var span_id = document.createAttribute("id");
+  ID = ID + 1;
   if (window.getSelection().toString().length!=0)
   {
       prop.value = "phonetics";
-      span_id.value = "211"
+      span_id.value = ID;
       span.setAttributeNode(prop);
       span.setAttributeNode(span_id);
       var sel = window.getSelection();
@@ -45,9 +46,9 @@ function anno_phonetic(xpath) {
           sel.addRange(range);
       }
   }
-  var span_ele = document.getElementById("211");
+  var span_ele = document.getElementById(ID);
   var fin_xpath = anno_getXpathTo(span_ele);
-  clicked_element = anno_getElementByXpath(fin_xpath);
+  var clicked_element = anno_getElementByXpath(fin_xpath);
   if (clicked_element.id == "mark" || clicked_element.id == "annolet") {
       console.log('not permitted');
   }
@@ -64,7 +65,7 @@ function anno_phonetic(xpath) {
         {
           console.log("text changing");
           $j(anno_getElementByXpath(fin_xpath)).text(phonetic_trans);
-          $j(anno_getElementByXpath(fin_xpath)).id = "phonetic";
+          $j(anno_getElementByXpath(fin_xpath)).id("phonetic");
           phonetic_trans = "default_value";
           window.clearInterval(timer);
         }

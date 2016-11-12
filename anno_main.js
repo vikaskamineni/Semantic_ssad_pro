@@ -1,6 +1,8 @@
 //main function which will execute other functions
 var jsonStr = '{ "change":[] }';
 var anno_btn = 0;
+var start = 0;
+var end = 0;
 var ID = 0;
 function annolet_main() {
     disableAllLinks(); // it will disable all the links present in webpage iteratively

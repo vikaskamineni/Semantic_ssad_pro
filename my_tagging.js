@@ -157,7 +157,7 @@ function change_font(stri1,stri2)
 
 function underline() {
     console.log("entered underline");
-    anno_btn = 20
+    anno_btn = 17;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -216,7 +216,7 @@ function underline() {
 function conv_to_href()
 {
     console.log("entered link");
-    anno_btn = 18
+    anno_btn = 18;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;
@@ -293,7 +293,7 @@ function conv_to_href()
 function header_func(stri1,stri2)
 {
     console.log("entered heading");
-    anno_btn = 14;
+    anno_btn = 20;
     document.onclick = function(event) {
         if (event === undefined) {
             event = window.event;

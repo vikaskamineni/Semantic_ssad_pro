@@ -269,7 +269,7 @@ function conv_to_href()
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagname","tagName":www});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":www});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");

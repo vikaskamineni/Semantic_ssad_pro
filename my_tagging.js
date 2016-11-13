@@ -50,7 +50,7 @@ function tagging_function(stri1,stri2)
         var obj = JSON.parse(jsonStr);
         if (start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prop2});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -144,7 +144,7 @@ function change_font(stri1,stri2)
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prop2});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -201,7 +201,7 @@ function underline() {
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":"underline"});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -269,7 +269,7 @@ function conv_to_href()
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagname"
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagname","tagName":www});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -333,7 +333,7 @@ function header_func(stri1,stri2)
         var obj = JSON.parse(jsonStr);
         if (start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":"heading"});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -394,7 +394,7 @@ function bold_tag(stri)
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prop1});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");

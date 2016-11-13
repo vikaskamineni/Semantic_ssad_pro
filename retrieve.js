@@ -108,19 +108,29 @@ function get_phonetics(str){
 
 function retrieve_changes()
 {
+    console.log("retrieving starts");
   var obj = JSON.parse(jsonStr);
+    console.log("object":obj);
   var j=0;
   while(obj['change'][j]!=null)
   {
+      console.log("retrieving continues orderly");
       var xpath = obj['change'][j].xpath;
+      console.log("xpath":xpath);
       var start_offset = obj['change'][j].start_offset;
+      console.log("start_offset":start_offset);
       var end_offset = obj['change'][j].end_offset;
+      console.log("end_offset":end_offset);
       var length = start_offset - end_offset;
       var anno_btn = obj['change'][j].func_triggered;
+      console.log("anno_btn":anno_btn);
       var tagName = obj['change'][j].tagName;
+      console.log("tagName":tagName);
       var ele = anno_getElementByXpath(xpath);
+      console.log(ele);
       if (anno_btn == 1)
       {
+        console.log("retrieving tagger changes");
         wrapText(ele, start_offset, length, tagName ,null);
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -132,10 +142,12 @@ function retrieve_changes()
       }
       if (anno_btn == 2)
       {
+          console.log("retrieving language_trans changes");
         wrapText(ele, start_offset, length, tagName ,null);
-        var stri = $j(ele).html(function(i,val) {
+        /*var stri = $j(ele).html(function(i,val) {
           return val.substr(start_offset,end_offset-start_offset);
-        });
+        });*/
+        var stri = text2.innerHTML;
         var text_to_translate = stri;
         var language_trans = get_languagetrans(text_to_translate,'en','hi');
         var timer = window.setInterval
@@ -159,10 +171,12 @@ function retrieve_changes()
       }
       if (anno_btn == 3)
       {
+          console.log("retrieving phonetic_trans");
         wrapText(ele, start_offset, length, tagName ,null);
-        var stri = $j(ele).html(function(i,val) {
+        /*var stri = $j(ele).html(function(i,val) {
           return val.substr(start_offset,end_offset-start_offset);
-        });
+        });*/
+        var stri = text2.innerHTML;
         var text_to_translate = stri;
         var phonetic_trans = get_languagetrans(text_to_translate,'en','hi');
         var timer = window.setInterval
@@ -186,6 +200,7 @@ function retrieve_changes()
       }
       if (anno_btn == 11)
       {
+        console.log("retrieving bg_yellow color");
         wrapText(ele, start_offset, length, tagName ,"background-color:yellow");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -197,6 +212,7 @@ function retrieve_changes()
       }
       if (anno_btn == 12)
       {
+        console.log("retrieving bg_red color");  
         wrapText(ele, start_offset, length, tagName ,"background-color:red");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -208,6 +224,7 @@ function retrieve_changes()
       }
       if (anno_btn == 13)
       {
+                    console.log("retrieving italics arial");
         wrapText(ele, start_offset, length, tagName ,"font-family:arial");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -219,6 +236,7 @@ function retrieve_changes()
       }
       if (anno_btn == 14)
       {
+        console.log("retrieving italics courier");  
         wrapText(ele, start_offset, length, tagName ,"font-family:courier");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -230,6 +248,7 @@ function retrieve_changes()
       }
       if (anno_btn == 15)
       {
+        console.log("retrieving italics Helvetica");
         wrapText(ele, start_offset, length, tagName ,"font-family:Helvetica");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -241,6 +260,7 @@ function retrieve_changes()
       }
       if (anno_btn == 16)
       {
+          console.log("retrieving italics Times");
         wrapText(ele, start_offset, length, tagName ,"font-family:Times");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -252,6 +272,7 @@ function retrieve_changes()
       }
       if (anno_btn == 17)
       {
+          console.log("retrieving underline changes");
         wrapText(ele, start_offset, length, tagName ,"text-decoration:underline");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -263,6 +284,7 @@ function retrieve_changes()
       }
       if (anno_btn == 18)
       {
+          console.log("retrieving convtohref");
         wrapText(ele, start_offset, length, tagName ,"text-color:blue");  
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -274,6 +296,7 @@ function retrieve_changes()
       }
       if (anno_btn == 19)
       {
+          console.log("retrieving bold");
         wrapa(ele, start_offset, length, tagName ,"font-weight:bold");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -285,6 +308,7 @@ function retrieve_changes()
       }
       if (anno_btn == 20)
       {
+          console.log("retrieving header");
         wrapheading(ele, start_offset, length, tagName ,null);  
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
@@ -296,6 +320,7 @@ function retrieve_changes()
       }
       if(tagName == "event-date-startdate"|| tagName == "event-date-enddate" || tagName == "event-location-street" ||tagName == "event-location-area" ||tagName == "event-location-city" ||tagName == "organization-owner" ||tagName == "organisation-employee" ||tagName == "organization-contact" ||tagName == "organization-location-street" ||tagName == "organization-location-area" ||tagName == "organization-location-city" || tagName == "person-name-firstname" ||tagName == "person-name-secondname" ||tagName == "person-address-street" ||tagName == "person-address-city" || tagName == "person-address-area" || tagName == "person-contact" || tagName == "date-startdate" || tagName == "date-enddate" || tagName == "currency-rupee" || tagName == "currency-dollar" || tagName == "currency-euro" || tagName == "unit-si" || tagName == "unit-cgi" || tagName == "unit-fps")
       {
+          console.log("retrieving rtag changes");
         wrapText(ele, start_offset, length, tagName ,null);
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +

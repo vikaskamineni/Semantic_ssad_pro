@@ -2,8 +2,11 @@ var $j = jQuery.noConflict();
 
 function wrapText(elem, start, length, tagName ,st) {
     var before = elem.textContent.substr(0, start);
-    var after = elem.textContent.substr(start + length, elem.textContent.length - length);
+    console.log(before);
+    var after = elem.textContent.substr(start + length, elem.textContent.length -length);
+    console.log(after);
     var letters = elem.textContent.substr(start, length);
+    console.log(letters);
     elem.innerHTML = '';
     var text1=document.createTextNode(before);
     var text2=document.createElement('span');

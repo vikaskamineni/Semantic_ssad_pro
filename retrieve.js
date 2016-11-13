@@ -1,6 +1,8 @@
 var $j = jQuery.noConflict();
 
 function wrapText(elem, start, length, tagName ,st) {
+    var whole = elem.textContent;
+    console.log(whole);
     var before = elem.textContent.substr(0, start);
     console.log(before);
     var after = elem.textContent.substr(start + length, elem.textContent.length -length);

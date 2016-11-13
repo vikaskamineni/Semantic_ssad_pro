@@ -308,6 +308,7 @@ $(document).ready(function(){
 
 function modify_unit_CGI()
 {
+    anno_btn = "modify-to cgi";
 $(document).ready(function(){
      $("[property='unit']").each( function() {
   
@@ -373,6 +374,11 @@ $(document).ready(function(){
                     ans=out+" "+"cm";
                     $this.text($this.text().replace(inp,ans));
                 }
+                var xpath = obj['change'][i].xpath;
+                var url = obj['change'][i].url;
+                var start = obj['change'][i].start;
+                var end = obj['change'][i].end;
+                obj['change'].push({"xpath":xpath,"url":url,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":anno_btn});            
             }
             i++;
         }     
@@ -382,6 +388,7 @@ $(document).ready(function(){
 }
 function modify_unit_FPS()
 {
+    anno_btn = "modify-to-fps";
 $(document).ready(function(){
     $("[property='unit']").each( function() {
   
@@ -452,6 +459,12 @@ $(document).ready(function(){
                     ans=out+" "+"ft";
                     $this.text($this.text().replace(inp,ans));
                 }
+                var xpath = obj['change'][i].xpath;
+                var url = obj['change'][i].url;
+                var start = obj['change'][i].start;
+                var end = obj['change'][i].end;
+                obj['change'].push({"xpath":xpath,"url":url,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":anno_btn});            
+
             }
             i++;
         }

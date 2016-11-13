@@ -110,7 +110,7 @@ function retrieve_changes()
 {
   var obj = JSON.parse(jsonStr);
   var j=0;
-  while(obj['change'][j]!=NULL)
+  while(obj['change'][j]!=null)
   {
       var xpath = obj['change'][j].xpath;
       var start_offset = obj['change'][j].start_offset;

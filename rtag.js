@@ -50,9 +50,9 @@ function func_tagging(stri)
 function toggle_tagging()
 {
   console.log("remove new hidden");
-    var temp=document.getElementById("page_wrap");
+    var temp=document.getElementById("page-wrap");
     console.log(temp);
-    document.getElementById("page_wrap").removeAttribute("hidden");
+    document.getElementById("page-wrap").removeAttribute("hidden");
     //}
     //else
     //{

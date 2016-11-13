@@ -108,9 +108,9 @@ function get_phonetics(str){
 
 function retrieve_changes()
 {
-    console.log("retrieving starts");
+  console.log("retrieving starts");
   var obj = JSON.parse(jsonStr);
-    console.log("object":obj);
+  console.log(obj);
   var j=0;
   while(obj['change'][j]!=null)
   {
@@ -142,7 +142,7 @@ function retrieve_changes()
       }
       if (anno_btn == 2)
       {
-          console.log("retrieving language_trans changes");
+        console.log("retrieving language_trans changes");
         wrapText(ele, start_offset, length, tagName ,null);
         /*var stri = $j(ele).html(function(i,val) {
           return val.substr(start_offset,end_offset-start_offset);
@@ -171,7 +171,7 @@ function retrieve_changes()
       }
       if (anno_btn == 3)
       {
-          console.log("retrieving phonetic_trans");
+        console.log("retrieving phonetic_trans");
         wrapText(ele, start_offset, length, tagName ,null);
         /*var stri = $j(ele).html(function(i,val) {
           return val.substr(start_offset,end_offset-start_offset);

@@ -116,16 +116,16 @@ function retrieve_changes()
   {
       console.log("retrieving continues orderly");
       var xpath = obj['change'][j].xpath;
-      console.log("xpath":xpath);
+      console.log(xpath);
       var start_offset = obj['change'][j].start_offset;
-      console.log("start_offset":start_offset);
+      console.log(start_offset);
       var end_offset = obj['change'][j].end_offset;
-      console.log("end_offset":end_offset);
+      console.log(end_offset);
       var length = start_offset - end_offset;
       var anno_btn = obj['change'][j].func_triggered;
-      console.log("anno_btn":anno_btn);
+      console.log(anno_btn);
       var tagName = obj['change'][j].tagName;
-      console.log("tagName":tagName);
+      console.log(tagName);
       var ele = anno_getElementByXpath(xpath);
       console.log(ele);
       if (anno_btn == 1)

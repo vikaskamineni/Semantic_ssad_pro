@@ -33,8 +33,8 @@ function func_tagging(stri)
         var pre = anno_getElementByXpath(xpath);
         var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
         console.log(offset);
-        start = offset;
-        end = offset + temp;
+        var start = offset;
+        var end = offset + temp;
         var currentLocation = window.location.href;
         var obj = JSON.parse(jsonStr);
         if (start != end)

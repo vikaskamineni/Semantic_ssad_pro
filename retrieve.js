@@ -116,7 +116,13 @@ function get_phonetics(str){
 function retrieve_changes()
 {
   console.log("retrieving starts");
-  var obj = JSON.parse(jsonStr);
+  var xhr = new XMLHttpRequest();
+  //var phonetic_tran = "Default_value";
+  xhr.open("GET", "//localhost:5000/framework", true); // replace localhost afterwards.
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+  xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+  var jsonstr = xhr.responseText 
+  var obj = JSON.parse(jsonstr);
   console.log(obj);
   var j=0;
   while(obj['change'][j]!=null)

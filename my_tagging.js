@@ -2,6 +2,7 @@
 
 function tagging_function(stri1,stri2)
 {
+    console.log("entered highlight");
     if ( stri2 === "yellow")
         anno_btn = 11;
     if ( stri2 === "red")
@@ -88,6 +89,7 @@ function tag_function()
 
 function change_font(stri1,stri2)
 {
+    console.log("entered italics");
     if (stri1 === "arial")
         anno_btn = 13;
     if (stri1 === "courier")
@@ -154,6 +156,7 @@ function change_font(stri1,stri2)
 
 
 function underline() {
+    console.log("entered underline");
     anno_btn = 20
     document.onclick = function(event) {
         if (event === undefined) {
@@ -212,6 +215,7 @@ function underline() {
 
 function conv_to_href()
 {
+    console.log("entered link");
     anno_btn = 18
     document.onclick = function(event) {
         if (event === undefined) {
@@ -288,6 +292,7 @@ function conv_to_href()
 }
 function header_func(stri1,stri2)
 {
+    console.log("entered heading");
     anno_btn = 14;
     document.onclick = function(event) {
         if (event === undefined) {
@@ -342,6 +347,7 @@ function header_func(stri1,stri2)
 }
 function bold_tag(stri)
 {
+    console.log("entered bold");
     anno_btn = 19
     document.onclick = function(event) {
         if (event === undefined) {

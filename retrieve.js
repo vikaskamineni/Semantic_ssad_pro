@@ -280,7 +280,14 @@ function retrieve_changes()
       if (anno_btn == 17)
       {
           console.log("retrieving underline changes");
-        wrapText(ele, start_offset, length, tagName ,"text-decoration:underline");
+        //wrapText(ele, start_offset, length, tagName ,"text-decoration:underline");
+          var str = ele.innerHTML;
+          str = str.substr(0, start_offset) +
+            '<span style = "text-decoration:underline">' + 
+            str.substr(start_offset, end_offset - start_offset + 1) +
+            '</span>' +
+            str.substr(end_offset + 1);
+          ele.innerHTML = str;
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "text-decoration:underline" >" +

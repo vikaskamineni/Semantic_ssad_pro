@@ -56,13 +56,13 @@ function toggle_tagging()
     //}
     //else
     //{
-    if(document.getElementById("page-wrap-new").hasAttribute("hidden"))
+    if(document.getElementById("page_wrap_new").hasAttribute("hidden"))
     {
     }
     else
     {
         console.log("add hidden");
-        document.getElementById("page-wrap-new").setAttribute("hidden",true);
+        document.getElementById("page_wrap_new").setAttribute("hidden",true);
     }
     if(document.getElementById("search-wrap").hasAttribute("hidden"))
     {

@@ -81,7 +81,7 @@
 		"newTagClass": null,
 		"innerHTMLText":null,
 		"innerHTMLFile": "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/test.html",
-		"fileJS": ["https://rawgit.com/raghavmittal101/tagging/master/js/tagging.js"],
+		"fileJS": ["https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/rtag.js"],
 		"JSParentTagName": "head",
 		"JSParentTagNameIndex": 0,
 		"menuButtonName": "rtag",

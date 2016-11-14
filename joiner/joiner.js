@@ -33,17 +33,17 @@ annolet.getJSON = function(){
 	console.log(pathJSON);
       	//console.log("fup");
 	
-      	$j.ajaxSetup({
+      	/*$j.ajaxSetup({
       			async: false
-      	});
+      	});*/
       	$j.getJSON(pathJSON, function(json) {
         	annolet.metafile = json;
 		console.log("entered");
 	  	console.log(annolet.metafile);
       	});
-      	$j.ajaxSetup({
+      	/*$j.ajaxSetup({
 		async: true
-      	});
+      	});*/
       	//console.log("fdec");
 };
 

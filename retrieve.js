@@ -471,7 +471,7 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<a style='color:blue' href=tagName>" + oldHtml.slice(spanStart, spanStop) + "</a>" +
+                     "<a style='color:blue' href= '" + tagName + "'>" + oldHtml.slice(spanStart, spanStop) + "</a>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;
@@ -542,7 +542,7 @@ function retrieve_changes()
         });
         ele.innerHTML = retVal;
       }
-      if(tagName == "event-location-street" ||tagName == "event-location-area" ||tagName == "event-location-city" ||tagName == "organization-owner" ||tagName == "organisation-employee" ||tagName == "organization-contact" ||tagName == "organization-location-street" ||tagName == "organization-location-area" ||tagName == "organization-location-city" || tagName == "person-name-firstname" ||tagName == "person-name-secondname" ||tagName == "person-address-street" ||tagName == "person-address-city" || tagName == "person-address-area" || tagName == "person-contact" || tagName == "date" || tagName == "currency-rupee" || tagName == "currency-dollar" || tagName == "currency-euro" || tagName == "unit-si" || tagName == "unit-cgi" || tagName == "unit-fps")
+      if(tagName == "event-name"|| tagName = "event-location-street" ||tagName == "event-location-area" ||tagName == "event-location-city" ||tagName == "organization-owner" ||tagName == "organisation-employee" ||tagName == "organization-contact" ||tagName == "organization-location-street" ||tagName == "organization-location-area" ||tagName == "organization-location-city" || tagName == "person-name-firstname" ||tagName == "person-name-secondname" ||tagName == "person-address-street" ||tagName == "person-address-city" || tagName == "person-address-area" || tagName == "person-contact" || tagName == "date" || tagName == "currency-rupee" || tagName == "currency-dollar" || tagName == "currency-euro" || tagName == "unit-si" || tagName == "unit-cgi" || tagName == "unit-fps")
       {
         console.log("retrieving rtag changes");
         var retVal;
@@ -564,8 +564,9 @@ function retrieve_changes()
                  return oldHtml;
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
+              //var string = tagName.toString();
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span property=tagName >" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span property='" + tagName + "'>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;

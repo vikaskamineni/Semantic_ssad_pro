@@ -13,20 +13,20 @@ function wrapText(elem, start, end, tagName ,st) {
     console.log(after);
     var letters = elem.textContent.substr(start, end - start);
     console.log(letters);
-    elem.innerHTML = '';
-    var text1=document.createTextNode(before);
+    //elem.innerHTML = '';
+    //var text1=document.createTextNode(before);
     var text2=document.createElement('span');
     var prop1 = document.createAttribute('property');
     var prop2 = document.createAttribute('style');
-    var text3=document.createTextNode(after);
+    //var text3=document.createTextNode(after);
     prop1.value = tagName;
     prop2.value = st;
     text2.setAttributeNode(prop1);
     text2.setAttributeNode(prop2);
     text2.innerHTML = letters;
-    elem.appendChild(text1);
+    //elem.appendChild(text1);
     elem.appendChild(text2);
-    elem.appendChild(text3);
+    //elem.appendChild(text3);
 }
 
 function wrapa(elem , start, length, tagName, st) {
@@ -300,7 +300,7 @@ function retrieve_changes()
           console.log("retrieving underline changes");
           
         //wrapText(ele, start_offset, length, tagName ,"text-decoration:underline");
-          var str = ele.innerHTML;
+          var str = ele.textContent;
           console.log(str.substr(start_offset, end_offset - start_offset + 1));
           console.log(str.substr(end_offset + 1));
           str = str.substr(0, start_offset) +

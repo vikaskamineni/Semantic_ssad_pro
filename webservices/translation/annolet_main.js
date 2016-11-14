@@ -1,5 +1,5 @@
 
-var $j = jQuery.noConflict();
+//var $j = jQuery.noConflict();
 var language_trans = "default_value";
 
 function get_languagetrans(str,fr,to){

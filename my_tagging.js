@@ -243,7 +243,7 @@ function conv_to_href()
             link.setAttribute('href',www);
             link.setAttribute('style','color:blue');
            // link.id = SID;
-            link.className="myClass";
+            //link.className="myClass";
             document.getElementsByClassName('myClass').onmouseover=function()
             {
                 this.style.backgroundColor = "green";

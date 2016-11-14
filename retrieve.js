@@ -298,9 +298,9 @@ function retrieve_changes()
       if (anno_btn == 17)
       {
           console.log("retrieving underline changes");
-          
+          var retVal;
         //wrapText(ele, start_offset, length, tagName ,"text-decoration:underline");
-          var str = ele.textContent;
+          /*var str = ele.textContent;
           console.log(str.substr(start_offset, end_offset - start_offset + 1));
           console.log(str.substr(end_offset + 1));
           str = str.substr(0, start_offset) +
@@ -316,6 +316,32 @@ function retrieve_changes()
                 "</span>" +
                 val.substr(end_offset);
         });*/
+          $j(ele).html(function(i,oldHtml) {
+              var i, c, spanStart, spanStop;
+              for (i = 0, c = 0; i < oldHtml.length; i++) {
+                  if (c === offset)
+                     spanStart = i;
+                  else if (c === offset+length) {
+                     spanStop = i;
+                     break;
+                  }
+                  if (oldHtml.charAt(i) === "<"){
+                     while (++i < oldHtml.length && oldHtml.charAt(i) != ">" && oldHtml.charAt(i+1) != "<");
+                  }else
+                     c++;
+              }        
+              if (spanStart === undefined)
+                 return oldHtml;
+              if (spanStop === undefined)
+                 spanStop = oldHtml.length;
+              retVal = oldHtml.slice(0, spanStart) +
+                     "<span>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     oldHtml.slice(spanStop);
+              //alert("New html: \n\n" + retVal);
+              return retVal;
+              
+          });
+          ele.innerHTML = retVal;
       }
       if (anno_btn == 18)
       {

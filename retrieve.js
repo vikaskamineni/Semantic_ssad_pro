@@ -6,6 +6,7 @@ function wrapText(elem, start, length, tagName ,st) {
     console.log(whole);
     console.log(whole_length);
     console.log(elem.textContent.substr(0,2));
+    console.log(elem.textContent.substr(5,10));
     var before = elem.textContent.substr(0, start);
     console.log(before);
     var after = elem.textContent.substr(start + length, elem.textContent.length -length);

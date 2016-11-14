@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-function wrapText(elem, start, length, tagName ,st) {
+function wrapText(elem, start, end, tagName ,st) {
     var whole = elem.textContent;
     var whole_length = elem.textContent.length;
     console.log(whole);
@@ -9,9 +9,9 @@ function wrapText(elem, start, length, tagName ,st) {
     console.log(elem.textContent.substr(5,10));
     var before = elem.textContent.substr(0, start);
     console.log(before);
-    var after = elem.textContent.substr(start + length, elem.textContent.length);
+    var after = elem.textContent.substr(end, elem.textContent.length - end);
     console.log(after);
-    var letters = elem.textContent.substr(start, start + length);
+    var letters = elem.textContent.substr(start, end - start);
     console.log(letters);
     elem.innerHTML = '';
     var text1=document.createTextNode(before);
@@ -156,7 +156,7 @@ function retrieve_changes()
       if (anno_btn == 1)
       {
         console.log("retrieving tagger changes");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,null);
+        wrapText(ele, start_offset, end_offset, tagName ,null);
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span property=tagName>" +
@@ -168,7 +168,7 @@ function retrieve_changes()
       if (anno_btn == 2)
       {
         console.log("retrieving language_trans changes");
-        wrapText(ele, start_offset,start_offset - end_offset , tagName ,null);
+        wrapText(ele, start_offset,end_offset , tagName ,null);
         /*var stri = $j(ele).html(function(i,val) {
           return val.substr(start_offset,end_offset-start_offset);
         });*/
@@ -197,7 +197,7 @@ function retrieve_changes()
       if (anno_btn == 3)
       {
         console.log("retrieving phonetic_trans");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,null);
+        wrapText(ele, start_offset, end_offset, tagName ,null);
         /*var stri = $j(ele).html(function(i,val) {
           return val.substr(start_offset,end_offset-start_offset);
         });*/
@@ -226,7 +226,7 @@ function retrieve_changes()
       if (anno_btn == 11)
       {
         console.log("retrieving bg_yellow color");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"background-color:yellow");
+        wrapText(ele, start_offset, end_offset, tagName ,"background-color:yellow");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "background-color:yellow" >" +
@@ -238,7 +238,7 @@ function retrieve_changes()
       if (anno_btn == 12)
       {
         console.log("retrieving bg_red color");  
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"background-color:red");
+        wrapText(ele, start_offset, end_offset, tagName ,"background-color:red");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "background-color:red" >" +
@@ -250,7 +250,7 @@ function retrieve_changes()
       if (anno_btn == 13)
       {
                     console.log("retrieving italics arial");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"font-family:arial");
+        wrapText(ele, start_offset, end_offset, tagName ,"font-family:arial");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "font-family:arial" >" +
@@ -262,7 +262,7 @@ function retrieve_changes()
       if (anno_btn == 14)
       {
         console.log("retrieving italics courier");  
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"font-family:courier");
+        wrapText(ele, start_offset, end_offset, tagName ,"font-family:courier");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "font-family:courier" >" +
@@ -274,7 +274,7 @@ function retrieve_changes()
       if (anno_btn == 15)
       {
         console.log("retrieving italics Helvetica");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"font-family:Helvetica");
+        wrapText(ele, start_offset, end_offset, tagName ,"font-family:Helvetica");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "font-family:Helvetica" >" +
@@ -286,7 +286,7 @@ function retrieve_changes()
       if (anno_btn == 16)
       {
           console.log("retrieving italics Times");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"font-family:Times");
+        wrapText(ele, start_offset, end_offset, tagName ,"font-family:Times");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "font-family:Times" >" +
@@ -320,7 +320,7 @@ function retrieve_changes()
       if (anno_btn == 18)
       {
           console.log("retrieving convtohref");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,"text-color:blue");  
+        wrapText(ele, start_offset, end_offset, tagName ,"text-color:blue");  
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<a style = "text-color:blue" href = tagName >" +
@@ -332,7 +332,7 @@ function retrieve_changes()
       if (anno_btn == 19)
       {
           console.log("retrieving bold");
-        wrapa(ele, start_offset, start_offset - end_offset, tagName ,"font-weight:bold");
+        wrapa(ele, start_offset, end_offset, tagName ,"font-weight:bold");
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span style = "font-wieght:bold" >" +
@@ -344,7 +344,7 @@ function retrieve_changes()
       if (anno_btn == 20)
       {
           console.log("retrieving header");
-        wrapheading(ele, start_offset, start_offset - end_offset, tagName ,null);  
+        wrapheading(ele, start_offset, end_offset, tagName ,null);  
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<h1>" +
@@ -356,7 +356,7 @@ function retrieve_changes()
       if(tagName == "event-date-startdate"|| tagName == "event-date-enddate" || tagName == "event-location-street" ||tagName == "event-location-area" ||tagName == "event-location-city" ||tagName == "organization-owner" ||tagName == "organisation-employee" ||tagName == "organization-contact" ||tagName == "organization-location-street" ||tagName == "organization-location-area" ||tagName == "organization-location-city" || tagName == "person-name-firstname" ||tagName == "person-name-secondname" ||tagName == "person-address-street" ||tagName == "person-address-city" || tagName == "person-address-area" || tagName == "person-contact" || tagName == "date-startdate" || tagName == "date-enddate" || tagName == "currency-rupee" || tagName == "currency-dollar" || tagName == "currency-euro" || tagName == "unit-si" || tagName == "unit-cgi" || tagName == "unit-fps")
       {
           console.log("retrieving rtag changes");
-        wrapText(ele, start_offset, start_offset - end_offset, tagName ,null);
+        wrapText(ele, start_offset,  end_offset, tagName ,null);
         /*$j(ele).html(function(i,val) {
           return val.substr(0,start_offset) +
                 "<span property = tagName >" +

@@ -129,11 +129,12 @@ annolet.inject.injectHTML = function(service) {
                 console.log("injectingHTML2");
                 }
             });
-	    console.log("injected HTML");
+		console.log("injected HTML");
         }
         else if(service.innerHTMLFile === null && service.innerHTMLText !== null){
-            parent.innerHTML += "\n" + service.innerHTMLText;
-            console.log("injectingHTML");
+            	parent.innerHTML += "\n" + service.innerHTMLText;
+            	console.log("injectingHTML");
+		
         }
     }
 };

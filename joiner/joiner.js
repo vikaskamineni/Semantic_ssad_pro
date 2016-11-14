@@ -133,7 +133,7 @@ annolet.inject.injectHTML = function(service) {
         }
         else if(service.innerHTMLFile === null && service.innerHTMLText !== null){
             	parent.innerHTML += "\n" + service.innerHTMLText;
-            	console.log("injectingHTML");
+            	console.log("injectingHTML3");
 		
         }
     }

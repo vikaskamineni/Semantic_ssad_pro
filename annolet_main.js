@@ -6,8 +6,6 @@ var ID = 0;
 var $j = jQuery.noConflict();
 var language_trans = "default_value";
 var phonetic_trans = "default_value";
-annolet_main();
-
 var annolet_btn;
 var count=0;
 var cnt=0;
@@ -47,17 +45,17 @@ function annolet_createContainer() {
     document.getElementById('annolet-container').innerHTML = "<ul id='annolet' class=annolet-tools-menu>"+
     "<span id='annolet' style='border-radius:10px;  color:orange;font-weight:bold;font-family:monospace; font-size:1.3em'>AnnoLet!</span>"+
     "<span id='annolet' style='color:grey;'>|</span>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>TRANSLATE</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>PHONETICS</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>TEXT2SPEECH</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TAGGER</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>rtag</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=11;'>Modify</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=10;'>edit</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=12;'>save</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=13;'>retrieve</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=annolet-exit-btn onclick='annolet_btn=0;'>exit</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick="+ run_langtrans()+">TRANSLATE</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick="+ run_phoneticConversion()+">PHONETICS</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick="+ anno_audio() +">TEXT2SPEECH</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick="+ do_tagging() +">TAGGER</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick="+ toggle_tagging() +">rtag</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick="+ tag_function() +">Tag_function</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick="+ search_function() +">Modify</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick="+ anno_edit() +">edit</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick="+ store_changes() +">save</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick="+ retrieve_changes() +">retrieve</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=annolet-exit-btn>exit</li>"+
     "</ul>"; //HTML to create a list of options
 }
 
@@ -377,6 +375,8 @@ function add_func_tagging()
     
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_tagging.js">    </script>');
     
+    
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/webservices/tagging/annolet_main.js">    </script>');
     $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style.css" type="text/css" media="screen, projection"/>');
   
 }
@@ -465,4 +465,4 @@ function disableAllLinks(){
         anchors[i].onclick = function() {return(false);};
     }
 }
-
+annolet_main();

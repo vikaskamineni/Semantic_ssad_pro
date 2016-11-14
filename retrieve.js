@@ -238,9 +238,9 @@ function retrieve_changes()
         $j(ele).html(function(i,oldHtml) {
               var i, c, spanStart, spanStop;
               for (i = 0, c = 0; i < oldHtml.length; i++) {
-                  if (c === offset)
+                  if (c === start_offset)
                      spanStart = i;
-                  else if (c === offset+length) {
+                  else if (c === end_offset) {
                      spanStop = i;
                      break;
                   }
@@ -346,9 +346,9 @@ function retrieve_changes()
           $j(ele).html(function(i,oldHtml) {
               var i, c, spanStart, spanStop;
               for (i = 0, c = 0; i < oldHtml.length; i++) {
-                  if (c === offset)
+                  if (c === start_offset)
                      spanStart = i;
-                  else if (c === offset+length) {
+                  else if (c === end_offset) {
                      spanStop = i;
                      break;
                   }

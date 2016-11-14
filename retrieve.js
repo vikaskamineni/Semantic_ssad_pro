@@ -116,12 +116,22 @@ function get_phonetics(str){
 function retrieve_changes()
 {
   console.log("retrieving starts");
+  var jsonstr;
   var xhr = new XMLHttpRequest();
   //var phonetic_tran = "Default_value";
   xhr.open("GET", "//localhost:5000/framework", true); // replace localhost afterwards.
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-  var jsonstr = xhr.responseText 
+  xhr.onreadystatechange = processRequest;
+
+  function processRequest(e)
+  {
+    if (xhr.readyState == 4)
+    {
+      console.log('pho trans set');
+      jsonstr = xhr.responseText;
+    }
+  }
   var obj = JSON.parse(jsonstr);
   console.log(obj);
   var j=0;

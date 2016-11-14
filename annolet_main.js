@@ -1,11 +1,23 @@
-
+var jsonStr = '{ "change":[] }';
+var anno_btn = 0;
+var start = 0;
+var end = 0;
+var ID = 0;
 var $j = jQuery.noConflict();
-
+var language_trans = "default_value";
+var phonetic_trans = "default_value";
 annolet_main();
 
 var annolet_btn;
 var count=0;
 var cnt=0;
+
+$j("#annolet-exit-btn").click(function(e) {
+    if (e === undefined) {
+        e = window.event;
+    } // for IE
+    e.stopPropagation();
+});
 // function to create annolet controls container
 function annolet_createContainer() {
     // appending a CSS stylesheet to head of webpage
@@ -25,16 +37,17 @@ function annolet_createContainer() {
     document.getElementById('annolet-container').innerHTML = "<ul id='annolet' class=annolet-tools-menu>"+
     "<span id='annolet' style='border-radius:10px;  color:orange;font-weight:bold;font-family:monospace; font-size:1.3em'>AnnoLet!</span>"+
     "<span id='annolet' style='color:grey;'>|</span>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TagIt!</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>TRANSLATE</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>PHONETICS</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>TEXT2SPEECH</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=1;'>TAGGER</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>rtag</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=2;'>Tag_function</li>"+
-    //"<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=3;'>Phonetics</li>"+
-    //"<li id='annolet' class=annolet-tools-menu-item id=highlight-btn onclick='annolet_btn=4;'>Translation</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=rtag-btn onclick='annolet_btn=6;'>ref_tag</li>"+
-    //"<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=9;'>audio</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=11;'>Modify</li>"+
     "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=10;'>edit</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=11;'>Search&Modify</li>"+
-    //"<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=12;'>pop_up</li>"+
-    "<li id='annolet' class=annolet-tools-menu-item id=exit-btn onclick='annolet_btn=0;'>exit</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=12;'>save</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=audio-btn onclick='annolet_btn=13;'>retrieve</li>"+
+    "<li id='annolet' class=annolet-tools-menu-item id=annolet-exit-btn onclick='annolet_btn=0;'>exit</li>"+
     "</ul>"; //HTML to create a list of options
 }
 
@@ -114,14 +127,35 @@ function get_languagetrans(str,fr,to){
 
 //function for getting phonetic
 function anno_phonetic(xpath) {
-  clicked_element = anno_getElementByXpath(xpath);
+  var span = document.createElement("span");
+  var prop = document.createAttribute("property");
+  var span_id = document.createAttribute("id");
+  ID = ID + 1;
+  var SID = ID.toString();
+  if (window.getSelection().toString().length!=0)
+  {
+      prop.value = "phonetics";
+      span_id.value = SID;
+      span.setAttributeNode(prop);
+      span.setAttributeNode(span_id);
+      var sel = window.getSelection();
+      if(sel.rangeCount){
+          var range = sel.getRangeAt(0).cloneRange();
+          range.surroundContents(span);
+          sel.removeAllRanges();
+          sel.addRange(range);
+      }
+  }
+  var span_ele = document.getElementById(SID);
+  var fin_xpath = anno_getXpathTo(span_ele);
+  var clicked_element = anno_getElementByXpath(fin_xpath);
   if (clicked_element.id == "mark" || clicked_element.id == "annolet") {
       console.log('not permitted');
   }
   else {
     //if element is already translated
-  if (anno_getElementByXpath(xpath).id != "phonetic" || !(anno_getElementByXpath(xpath).id)) {
-    var text_to_translate = $j(anno_getElementByXpath(xpath)).html();
+  if (anno_getElementByXpath(fin_xpath).id != "phonetic" || !(anno_getElementByXpath(fin_xpath).id)) {
+    var text_to_translate = $j(anno_getElementByXpath(fin_xpath)).html();
     get_phonetics(text_to_translate);
     var timer = window.setInterval
     (
@@ -130,7 +164,8 @@ function anno_phonetic(xpath) {
         if(typeof phonetic_trans !== "default_value")
         {
           console.log("text changing");
-          $j(anno_getElementByXpath(xpath)).text(phonetic_trans);
+          $j(clicked_element).text(phonetic_trans);
+          $j(clicked_element).id = "phonetic";
           phonetic_trans = "default_value";
           window.clearInterval(timer);
         }
@@ -139,7 +174,7 @@ function anno_phonetic(xpath) {
           console.log("returned without change");
         }
       }
-      ,1000
+      ,2
     );
   }
   else {
@@ -148,18 +183,72 @@ function anno_phonetic(xpath) {
   }
 }
 
+//------------------------------------------------------------------------
+
+
+
+//main function which will execute other functions
+function run_phoneticConversion() {
+    anno_btn = 3;
+    document.onclick = function(event) {
+        if (event === undefined) {
+            event = window.event;
+        } // for IE
+        var target = 'target' in event ? event.target : event.srcElement; // for IE
+        var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
+        var xpath = anno_getXpathTo(target);
+        anno_phonetic(xpath);
+        var sel = window.getSelection();
+        var temp = window.getSelection().toString().length;
+        console.log(temp);
+        var pre = anno_getElementByXpath(xpath);
+        var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+        console.log(offset);
+        start = offset;
+        end = offset + temp;
+        var currentLocation = window.location.href;
+        var obj = JSON.parse(jsonStr);
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+        jsonStr = JSON.stringify(obj);
+        console.log("inside func");
+        console.log(jsonStr);
+        
+    };
+}
+
 
 //function for getting phonetic
 function anno_language(xpath) {
-  clicked_element = anno_getElementByXpath(xpath);
+  var span = document.createElement("span");
+  var prop = document.createAttribute("property");
+  var span_id = document.createAttribute("id");
+  ID = ID + 1;
+  var SID = ID.toString();
+  if (window.getSelection().toString().length!=0)
+  {
+      prop.value = "language";
+      span_id.value = SID;
+      span.setAttributeNode(prop);
+      span.setAttributeNode(span_id);
+      var sel = window.getSelection();
+      if(sel.rangeCount){
+          var range = sel.getRangeAt(0).cloneRange();
+          range.surroundContents(span);
+          sel.removeAllRanges();
+          sel.addRange(range);
+      }
+  }
+  var span_ele = document.getElementById(SID);
+  var fin_xpath = anno_getXpathTo(span_ele);
+  var clicked_element = anno_getElementByXpath(fin_xpath);
   //if element is already highlighted
   if (clicked_element.id == "mark" || clicked_element.id == "annolet") {
       console.log('not permitted');
   }
   else {
   //if element is already translated
-  if (anno_getElementByXpath(xpath).id != "language" || !(anno_getElementByXpath(xpath).id)) {
-    var text_to_translate = $j(anno_getElementByXpath(xpath)).html();
+  if (anno_getElementByXpath(fin_xpath).id != "language" || !(anno_getElementByXpath(fin_xpath).id)) {
+    var text_to_translate = $j(anno_getElementByXpath(fin_xpath)).html();
     get_languagetrans(text_to_translate,'en','hi');
     var timer = window.setInterval
     (
@@ -168,7 +257,8 @@ function anno_language(xpath) {
         if(typeof language_trans !== "default_value")
         {
           console.log("text changing");
-          $j(anno_getElementByXpath(xpath)).text(language_trans);
+          $j(anno_getElementByXpath(fin_xpath)).text(language_trans);
+          $j(anno_getElementByXpath(fin_xpath)).id("language");
           language_trans = "default_value";
           window.clearInterval(timer);
         }
@@ -185,6 +275,39 @@ function anno_language(xpath) {
     }
   }
 }
+
+//------------------------------------------------------------------------
+
+
+
+//main function which will execute other functions
+function run_langtrans() {
+    anno_btn = 2;
+    document.onclick = function(event) {
+        if (event === undefined) {
+            event = window.event;
+        } // for IE
+        var target = 'target' in event ? event.target : event.srcElement; // for IE
+        var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
+        var xpath = anno_getXpathTo(target);
+        anno_language(xpath);
+        var sel = window.getSelection();
+        var temp = window.getSelection().toString().length;
+        console.log(temp);
+        var pre = anno_getElementByXpath(xpath);
+        var offset = getCharOffsetRelativeTo(pre, sel.anchorNode, sel.anchorOffset);
+        console.log(offset);
+        start = offset;
+        end = offset + temp;
+        var currentLocation = window.location.href;
+        var obj = JSON.parse(jsonStr);
+        obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end});
+        jsonStr = JSON.stringify(obj);
+        console.log("inside func");
+        console.log(jsonStr);
+    };
+}
+
 
 
 function anno_audio(xpath)
@@ -213,35 +336,25 @@ function anno_audio(xpath)
     }
 }
 
-function anno_edit(xpath)
+function anno_edit()
 {
-        document.getElementsByTagName("body")[0].setAttribute('contenteditable','true');
+        if (document.getElementsByTagName("body")[0].contentEditable== "true") 
+        {
+                document.getElementsByTagName("body")[0].contentEditable= "false";
+        }
+        else
+        {
+                document.getElementsByTagName("body")[0].setAttribute('contenteditable','true');
+        }
 }
 
-function anno_remove_edit(xpath)
-{
-  document.getElementsByTagName("body")[0].removeAttribute('contenteditable');
-  document.getElementById("page-wrap").setAttribute("hidden","");
-  $j(document).ready(function(){
-    $j("[property = 'event-name']").each( function() {
-    //console.log("stri correct");
-    //var format = "MMMM Do, YYYY";
 
-    var $this = $j( this );
-    //var old_date = $j.trim($this.text());
-    //var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
-    $this.css("background-color","");
-    //$this.text($this.text().replace(old_date, new_date));
-  });
-  });
-      
-}
 //------------------------------------------------------------------------
 function add_tagging()
 {
     $j("body").append('<div id=\"page-wrap\" hidden> <ul class=\"annolet_dropdown\"> <li><a href=\"#\" >Event</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'event-name\')\">Name</a> </li> <li> <a href=\"#\">Date</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-startdate\')\" >Start date</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-date-enddate\')\">End date</a></li> </ul> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-street\')\" >Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'event-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Organization</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-owner\')\">Owner</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-employee\')\" >Employee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'organization-contact\')\">Contact</a> </li> <li> <a href=\"#\">Location</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'organization-location-city\')\">City</a></li> </ul> </li> </ul> </li> <li><a href=\"#\" >Person</a> <ul class=\"sub_menu\"> <li> <a href=\"#\">Name</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-firstname\')\" >First Name</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-name-secondname\')\">Second Name</a></li> </ul> </li> <li> <a href=\"#\">Address</a> <ul> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-street\')\">Street</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-area\')\">Area</a></li> <li><a href=\"#\" onclick=\"func_tagging(\'person-address-city\')\">City</a></li> </ul> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-contact\')\">Contact</a> </li> </ul> </li> <li><a href=\"#\" >Date</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'date-startdate\')\">Start date</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'person-enddate\')\">End date</a> </li> </ul> </li> <li><a href=\"#\" >Currency</a> <ul class=\"sub_menu\"> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-rupee\')\">Rupee</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-dollar\')\">Dollar</a> </li> <li> <a href=\"#\" onclick=\"func_tagging(\'currency-euro\')\">Euro</a> </li> </ul> </li> <li><a href=\"#\" onclick=\"func_tagging(\'unit\')\">Unit</a>  </li> </ul> </div>');
 
-  $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/tagging.js">    </script>');
+  $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/rtag.js">    </script>');
 
   $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/style.css" type="text/css" media="screen, projection"/>');
   
@@ -256,6 +369,12 @@ function add_func_tagging()
     
     $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style.css" type="text/css" media="screen, projection"/>');
   
+}
+function add_persistence()
+{
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/persist.js">    </script>');
+    
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/retrieve.js">    </script>');
 }
 function add_search_tagging()
 {
@@ -316,7 +435,7 @@ function pop_up_func()
             sel.addRange(range);
         }
 }
-function anno_rtag(xpath)
+/*function anno_rtag(xpath)
 {
     //if((count%2)==1)
     //{
@@ -347,8 +466,8 @@ function anno_rtag(xpath)
     }
     
     //toggle_tagging();
-}
-function toggle_tagging()
+}*/
+/*function toggle_tagging()
 {
   var element = document.getElementById("page-wrap") ;
   if(element.hasAttribute("hidden"))
@@ -374,8 +493,8 @@ function toggle_tagging2()
     {
         element.setAttribute("hidden","");
     }
-}
-function tag_function()
+}*/
+/*function tag_function()
 {
     //if(cnt%2==1)
     //{
@@ -426,7 +545,7 @@ function search_function()
         element.setAttribute("hidden",true);
     }
 }
-
+*/
 //main function which will execute other functions
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
@@ -451,8 +570,7 @@ function annolet_main() {
           anno_phonetic(xpath);
         }
         else if (annolet_btn == 6){
-           count++;
-           anno_rtag(xpath);
+           toggle_tagging();
         }
         else if (annolet_btn===9)
         {
@@ -464,7 +582,6 @@ function annolet_main() {
         }
         else if (annolet_btn == 2)
         {
-            cnt++;
             tag_function();
         }
         else if (annolet_btn == 11)
@@ -473,11 +590,11 @@ function annolet_main() {
         }
         else if (annolet_btn == 12)
         {
-            pop_up_func();
+            store_changes();
         }
-         else if (annolet_btn===0)
+        else if (annolet_btn == 13)
         {
-             anno_remove_edit(xpath);
+            retrieve_changes();
         }
     };
 }
@@ -516,20 +633,3 @@ function tagObject(xpath, obj){
       tagName: tagName,
       tagInfo: tagInfo,
       xpath: xpath
-    }
-  )
-}
-
-//function for highlighting element
-function anno_highlight(xpath) {
-    clicked_element = anno_getElementByXpath(xpath);
-    //if element is already highlighted
-    if (clicked_element.id == "mark" || clicked_element.id == "annolet") {
-        console.log('not permitted');
-    }
-    else {
-      // hightlight selected element and store it
-      $j(anno_getElementByXpath(xpath)).wrapInner("<span id='mark' style='background:yellow;'></span>");
-      annolet_insertIntoObject(xpath); // storing into object
-    }
-}

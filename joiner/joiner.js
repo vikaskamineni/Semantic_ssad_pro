@@ -126,9 +126,10 @@ annolet.inject.injectHTML = function(service) {
         if(service.innerHTMLFile !== null && service.innerHTMLText === null ){
             $j.ajax({ url: service.innerHTMLFile, success: function(data) { 
                 parent.innerHTML += "\n" + data;
-                console.log("injectingHTML");
-                } 
+                console.log("injectingHTML2");
+                }
             });
+	    console.log("injected HTML");
         }
         else if(service.innerHTMLFile === null && service.innerHTMLText !== null){
             parent.innerHTML += "\n" + service.innerHTMLText;

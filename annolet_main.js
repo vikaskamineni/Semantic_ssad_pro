@@ -18,6 +18,16 @@ $j("#annolet-exit-btn").click(function(e) {
     } // for IE
     e.stopPropagation();
 });
+
+
+function getCharOffsetRelativeTo(container, node, offset) {
+    var range = document.createRange();
+    range.selectNodeContents(container);
+    range.setEnd(node, offset);
+    return range.toString().length;
+}
+
+
 // function to create annolet controls container
 function annolet_createContainer() {
     // appending a CSS stylesheet to head of webpage
@@ -435,122 +445,12 @@ function pop_up_func()
             sel.addRange(range);
         }
 }
-/*function anno_rtag(xpath)
-{
-    //if((count%2)==1)
-    //{
-    console.log("remove hidden");
-    var temp=document.getElementById("page-wrap");
-    console.log(temp);
-    document.getElementById("page-wrap").removeAttribute("hidden");
-    //}
-    //else
-    //{
-    if(document.getElementById("page_wrap_new").hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        console.log("add hidden");
-        var temp=document.getElementById("page_wrap_new");
-        console.log(temp);
-        document.getElementById("page_wrap_new").setAttribute("hidden",true);
-    }
-    if(document.getElementById("search-wrap").hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        console.log("add hidden");
-        document.getElementById("search-wrap").setAttribute("hidden",true);
-    }
-    
-    //toggle_tagging();
-}*/
-/*function toggle_tagging()
-{
-  var element = document.getElementById("page-wrap") ;
-  if(element.hasAttribute("hidden"))
-  {
-    console.log("remove hidden");
-    element.removeAttribute("hidden");
-    console.log(element);
-  }
-  else
-  {
-      console.log("add hidden");
-    element.setAttribute("hidden",true);
-      console.log(element);
-  }
-}
-function toggle_tagging2()
-{
-    var element = document.getElementById("page-wrap");
-    if(element.hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        element.setAttribute("hidden","");
-    }
-}*/
-/*function tag_function()
-{
-    //if(cnt%2==1)
-    //{
-    console.log("remove new hidden");
-    var temp=document.getElementById("page_wrap_new");
-    console.log(temp);
-    document.getElementById("page_wrap_new").removeAttribute("hidden");
-    //}
-    //else
-    //{
-    if(document.getElementById("page-wrap").hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        console.log("add hidden");
-        document.getElementById("page-wrap").setAttribute("hidden",true);
-    }
-    if(document.getElementById("search-wrap").hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        console.log("add hidden");
-        document.getElementById("search-wrap").setAttribute("hidden",true);
-    }
-    
- 
-}
-
-function search_function()
-{
-    document.getElementById("search-wrap").removeAttribute("hidden");
-    if(document.getElementById("page-wrap").hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        console.log("add hidden");
-        document.getElementById("page-wrap").setAttribute("hidden",true);
-    }
-    var element = document.getElementById("page_wrap_new");
-    if(element.hasAttribute("hidden"))
-    {
-    }
-    else
-    {
-        element.setAttribute("hidden",true);
-    }
-}
-*/
 //main function which will execute other functions
 function annolet_main() {
     disableAllLinks()  // it will disable all the links present in webpage iteratively
     annolet_createContainer();
     add_tagging();
+    add_persistence();
     add_func_tagging();
     add_search_tagging();
     document.onclick = function(event) {
@@ -564,10 +464,10 @@ function annolet_main() {
             anno_highlight(xpath);
         }
         if(annolet_btn === 4){
-          anno_language(xpath);
+          run_langtrans();
         }
         else if (annolet_btn == 3){
-          anno_phonetic(xpath);
+          run_phoneticConversion()
         }
         else if (annolet_btn == 6){
            toggle_tagging();
@@ -607,29 +507,3 @@ function disableAllLinks(){
     }
 }
 
-//function to store tags into JSON object.
-var annolet_obj = 0; //will save jason objects
-function annolet_insertIntoObject(xpath) {
-  if(annolet_obj==0){
-    authorname = prompt('enter authorname');
-    annolet_obj = {
-        url: window.location.href,
-        authorname: authorname,
-        tags : []
-    };
-    tagObject(xpath, annolet_obj);
-  }
-  else {
-    tagObject(xpath, annolet_obj);
-  }
-}
-
-// function for creation of objects
-function tagObject(xpath, obj){
-  tagName = prompt('tagName:');
-  tagInfo = prompt('tagInfo');
-  obj.tags.push(
-    {
-      tagName: tagName,
-      tagInfo: tagInfo,
-      xpath: xpath

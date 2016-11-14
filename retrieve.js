@@ -138,13 +138,14 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span property=tagName id=tagName>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span property=tagName>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;
               
-        });  
-        var stri = retVal.getElementById(tagName).innerHTML;
+        }); 
+        ele.innerHTML = retVal;
+        var stri = ele.querySelectorAll('span[property = tagName]');
         var text_to_translate = stri;
         var language_trans = get_languagetrans(text_to_translate,'en','hi');
         var timer = window.setInterval
@@ -165,8 +166,8 @@ function retrieve_changes()
           }
           ,3
         );
-        retVal.getElementById(tagName).innerHTML = language_trans;
-        ele.innerHTML = retVal;
+        ele.getAttribute(tagName).innerHTML = language_trans;
+        
       }
       if (anno_btn == 3)
       {
@@ -191,13 +192,14 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span property=tagName id=tagName>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span property=tagName>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;
               
-        });  
-        var stri = retVal.getElementById(tagName).innerHTML;  
+        });
+        ele.innerHTML = retVal;
+        var stri = ele.querySelectorAll('span[property = tagName]'); 
         var text_to_translate = stri;
         var phonetic_trans = get_languagetrans(text_to_translate,'en','hi');
         var timer = window.setInterval
@@ -218,8 +220,7 @@ function retrieve_changes()
           }
           ,3
         );
-        retVal.getElementById(tagName).innerHTML = phonetic_trans;
-        ele.innerHTML = retVal;
+        ele.getAttribute(tagName).innerHTML = phonetic_trans;
       }
       if (anno_btn == 11)
       {
@@ -462,13 +463,14 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<a style='color:blue' href=tagName >" + oldHtml.slice(spanStart, spanStop) + "</a>" +
+                     "<a style='color:blue'>" + oldHtml.slice(spanStart, spanStop) + "</a>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;
               
         });
         ele.innerHTML = retVal;
+        ele.getElementsByTagName('a').href = tagName;
       }
       if (anno_btn == 19)
       {

@@ -382,6 +382,7 @@ function add_func_tagging()
 }
 function add_persistence()
 {
+    console.log("injected persist js");
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/persist.js">    </script>');
     
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/retrieve.js">    </script>');

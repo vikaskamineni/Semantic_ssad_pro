@@ -376,7 +376,7 @@ function add_func_tagging()
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_tagging.js">    </script>');
     
     
-    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/webservices/tagging/annolet_main.js">    </script>');
+    
     $j("head").append('<link rel="stylesheet" href="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/my_style.css" type="text/css" media="screen, projection"/>');
   
 }
@@ -384,7 +384,7 @@ function add_persistence()
 {
     console.log("injected persist js");
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/persist.js">    </script>');
-    
+    $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/webservices/tagging/annolet_main.js">    </script>');
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/retrieve.js">    </script>');
 }
 function add_search_tagging()

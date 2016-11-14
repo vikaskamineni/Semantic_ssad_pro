@@ -51,7 +51,7 @@ function tagging_function(stri1,stri2)
         var obj = JSON.parse(jsonStr);
         if (start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prop2});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":stri2});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -146,7 +146,7 @@ function change_font(stri1,stri2)
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prop2});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":stri1});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");
@@ -400,7 +400,7 @@ function bold_tag(stri)
         var obj = JSON.parse(jsonStr);
         if(start != end)
         {
-            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":prop1});
+            obj['change'].push({"xpath":xpath,"url":currentLocation,"func_triggered":anno_btn,"start_offset":start,"end_offset":end,"tagName":stri});
         }
         jsonStr = JSON.stringify(obj);
         console.log("inside func");

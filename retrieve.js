@@ -259,8 +259,8 @@ function retrieve_changes()
               //alert("New html: \n\n" + retVal);
               return retVal;
               
-          });
-          ele.innerHTML = retVal;
+        });
+        ele.innerHTML = retVal;
       }
       if (anno_btn == 12)
       {

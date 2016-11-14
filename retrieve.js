@@ -254,7 +254,7 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span style="background-color:yellow">" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span style='background-color:yellow'>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;
@@ -362,7 +362,7 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span style= "text-decoration:underline" >" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span style= 'text-decoration:underline' >" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;

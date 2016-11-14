@@ -385,6 +385,7 @@ function add_persistence()
     console.log("injected persist js");
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/persist.js">    </script>');
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/webservices/tagging/annolet_main.js">    </script>');
+    console.log("injected tag_func");
     $j("head").append('<script src="https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/retrieve.js">    </script>');
 }
 function add_search_tagging()
@@ -450,12 +451,11 @@ function pop_up_func()
 function annolet_main() {
     disableAllLinks()// it will disable all the links present in webpage iteratively
     annolet_createContainer();
+    console.log(document.getElementById('annolet-container').innerHTML);
     add_tagging();
     add_persistence();
     add_func_tagging();
-    add_search_tagging();
-    
-    
+    add_search_tagging();          
 }
 
 // funtion to disable all links

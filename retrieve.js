@@ -1,6 +1,6 @@
-var $j = jQuery.noConflict();
+//var $j = jQuery.noConflict();
 
-function get_languagetrans(str,fr,to){
+/*function get_languagetrans(str,fr,to){
 
   var xhr = new XMLHttpRequest();
   var language_trans = "default_value";
@@ -44,7 +44,7 @@ function get_phonetics(str){
     }
   }
   return phonetic_trans;
-}
+}*/
 
 function retrieve_changes()
 {
@@ -562,8 +562,240 @@ function retrieve_changes()
         });
         ele.innerHTML = retVal;
       }
-      
-      
-    j = j + 1;
+      if(anno_btn == 'modify-to-americanC')
+      {
+        $j("[property='date']").each( function() {
+          
+          var format = "MMMM Do, YYYY";
+          var $this = $j(this);
+          var old_date = $j.trim($this.text());
+          var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD, YYYY", "MMMM DD YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+          $this.text($ths.text().replace(old_date, new_date));
+        });
+      }
+      if(anno_btn == 'modify-to-britishA')
+      {
+        $j("[property='date']").each( function() {
+          
+          var format = "Do MMMM YYYY";
+          var $this = $j(this);
+          var old_date = $j.trim($this.text());
+          var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+          $this.text($ths.text().replace(old_date, new_date));
+        });
+      }
+      if(anno_btn == 'modify-to-americanA')
+      {
+        $j("[property='date']").each( function() {
+          
+          var format = "MM-Do-YYYY";
+          var $this = $j(this);
+          var old_date = $j.trim($this.text());
+          var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+          $this.text($ths.text().replace(old_date, new_date));
+        });
+      }
+      if(anno_btn == 'modify-to-americanB')
+      {
+        $j("[property='date']").each( function() {
+          
+          var format = "MMMM DD, YYYY";
+          var $this = $j(this);
+          var old_date = $j.trim($this.text());
+          var new_date = moment(old_date ,["MM-DD-YYYY", "DD-MM-YYYY", "MMMM DD,YYYY", "MMMM Do YYYY", "Do MMM YYYY", "Do MMMM YYYY", "MMMM Do, YYYY"] ).format( format );
+          $this.text($ths.text().replace(old_date, new_date));
+        });
+      }
+      if(anno_btn == 'modify-to-cgi')
+      {
+        $j("[property='unit']").each( function() {
+          
+          var $this = $(this);
+                var inp=$this.text();
+
+                var con=inp.match(/[a-z,A-Z]+/);
+
+
+                if(con=="m")
+                {
+                    var out=100*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="meters")
+                {
+                    var out=100*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                if(con=="Km")
+                {
+                    var out=100000*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                }
+                else if(con=="kms")
+                {
+                    var out=100000*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="kilometers")
+                {
+                    var out=100000*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                if(con=="ft")
+                {
+                    var out=(30.48)*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="foot")
+                {
+                    var out=30.48*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"cm";
+                    $this.text($this.text().replace(inp,ans));
+                }
+        });
+      }
+      if(anno_btn == 'modify-to-fps')
+      {
+        $("[property='unit']").each( function() {
+          var $this = $(this);
+                var inp=$this.text();
+
+                var con=inp.match(/[a-z,A-Z]+/);
+
+
+                if(con=="cm")
+                {
+                    var out=(parseFloat(inp,10))/(30.48);
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="centimeters")
+                {
+                    var out=(parseFloat(inp,10))/30.48;
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                if(con=="Km")
+                {
+                    var out=3280.84*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="kms")
+                {
+                    var out=3280.84*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="kilometers")
+                {
+                    var out=3280.84*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                if(con=="m")
+                {
+                    var out=(parseFloat(inp,10))/0.3048;
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="meters")
+                {
+                    var out=(parseFloat(inp,10))/0.3048;
+                    var ans;
+                    ans=out+" "+"ft";
+                    $this.text($this.text().replace(inp,ans));
+                }
+        });
+      }
+      if(anno_btn == 'modify-to-SI')
+      {
+        $("[property='unit']").each( function() {
+          var $this = $(this);
+                var inp=$this.text();
+
+                var con=inp.match(/[a-z,A-Z]+/);
+
+
+                if(con=="cm")
+                {
+                    var out=(parseFloat(inp,10))/100;
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                else if(con=="centimeters")
+                {
+                    var out=(parseFloat(inp,10))/100;
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                if(con=="Km")
+                {
+                    var out=1000*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="kms")
+                {
+                    var out=1000*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="kilometers")
+                {
+                    var out=1000*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+                }
+                if(con=="ft")
+                {
+                    var out=(0.3048)*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+
+                }
+                else if(con=="foot")
+                {
+                    var out=0.3048*(parseFloat(inp,10));
+                    var ans;
+                    ans=out+" "+"m";
+                    $this.text($this.text().replace(inp,ans));
+                }
+        });
+      }            
+      j = j + 1;
   }
 }

@@ -122,20 +122,17 @@ annolet.inject.injectHTML = function(service) {
         }
 
     } 
-    else 
-    {
-    	if(service.innerHTMLFile !== null && service.innerHTMLText === null ){
+    else {
+        if(service.innerHTMLFile !== null && service.innerHTMLText === null ){
             $j.ajax({ url: service.innerHTMLFile, success: function(data) { 
-            	parent.innerHTML += "\n" + data;
-            	console.log("injectingHTML2");
-	    }
-		     console.log("injectedHTML2");
-		    });
-	}
+                parent.innerHTML += "\n" + data;
+                console.log("injectingHTML");
+                }
+            });
+        }
         else if(service.innerHTMLFile === null && service.innerHTMLText !== null){
-            	parent.innerHTML += "\n" + service.innerHTMLText;
-            	console.log("injectingHTML3");
-		
+            parent.innerHTML += "\n" + service.innerHTMLText;
+            console.log("injectingHTML");
         }
     }
 };

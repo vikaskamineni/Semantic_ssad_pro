@@ -542,7 +542,7 @@ function retrieve_changes()
         });
         ele.innerHTML = retVal;
       }
-      if(tagName == "event-name"|| tagName = "event-location-street" ||tagName == "event-location-area" ||tagName == "event-location-city" ||tagName == "organization-owner" ||tagName == "organisation-employee" ||tagName == "organization-contact" ||tagName == "organization-location-street" ||tagName == "organization-location-area" ||tagName == "organization-location-city" || tagName == "person-name-firstname" ||tagName == "person-name-secondname" ||tagName == "person-address-street" ||tagName == "person-address-city" || tagName == "person-address-area" || tagName == "person-contact" || tagName == "date" || tagName == "currency-rupee" || tagName == "currency-dollar" || tagName == "currency-euro" || tagName == "unit-si" || tagName == "unit-cgi" || tagName == "unit-fps")
+      if ( tagName == "event-name" || tagName == "event-location-street" ||tagName == "event-location-area" ||tagName == "event-location-city" ||tagName == "organization-owner" ||tagName == "organisation-employee" ||tagName == "organization-contact" ||tagName == "organization-location-street" ||tagName == "organization-location-area" ||tagName == "organization-location-city" || tagName == "person-name-firstname" ||tagName == "person-name-secondname" ||tagName == "person-address-street" ||tagName == "person-address-city" || tagName == "person-address-area" || tagName == "person-contact" || tagName == "date" || tagName == "currency-rupee" || tagName == "currency-dollar" || tagName == "currency-euro" || tagName == "unit-si" || tagName == "unit-cgi" || tagName == "unit-fps")
       {
         console.log("retrieving rtag changes");
         var retVal;
@@ -574,7 +574,7 @@ function retrieve_changes()
         });
         ele.innerHTML = retVal;
       }
-      if(anno_btn == 'modify-to-americanC')
+      if (anno_btn == 'modify-to-americanC')
       {
         $j("[property='date']").each( function() {
           
@@ -585,7 +585,7 @@ function retrieve_changes()
           $this.text($ths.text().replace(old_date, new_date));
         });
       }
-      if(anno_btn == 'modify-to-britishA')
+      if (anno_btn == 'modify-to-britishA')
       {
         $j("[property='date']").each( function() {
           
@@ -596,7 +596,7 @@ function retrieve_changes()
           $this.text($ths.text().replace(old_date, new_date));
         });
       }
-      if(anno_btn == 'modify-to-americanA')
+      if (anno_btn == 'modify-to-americanA')
       {
         $j("[property='date']").each( function() {
           
@@ -607,7 +607,7 @@ function retrieve_changes()
           $this.text($ths.text().replace(old_date, new_date));
         });
       }
-      if(anno_btn == 'modify-to-americanB')
+      if (anno_btn == 'modify-to-americanB')
       {
         $j("[property='date']").each( function() {
           
@@ -618,7 +618,7 @@ function retrieve_changes()
           $this.text($ths.text().replace(old_date, new_date));
         });
       }
-      if(anno_btn == 'modify-to-cgi')
+      if (anno_btn == 'modify-to-cgi')
       {
         $j("[property='unit']").each( function() {
           
@@ -628,7 +628,7 @@ function retrieve_changes()
                 var con=inp.match(/[a-z,A-Z]+/);
 
 
-                if(con=="m")
+                if (con=="m")
                 {
                     var out=100*(parseFloat(inp,10));
                     var ans;
@@ -636,20 +636,20 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="meters")
+                else if (con=="meters")
                 {
                     var out=100*(parseFloat(inp,10));
                     var ans;
                     ans=out+" "+"cm";
                     $this.text($this.text().replace(inp,ans));
                 }
-                if(con=="Km")
+                if (con=="Km")
                 {
                     var out=100000*(parseFloat(inp,10));
                     var ans;
                     ans=out+" "+"cm";
                 }
-                else if(con=="kms")
+                else if (con=="kms")
                 {
                     var out=100000*(parseFloat(inp,10));
                     var ans;
@@ -657,14 +657,14 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="kilometers")
+                else if (con=="kilometers")
                 {
                     var out=100000*(parseFloat(inp,10));
                     var ans;
                     ans=out+" "+"cm";
                     $this.text($this.text().replace(inp,ans));
                 }
-                if(con=="ft")
+                if (con=="ft")
                 {
                     var out=(30.48)*(parseFloat(inp,10));
                     var ans;
@@ -672,7 +672,7 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="foot")
+                else if (con=="foot")
                 {
                     var out=30.48*(parseFloat(inp,10));
                     var ans;
@@ -681,7 +681,7 @@ function retrieve_changes()
                 }
         });
       }
-      if(anno_btn == 'modify-to-fps')
+      if (anno_btn == 'modify-to-fps')
       {
         $("[property='unit']").each( function() {
           var $this = $(this);
@@ -690,7 +690,7 @@ function retrieve_changes()
                 var con=inp.match(/[a-z,A-Z]+/);
 
 
-                if(con=="cm")
+                if (con=="cm")
                 {
                     var out=(parseFloat(inp,10))/(30.48);
                     var ans;
@@ -698,14 +698,14 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="centimeters")
+                else if (con=="centimeters")
                 {
                     var out=(parseFloat(inp,10))/30.48;
                     var ans;
                     ans=out+" "+"ft";
                     $this.text($this.text().replace(inp,ans));
                 }
-                if(con=="Km")
+                if (con=="Km")
                 {
                     var out=3280.84*(parseFloat(inp,10));
                     var ans;
@@ -713,7 +713,7 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="kms")
+                else if (con=="kms")
                 {
                     var out=3280.84*(parseFloat(inp,10));
                     var ans;
@@ -721,14 +721,14 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="kilometers")
+                else if (con=="kilometers")
                 {
                     var out=3280.84*(parseFloat(inp,10));
                     var ans;
                     ans=out+" "+"ft";
                     $this.text($this.text().replace(inp,ans));
                 }
-                if(con=="m")
+                if (con=="m")
                 {
                     var out=(parseFloat(inp,10))/0.3048;
                     var ans;
@@ -736,7 +736,7 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="meters")
+                else if (con=="meters")
                 {
                     var out=(parseFloat(inp,10))/0.3048;
                     var ans;
@@ -745,7 +745,7 @@ function retrieve_changes()
                 }
         });
       }
-      if(anno_btn == 'modify-to-SI')
+      if (anno_btn == 'modify-to-SI')
       {
         $("[property='unit']").each( function() {
           var $this = $(this);
@@ -754,21 +754,21 @@ function retrieve_changes()
                 var con=inp.match(/[a-z,A-Z]+/);
 
 
-                if(con=="cm")
+                if (con=="cm")
                 {
                     var out=(parseFloat(inp,10))/100;
                     var ans;
                     ans=out+" "+"m";
                     $this.text($this.text().replace(inp,ans));
                 }
-                else if(con=="centimeters")
+                else if (con=="centimeters")
                 {
                     var out=(parseFloat(inp,10))/100;
                     var ans;
                     ans=out+" "+"m";
                     $this.text($this.text().replace(inp,ans));
                 }
-                if(con=="Km")
+                if (con=="Km")
                 {
                     var out=1000*(parseFloat(inp,10));
                     var ans;
@@ -776,7 +776,7 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="kms")
+                else if (con=="kms")
                 {
                     var out=1000*(parseFloat(inp,10));
                     var ans;
@@ -784,14 +784,14 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="kilometers")
+                else if (con=="kilometers")
                 {
                     var out=1000*(parseFloat(inp,10));
                     var ans;
                     ans=out+" "+"m";
                     $this.text($this.text().replace(inp,ans));
                 }
-                if(con=="ft")
+                if (con=="ft")
                 {
                     var out=(0.3048)*(parseFloat(inp,10));
                     var ans;
@@ -799,7 +799,7 @@ function retrieve_changes()
                     $this.text($this.text().replace(inp,ans));
 
                 }
-                else if(con=="foot")
+                else if (con=="foot")
                 {
                     var out=0.3048*(parseFloat(inp,10));
                     var ans;

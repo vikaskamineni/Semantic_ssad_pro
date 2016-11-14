@@ -146,7 +146,7 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span property=tagName>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span property='" + tagName + "'>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;
@@ -200,7 +200,7 @@ function retrieve_changes()
               if (spanStop === undefined)
                  spanStop = oldHtml.length;
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span property=tagName>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span property='" + tagName+ "'>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;

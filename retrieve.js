@@ -132,7 +132,7 @@ function retrieve_changes()
       jsonstr = xhr.responseText;
     }
   }
-  var obj = JSON.parse(jsonstr);
+  var obj = JSON.parse(jsonStr);
   console.log(obj);
   var j=0;
   while(obj['change'][j]!=null)

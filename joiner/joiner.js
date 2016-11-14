@@ -58,9 +58,17 @@ annolet.connectWebservices = function() {
             annolet.inject.injectCSS(services[i]);
             console.log("injectedCSS");
         }
-        if (services[i].innerHTMLText !== null || services[i].innerHTMLFile !== null) {
-            annolet.inject.injectHTML(services[i]);
-            console.log("injectedHTML");
+        if (services[i].innerHTMLText !== null || services[i].innerHTMLFile !== null) 
+	{
+		$j.ajaxSetup({
+      			async: false
+      	 	});	
+            	annolet.inject.injectHTML(services[i]);
+            	console.log("injectedHTML");
+		$j.ajaxSetup({
+			async: true
+      		});
+	    
         }
 	var j=0;
 	while(services[i].fileJS[j]!=null) {		

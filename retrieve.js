@@ -9,9 +9,9 @@ function wrapText(elem, start, length, tagName ,st) {
     console.log(elem.textContent.substr(5,10));
     var before = elem.textContent.substr(0, start);
     console.log(before);
-    var after = elem.textContent.substr(start + length, elem.textContent.length -length);
+    var after = elem.textContent.substr(start + length, elem.textContent.length);
     console.log(after);
-    var letters = elem.textContent.substr(start, length);
+    var letters = elem.textContent.substr(start, start + length);
     console.log(letters);
     elem.innerHTML = '';
     var text1=document.createTextNode(before);

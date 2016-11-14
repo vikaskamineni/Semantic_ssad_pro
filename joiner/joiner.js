@@ -31,7 +31,7 @@ annolet.getJSON = function(){
       */
 	var pathJSON = "https://rawgit.com/vikaskamineni/Semantic_ssad_pro/master/joiner/manifest.json"+ "?v=" + parseInt(Math.random() * 999);
 	console.log(pathJSON);
-      	console.log("fup");
+      	//console.log("fup");
 	
       	$j.ajaxSetup({
       			async: false
@@ -40,16 +40,15 @@ annolet.getJSON = function(){
         	annolet.metafile = json;
 		console.log("entered");
 	  	console.log(annolet.metafile);
-	  
       	});
       	$j.ajaxSetup({
 		async: true
       	});
-      	console.log("fdec");
+      	//console.log("fdec");
 };
 
 annolet.connectWebservices = function() {
-    console.log("continues");
+    //console.log("continues");
     var services = annolet.metafile.services;
     console.log("end");
     for(var i = 0; i < services.length; i++) {
@@ -170,9 +169,9 @@ annolet.run = function(){
 	console.log("sol1");
 	console.log(annolet.metafile);
 	//$j(window.annolet.metafile).load(function(){
-		      console.log("sol2");
-		      annolet.connectWebservices();
-		      annolet.createUI();
+	console.log("sol2");
+	annolet.connectWebservices();
+	annolet.createUI();
 //});
 }
 

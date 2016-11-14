@@ -449,11 +449,11 @@ function pop_up_func()
 //main function which will execute other functions
 function annolet_main() {
     disableAllLinks()// it will disable all the links present in webpage iteratively
+    annolet_createContainer();
     add_tagging();
     add_persistence();
     add_func_tagging();
     add_search_tagging();
-    annolet_createContainer();
     
     
 }

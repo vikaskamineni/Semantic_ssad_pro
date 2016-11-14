@@ -454,50 +454,42 @@ function annolet_main() {
     add_persistence();
     add_func_tagging();
     add_search_tagging();
-    document.onclick = function(event) {
-        if (event === undefined) {
-            event = window.event;
-        } // for IE
-        var target = 'target' in event ? event.target : event.srcElement; // for IE
-        var root = document.compatMode === 'CSS1Compat' ? document.documentElement : document.body;
-        var xpath = anno_getXpathTo(target);
-        if (annolet_btn === 1) {
-            anno_highlight(xpath);
-        }
-        if(annolet_btn === 4){
-          run_langtrans();
-        }
-        else if (annolet_btn == 3){
-          run_phoneticConversion()
-        }
-        else if (annolet_btn == 6){
-           toggle_tagging();
-        }
-        else if (annolet_btn===9)
-        {
-            anno_audio(xpath);
-        }
-        else if (annolet_btn===10)
-        {
-             anno_edit(xpath);
-        }
-        else if (annolet_btn == 2)
-        {
-            tag_function();
-        }
-        else if (annolet_btn == 11)
-        {
-            search_function();
-        }
-        else if (annolet_btn == 12)
-        {
-            store_changes();
-        }
-        else if (annolet_btn == 13)
-        {
-            retrieve_changes();
-        }
-    };
+    if (annolet_btn === 1) {
+        anno_highlight(xpath);
+    }
+    if(annolet_btn === 4){
+        run_langtrans();
+    }
+    else if (annolet_btn == 3){
+        run_phoneticConversion()
+    }
+    else if (annolet_btn == 6){
+        toggle_tagging();
+    }
+    else if (annolet_btn===9)
+    {
+        anno_audio(xpath);
+    }
+    else if (annolet_btn===10)
+    {
+        anno_edit(xpath);
+    }
+    else if (annolet_btn == 2)
+    {
+        tag_function();
+    }
+    else if (annolet_btn == 11)
+    {
+        search_function();
+    }
+    else if (annolet_btn == 12)
+    {
+        store_changes();
+    }
+    else if (annolet_btn == 13)
+    {
+        retrieve_changes();
+    }
 }
 
 // funtion to disable all links

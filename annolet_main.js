@@ -448,48 +448,14 @@ function pop_up_func()
 }
 //main function which will execute other functions
 function annolet_main() {
-    disableAllLinks()  // it will disable all the links present in webpage iteratively
-    annolet_createContainer();
+    disableAllLinks()// it will disable all the links present in webpage iteratively
     add_tagging();
     add_persistence();
     add_func_tagging();
     add_search_tagging();
-    if (annolet_btn === 1) {
-        anno_highlight(xpath);
-    }
-    if(annolet_btn === 4){
-        run_langtrans();
-    }
-    else if (annolet_btn == 3){
-        run_phoneticConversion()
-    }
-    else if (annolet_btn == 6){
-        toggle_tagging();
-    }
-    else if (annolet_btn===9)
-    {
-        anno_audio(xpath);
-    }
-    else if (annolet_btn===10)
-    {
-        anno_edit(xpath);
-    }
-    else if (annolet_btn == 2)
-    {
-        tag_function();
-    }
-    else if (annolet_btn == 11)
-    {
-        search_function();
-    }
-    else if (annolet_btn == 12)
-    {
-        store_changes();
-    }
-    else if (annolet_btn == 13)
-    {
-        retrieve_changes();
-    }
+    annolet_createContainer();
+    
+    
 }
 
 // funtion to disable all links

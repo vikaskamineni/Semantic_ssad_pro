@@ -73,8 +73,8 @@ function retrieve_changes()
     {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":11,"start_offset":59,"end_offset":67,"tagName":"yellow"},
     {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":19,"start_offset":78,"end_offset":87,"tagName":"bold"}]
             }
-  var obj = JSON.parse(jsonStr);
-  console.log(obj);
+  //var obj = JSON.parse(jsontr);
+  //console.log(obj);
   var j=0;
   while(obj['change'][j]!=null)
   {

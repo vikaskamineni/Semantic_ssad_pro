@@ -568,7 +568,7 @@ function retrieve_changes()
                  spanStop = oldHtml.length;
               //var string = tagName.toString();
               retVal = oldHtml.slice(0, spanStart) +
-                     "<span property='" + tagName + "'>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
+                     "<span style='background-color:red' property='" + tagName + "'>" + oldHtml.slice(spanStart, spanStop) + "</span>" +
                      oldHtml.slice(spanStop);
               //alert("New html: \n\n" + retVal);
               return retVal;

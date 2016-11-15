@@ -38,8 +38,8 @@ annolet.getJSON = function(){
       	});
       	$j.getJSON(pathJSON, function(json) {
         	annolet.metafile = json;
-		console.log("entered");
-	  	//console.log(annolet.metafile);
+		console.log("entered f");
+	  	console.log(annolet.metafile);
       	});
       	$j.ajaxSetup({
 		async: true

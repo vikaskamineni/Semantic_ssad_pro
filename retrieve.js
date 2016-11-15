@@ -72,8 +72,8 @@ function retrieve_changes()
     {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":18,"start_offset":34,"end_offset":58,"tagName":"www.abc.com"},
     {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":11,"start_offset":59,"end_offset":67,"tagName":"yellow"},
     {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":19,"start_offset":78,"end_offset":87,"tagName":"bold"},
-    {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":'rtag',"start_offset":89,"end_offset":93,"tagName":"date"},
-    {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":'rtag',"start_offset":113,"end_offset":121,"tagName":"event-name"}]
+    {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":'rtag',"start_offset":88,"end_offset":93,"tagName":"date"},
+    {"xpath":"//*[@id='main']/p[1]","url":"http://www.w3schools.com/sql/sql_join_left.asp#","func_triggered":'rtag',"start_offset":112,"end_offset":121,"tagName":"event-name"}]
             }
   //var obj = JSON.parse(jsontr);
   //console.log(obj);

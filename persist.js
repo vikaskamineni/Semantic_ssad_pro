@@ -1,7 +1,7 @@
 function store_changes()
 {
 	console.log("outside func");
-	var jsonStr = JSON.stringify(obj);
+	//var jsonStr = JSON.stringify(obj);
 	console.log(jsonStr);
 	var xhr = new XMLHttpRequest();
   	xhr.open("POST", "//localhost:5000/framework", true); // replace localhost afterwards.
